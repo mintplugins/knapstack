@@ -100,6 +100,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-slide.php' );
 	
 	/**
+	 * Check if mp_links is installed
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-links.php' );
+	
+	/**
 	 * Check if mp_stacks is installed
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-stacks.php' );

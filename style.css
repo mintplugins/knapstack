@@ -95,7 +95,11 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
 	border: 0;
 }
-
+/* The WP admin bar conflicts with our menu so hide it on the front end
+----------------------------------------------- */
+#mp-core-upload-logo{
+	margin-top:10px;	
+}
 /* Background Classes 
 ----------------------------------------------- */
 .mp-dark-background{
@@ -126,6 +130,9 @@ a img {
 
 /* Header 
 ----------------------------------------------- */
+.admin-bar #page > header{
+	margin-top:28px;	
+}
 #page > header{
 	position:fixed;
 	top:0px;
@@ -547,4 +554,10 @@ textarea{
 }
 .site-info-right{
 	float:right;	
+}
+/* Footer
+----------------------------------------------- */
+pre{
+	background-color: rgb(245, 245, 245);
+	padding: 20px;	
 }
