@@ -1,0 +1,550 @@
+/*
+Theme Name: KnapStack Theme
+Theme URI: http://moveplugins.com/
+Author: Move Plugins
+Author URI: http://moveplugins.com/
+Description: A theme designed around the MP Stacks plugin.
+Version: 1.0.0.0
+License: GNU General Public License
+License URI: license.txt
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: 'MP Stacks Font 1';
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	color:#00bb85;
+}
+body {
+	background: #fff;
+	font-size:14px;
+	font-size:1.4rem;
+	line-height:2.5rem;
+}
+a{
+	color:#00bb85;	
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+/* Background Classes 
+----------------------------------------------- */
+.mp-dark-background{
+	background-color:#00bb85;
+	color:#fff;
+}
+.mp-medium-background{
+	background-color:##05d594;
+	color:#fff;
+}
+.mp-lighter-background{
+	background-color:#65ecb5;
+	color:#008764;	
+}
+.mp-lightest-background{
+	background-color:#fff;
+	color:#008764;
+}
+
+/* Page 
+----------------------------------------------- */
+#page{
+	min-width:1100px;
+	width:100%;
+	display:block;	
+	margin: 0px auto;
+}
+
+/* Header 
+----------------------------------------------- */
+#page > header{
+	position:fixed;
+	top:0px;
+	width:100%;
+	z-index:1;
+	background-color:rgba(255, 255, 255, 0.89);
+}
+
+#page > header .header-inner{
+	max-width:1100px;
+	margin:0px auto;	
+}
+
+/* Header SIte Branding Area
+----------------------------------------------- */
+.site-branding{
+	display:inline-block;	
+}
+.site-branding a{
+	display: block;	
+}
+#mp-core-logo{
+	display:block;
+	position:absolute;
+}
+.site-description{
+	display:none;	
+}
+
+/* Header Menu
+----------------------------------------------- */
+.menu-main-navigation-container{
+	float:left;
+}
+#site-navigation .mp-links{
+	margin-top:5px;
+	float:left;
+}
+#site-navigation .mp-links li{
+	margin-left:10px;	
+}
+#site-navigation .mp-links li a:before{
+	font-size:35px;
+	font-size:3.5rem;
+}
+#site-navigation{
+	display:inline-block;
+	float:right;
+	margin-top:9px;	
+	font-size: 13px; 
+	font-size: 1.3rem;
+}
+#site-navigation .menu{
+	position:relative;
+	z-index:1000;
+}
+#site-navigation .menu > li{
+	float:left;
+	list-style:none;
+	margin-right:10px;
+	position:relative;
+	padding-bottom:12px!important;
+}
+#site-navigation .menu > li a {
+	text-decoration:none;
+}
+
+/* Applies to all nav levels
+----------------------------------------------- */
+
+#site-navigation .menu li{
+	padding:5px 10px 5px 0px;
+	white-space:nowrap;
+}
+
+#site-navigation .menu li a{
+	padding-left:10px;	
+}
+
+/* First level dropdown
+----------------------------------------------- */
+#site-navigation .menu > li > ul > li{
+	margin-right:0px;
+	overflow:visible;
+}
+#site-navigation .menu > li > ul{
+	position:absolute;
+	display:none;
+	list-style:none;
+	margin:0px;
+	top: 42px;
+}
+#site-navigation .menu > li:hover > ul{
+	display:block;
+	
+}
+/* Applies to all dropdowns
+----------------------------------------------- */
+#site-navigation .menu > li ul{
+	background-color:rgba(0, 0, 0, 0.52);
+}
+
+#site-navigation .menu > li ul a{
+	color:#fff;		
+}
+
+
+/* Second level dropdown
+----------------------------------------------- */
+#site-navigation .menu > li > ul > li > ul{
+	position:absolute;
+	display:none;
+	list-style:none;
+	margin-left: 100%;
+	top: 37px;
+}
+#site-navigation .menu > li > ul > li:hover > ul{
+	display:block;
+	
+}
+
+/* Third level dropdown
+----------------------------------------------- */
+#site-navigation .menu > li > ul > li > ul > li > ul{
+	position:absolute;
+	display:none;
+	list-style:none;
+	margin-left: 100%;
+	top: 0px;
+}
+#site-navigation .menu > li > ul > li > ul > li:hover > ul{
+	display:block;
+}
+
+/* Screen Reader Divs
+----------------------------------------------- */
+.menu-toggle, .screen-reader-text{
+	display:none;	
+}
+/* Main div
+----------------------------------------------- */
+#main-container{
+	width:100%;
+	margin:0px auto;	
+	position: relative;	
+	padding-top:50px;
+	font-size:115%;
+}
+/* Page and Entry Header
+----------------------------------------------- */
+#main-container > .page-header, #main-container > .entry-header{
+	padding:40px 0px 40px 0px;
+	background-color:#00bb85;
+	color:#fff;
+}
+#main-container > .page-header > .page-header-inner{
+	display:table;
+	margin:0px auto;
+	text-align:center;
+}
+#main-container > .page-header > .page-header-inner a {
+	color:#fff;	
+}
+/* Primary div
+----------------------------------------------- */
+#content{
+	max-width: 1100px;
+	margin: 0px auto;
+	padding:20px;
+}
+/* Content div when the stacks page template is used */
+.page-template-templatespage-template-stack-php #content{
+	max-width:100%;
+	background-color:none;
+	padding:0px;
+}
+/* Content div when the archive template is used */
+.archive #content{
+	max-width:100%;
+	background-color:none;
+	padding:0px;
+}
+
+
+/* Secondary div
+----------------------------------------------- */
+#secondary-container{
+	padding: 40px 0px 40px 0px;
+	background-color: #00bb85;
+	color: #fff;	
+}
+#secondary{
+	max-width:1100px;
+	margin: 0px auto;
+	clear:both;
+	float:none;	
+}
+#secondary a{
+	color:#fff;
+}
+#secondary .footer-widget{
+	float:left;
+	width:255px;	
+	margin-right:20px;
+}
+#secondary .footer-widget .title{
+	margin-bottom:15px;
+}
+
+/* Colophon div
+----------------------------------------------- */
+#colophon{
+	float:none;	
+	max-width:1140px;
+	margin:0px auto;
+	padding:20px 0px 20px 0px;
+}
+/* Main H Tag settings
+----------------------------------------------- */
+.page-header h1, .entry-header h1{
+	font-size: 50px; 
+	font-size: 5.0rem;
+	font-weight:400;
+	line-height: 6rem;
+}
+
+/* Post and Page H Tag Elements
+----------------------------------------------- */
+.entry-content h1, .page-content h1{
+	font-size: 25px; 
+	font-size: 2.5rem;
+	font-weight:400;
+}
+.entry-content h2, .page-content h2{
+	font-size: 20px; 
+	font-size: 2.0rem;
+	font-weight:400;
+}
+.entry-content h3, .page-content h3{
+	font-size: 15px; 
+	font-size: 1.5rem;
+	font-weight:400;
+}
+.entry-content h4, .page-content h4{
+	font-size: 10px; 
+	font-size: 1.0rem;
+	font-weight:400;
+}
+.entry-content h5, .page-content h5{
+	font-size: 30px; 
+	font-size: 3.0rem;
+	font-weight:400;
+}
+.entry-content h6, .page-content h6{
+	font-size: 35px; 
+	font-size: 3.5rem;
+	font-weight:400;
+}
+
+/* Form Elements
+----------------------------------------------- */
+input, input[type=search], textarea{
+	background-color: rgba(0, 0, 0, 0.52);
+	color:#fff;
+	border: none;
+	padding:8px 10px 8px 10px;
+	font-weight:400;
+	margin:0px 0px 5px 0px;
+}
+textarea{
+	height: 132px;
+	width:90%;
+	max-width: 400px;	
+	margin:0px;
+}
+
+/* Comments
+----------------------------------------------- */
+#comments-container{
+	background-color:#65ecb5;
+}
+#comments{
+	margin:0px auto;
+	max-width:1100px;	
+	padding:20px;
+}
+#comments .comment{
+	margin-bottom:20px;
+}
+#comments .comment .comment-meta{
+	margin:-26.5px 0px 5px 130px
+}
+#comments .comment footer{
+	margin-bottom:5px;	
+}
+#reply-title, .comments-title{
+	font-size: 20px; 
+	font-size: 2.0rem;
+	font-weight:400;
+}
+.comments-title{
+	margin-bottom:20px;
+}
+.logged-in-as, .comment-notes{
+	margin:5px 0px 10px 0px;	
+}
+.comment-author img{
+	border-radius: 30px;
+	float:left;
+	margin-right:10px;	
+}
+.comment-author .fn{
+	font-weight:400;
+	font-size:16px;
+	font-size:1.6rem;
+}
+#comments .comment time{
+	font-size:12px;
+	font-size:1.2rem;
+}
+#comments .children{
+	margin-left:50px;	
+}
+/* Nav Below
+----------------------------------------------- */
+#content footer{
+	float:right;
+	font-size:12px;
+	font-size:1.2rem;
+	margin-top:25px;		
+}
+#nav-below{
+	float:none;
+	clear:both;	
+	font-size:12px;
+	font-size:1.2rem;
+	margin-top:25px;	
+}
+.nav-previous{
+	float:left;	
+}
+.nav-next{
+	float:right;	
+}
+/* Archive Page
+----------------------------------------------- */
+.archive #main-container #primary{
+	background-color:transparent;	
+}
+.archive article {
+	width:100%;
+}
+.archive .entry-content{
+}
+/*Even Items*/
+.archive article:nth-child(2n) {
+	background-color:#05d594;	
+}
+.archive article:nth-child(2n) a, 
+.archive article:nth-child(2n) p {
+	color:#fff;
+	text-decoration:none;
+}
+
+/*Odd Items */
+.archive article:nth-child(odd) {
+	color:#05d594;	
+}
+.archive article:nth-child(odd) a, 
+.archive article:nth-child(odd) p {
+	text-decoration:none;
+	margin-right:30px;
+}
+
+.archive-stack-outer{
+	display: block;
+	max-width: 800px;
+	width: 100%;
+	margin: 0px auto;
+}
+.archive-stack-inner{
+	display: table;
+	width: 100%;
+}
+.archive-stack{
+	display:table-cell;
+	width:50%;	
+	vertical-align:middle;
+	padding:50px 0px 50px 0px;
+}
+.archive-stack-centered{
+	display:table-cell;
+	width:100%;	
+	text-align:center;
+	vertical-align:middle;
+	padding:50px 0px 50px 0px;
+}
+.archive article .entry-meta{
+	display:none;	
+}
+/* MP Links
+----------------------------------------------- */
+.mp-links{
+	margin:0px;
+	padding:0px;
+	font-size:0px;
+	list-style:none;	
+}
+.mp-links li {
+	float:left;	
+}
+.mp-links li a:before{
+	font-size:50px;	
+}
+/* Footer
+----------------------------------------------- */
+.site-info-left{
+	float:left;	
+}
+.site-info-right{
+	float:right;	
+}

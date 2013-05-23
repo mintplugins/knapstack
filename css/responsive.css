@@ -1,0 +1,14 @@
+#page{
+	min-width:inherit;
+}
+
+/* 865 screen width */
+@media screen and (max-width: 865px) {
+	
+}
+
+/* 400 screen width */
+@media screen and (max-width: 617px) {
+	
+
+}
