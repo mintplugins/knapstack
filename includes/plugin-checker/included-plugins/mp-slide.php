@@ -7,7 +7,7 @@
 	function mp_slide_plugin_check() {
 		$args = array(
 			'plugin_name' => __('MP Slide', 'mt_malachi'), 
-			'plugin_message' => __('To create sliders, you require the Slider plugin. Install it here.', 'mt_malachi'), 
+			'plugin_message' => __('To create sliders, you require the Slider plugin. Install it here.', 'mp_knapstack'), 
 			'plugin_slug' => 'mp-slide', 
 			'plugin_filename' => 'mp-slide.php',
 			'plugin_required' => false,
@@ -16,5 +16,5 @@
 		$mp_slide_plugin_check = new MP_CORE_Plugin_Checker($args);
 	}
  }
-add_action( 'init', 'mp_slide_plugin_check' );
+add_action( 'admin_init', 'mp_slide_plugin_check' );
 
