@@ -23,8 +23,6 @@ if ( ! function_exists( 'malachi_scripts' ) ):
 			wp_enqueue_style( 'mt_responsive', get_template_directory_uri() . '/css/responsive.css' );
 		}
 		
-		//Malachi Icon Font
-		wp_enqueue_style( 'mp_knapstack_icon_font', get_template_directory_uri() . '/css/mt-malachi-font.css' );
 	}
 endif; //malachi_scripts
 add_action( 'wp_enqueue_scripts', 'malachi_scripts' );

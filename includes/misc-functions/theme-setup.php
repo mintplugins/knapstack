@@ -7,13 +7,13 @@
  * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640;
+	$content_width = 1100;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
-if ( ! function_exists( 'malachi_setup' ) ):
-	function malachi_setup() {
+if ( ! function_exists( 'mp_knapstack_setup' ) ):
+	function mp_knapstack_setup() {
 	
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
@@ -23,13 +23,7 @@ if ( ! function_exists( 'malachi_setup' ) ):
 	
 		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
-		
-		//Add Theme Support for the mp_people plugin
-		add_theme_support( 'mp_people' );
-		
-		//Add Theme Support for the mp_people plugin
-		add_theme_support( 'mp_sermons' );
-		
+				
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Navigation', 'mp_knapstack' ),
@@ -39,5 +33,23 @@ if ( ! function_exists( 'malachi_setup' ) ):
 	}
 endif;
 
-/** Tell WordPress to run malachi_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'malachi_setup' );
+/** Tell WordPress to run mp_knapstack_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'mp_knapstack_setup' );
+
+/**
+ * Set content width of site
+ */
+function mp_knapstack_viewport(){
+	
+	$responsive_check = get_theme_mod('mp_knapstack_responsive_off');
+	
+	//If we are using responsive
+	if ( empty( $responsive_check ) ){
+		echo '<meta name="viewport" content="width=device-width" />';
+	}
+	//If we are NOT using responseive
+	else{
+		echo '<meta name="viewport" content="width=1100">';
+	}
+}
+add_action( 'wp_head', 'mp_knapstack_viewport' );

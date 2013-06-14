@@ -86,7 +86,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#main a, #colophon a',
+					'element'    => '#main-container a, #colophon a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
