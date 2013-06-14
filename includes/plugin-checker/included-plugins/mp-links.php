@@ -16,5 +16,5 @@
 		$mp_links_plugin_check = new MP_CORE_Plugin_Checker($args);
 	}
  }
-add_action( 'admin_init', 'mp_links_plugin_check' );
+add_action( '_admin_menu', 'mp_links_plugin_check' );
 
