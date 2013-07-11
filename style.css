@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.0.5
+Version: 1.0.0.6
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -175,13 +175,13 @@ a img {
 	margin-left:10px;	
 }
 #site-navigation .mp-links li a:before{
-	font-size:35px;
-	font-size:3.5rem;
+	font-size:18px;
+	font-size:1.8rem;
 }
 #site-navigation{
 	display:inline-block;
 	float:right;
-	margin-top:9px;	
+	padding-top:9px;	
 	font-size: 13px; 
 	font-size: 1.3rem;
 }
