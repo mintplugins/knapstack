@@ -139,5 +139,10 @@ else{
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/enqueue-scripts.php' );
 	
+	/**
+	 * BB Press Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/bbpress-hooks.php' );
+	
 	
 }

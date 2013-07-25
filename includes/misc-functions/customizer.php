@@ -110,6 +110,55 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
+		array( 'section_id' => 'mp_knapstack_form_elements', 'section_title' => __( 'Form Styling', 'mp_core' ),'section_priority' => 3,
+			'settings' => array(
+				'mp_knapstack_form_input_text_color' => array(
+					'label'      => __( 'Input Text Color', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input',
+					'jquery_function_name' => 'css',
+					'arg' => 'color'
+				),
+				'mp_knapstack_form_input_inactive_color' => array(
+					'label'      => __( 'Inactive Input Color', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input',
+					'jquery_function_name' => 'css',
+					'arg' => 'border-color'
+				),
+				'mp_knapstack_form_input_active_color' => array(
+					'label'      => __( 'Active Input Color', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input:focus',
+					'jquery_function_name' => 'css',
+					'arg' => 'border-color'
+				),
+				'mp_knapstack_form_input_submit' => array(
+					'label'      => __( 'Button Color', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input[type=submit], button',
+					'jquery_function_name' => 'css',
+					'arg' => 'background-color'
+				),
+				'mp_knapstack_form_input_submit_hover' => array(
+					'label'      => __( 'Button Color when Mouse-Over', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input[type=submit]:hover, button:hover',
+					'jquery_function_name' => 'css',
+					'arg' => 'background-color'
+				),
+			)
+		),
 		array( 'section_id' => 'mp_knapstack_page_header', 'section_title' => __( 'Page Titles Settings', 'mp_core' ),'section_priority' => 3,
 			'settings' => array(
 				'mp_knapstack_page_header_bg_color' => array(

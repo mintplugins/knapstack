@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.0.6
+Version: 1.0.0.7
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -107,7 +107,7 @@ a img {
 	color:#fff;
 }
 .mp-medium-background{
-	background-color:##05d594;
+	background-color:#05d594;
 	color:#fff;
 }
 .mp-lighter-background{
@@ -142,8 +142,12 @@ a img {
 }
 
 #page > header .header-inner{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 	max-width:1100px;
 	margin:0px auto;	
+	padding:0px 20px 0px 20px;
 }
 
 /* Header SIte Branding Area
@@ -175,13 +179,13 @@ a img {
 	margin-left:10px;	
 }
 #site-navigation .mp-links li a:before{
-	font-size:18px;
-	font-size:1.8rem;
+	font-size:35px;
+	font-size:3.5rem;
 }
 #site-navigation{
 	display:inline-block;
 	float:right;
-	padding-top:9px;	
+	margin-top:9px;	
 	font-size: 13px; 
 	font-size: 1.3rem;
 }
@@ -299,6 +303,9 @@ a img {
 /* Primary div
 ----------------------------------------------- */
 #content{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 	max-width: 1100px;
 	margin: 0px auto;
 	padding:20px;
@@ -314,6 +321,10 @@ a img {
 	max-width:100%;
 	background-color:none;
 	padding:0px;
+}
+/* Content div when the bbPress is used */
+.bbpress #content{
+	max-width: 1100px;	
 }
 
 
@@ -395,18 +406,84 @@ a img {
 /* Form Elements
 ----------------------------------------------- */
 input, input[type=search], textarea{
-	background-color: rgba(0, 0, 0, 0.52);
-	color:#fff;
-	border: none;
-	padding:8px 10px 8px 10px;
-	font-weight:400;
-	margin:0px 0px 5px 0px;
+	border: 2px solid #bdc3c7;
+	color: #34495e;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	padding: 8px 5px!important;
+	text-indent: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: border .25s linear, color .25s linear;
+	-moz-transition: border .25s linear, color .25s linear;
+	-o-transition: border .25s linear, color .25s linear;
+	transition: border .25s linear, color .25s linear;
+	-webkit-backface-visibility: hidden;
+}
+input:focus, input[type=search]:focus, textarea:focus{
+	-webkit-appearance: none;
+	border: 2px solid #000;
+	outline: none;
 }
 textarea{
 	height: 132px;
 	width:90%;
 	max-width: 400px;	
 	margin:0px;
+}
+input[type=submit], button{
+	text-indent: 0px;
+	color:#fff!important;
+	padding:10px 20px 10px 20px!important;
+	border-radius: 3px;
+	border:none!important;
+	text-shadow:none!important;
+	background-color: #00bb85;
+	-webkit-transition: background-color .25s linear;
+	-moz-transition: background-color .25s linear;
+	-o-transition: background-color .25s linear;
+	-ms-transition: background-color .25s linear;
+	transition: background-color .25s linear;
+}
+input[type=submit]:hover, button:hover{
+	box-shadow: none!important;
+	border-radius: 3px;
+	background-color: #00D396;
+	-webkit-transition: background-color .25s linear;
+	-moz-transition: background-color .25s linear;
+	-o-transition: background-color .25s linear;
+	-ms-transition: background-color .25s linear;
+	transition: background-color .25s linear;
+}
+
+/* EDD Styles
+----------------------------------------------- */
+.edd_success{
+	border: none;
+	margin: 20px 0;
+	background: #58DD88;
+	color: #FFFFFF;	
+}
+
+/* bbPress Styles
+----------------------------------------------- */
+.bbp-template-notice.info {
+	border: none!important;
+	background-color: #EEEEEE!important;
+	padding: 5px 10px 5px 10px;
+}
+.bp-the-content, .wp-editor-area{
+	border: none;
+}
+.bp-the-content:hover, .wp-editor-area:hover{
+	border: none;
+}
+.bbp-search-form{
+	margin-bottom:10px;	
 }
 
 /* Comments
