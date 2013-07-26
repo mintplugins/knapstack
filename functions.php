@@ -73,6 +73,12 @@ if (!function_exists('mp_core_textdomain')){
 	 * Include Plugin Checker
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
+	
+	/**
+	 * Include Plugin Installer
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
+	
 	/**
 	 * Check if wp_core in installed
 	 */

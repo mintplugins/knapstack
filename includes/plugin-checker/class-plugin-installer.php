@@ -6,16 +6,21 @@
 if ( !class_exists( 'MP_CORE_Plugin_Installer' ) ){
 	class MP_CORE_Plugin_Installer{
 		
-		public function __construct($args){
+		public function __construct($args, $license = NULL){
 			
 			//Get args
 			$this->_args = $args;
-			
+						
+			//Get license
+			$this->_license = $license;
+						
 			//Plugin Name Slug
 			$this->plugin_name_slug = sanitize_title ( $this->_args['plugin_name'] ); //EG move-plugins-core	
 			
 			// Create update/install plugin page
 			add_action('admin_menu', array( $this, 'mp_core_install_plugin_page') );
+			
+			ob_start();
 											
 		}
 	
@@ -45,6 +50,47 @@ if ( !class_exists( 'MP_CORE_Plugin_Installer' ) ){
 		 * Callback function for the update plugin page above. This page uses the filesystem api to install a plugin
 		 */
 		public function mp_core_install_check_callback() {
+			
+			//If this product is licensed
+			if ( !empty( $this->_args['plugin_licensed'] ) && $this->_args['plugin_licensed'] ){
+				
+				//get validity of license saved
+				$license_valid = get_option( $this->plugin_name_slug . '_license_status_valid' );
+				
+				//if license saved is incorrrect
+				if ( !$license_valid ) {
+				
+					//output incorrect license message
+					echo "The license entered is not valid";
+					
+					//output form to try license
+					
+					//stop the rest of this page from showing
+					return true;
+					
+				}
+				
+				
+				//Set up API args for EDD Software Licensing Response
+				$api_params = array(
+					'edd_action' 	=> 'get_version',
+					'license' 		=> $this->_license,
+					'name' 			=> $this->_args['plugin_name'],
+					'slug' 			=> $this->plugin_name_slug,
+					'author'		=> NULL
+				);
+							
+				//Send request to EDD_Software_Licensing.php on API server (eg repo.moveplugins.com)
+				$request = wp_remote_post( $this->_args['plugin_api_url'], array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+				
+				//JSON Decode response and store the plugin download link in $this->_args['plugin_download_link']
+				$request = json_decode( wp_remote_retrieve_body( $request ) );
+				
+				//Set the plugin download link to be the package URL from the response
+				$this->_args['plugin_download_link'] = $request->package;
+				
+				
+			}
 											
 			echo '<div class="wrap">';
 			
@@ -62,13 +108,13 @@ if ( !class_exists( 'MP_CORE_Plugin_Installer' ) ){
 			$nonce=$_REQUEST['_wpnonce'];
 			
 			//Check that nonce to ensure the user wants to do this
-			if (! wp_verify_nonce($nonce, 'install-plugin_' . $this->_args['plugin_download_link']) ) die('<p>' . __('Security Check', 'mp_core') . '</p>'); 
+			if (! wp_verify_nonce($nonce, 'install-plugin_' . $this->plugin_name_slug ) ) die('<p>' . __('Security Check', 'mp_core') . '</p>'); 
 			
 			//Set the method for the wp filesystem
 			$method = ''; // Normally you leave this an empty string and it figures it out by itself, but you can override the filesystem method here
 			
 			//Get credentials for wp filesystem
-			$url = wp_nonce_url('plugins.php?page=mp_core_install_plugin_page_' .  $this->_args['plugin_slug'] . '&action=install-plugin&plugin=' . $this->_args['plugin_slug'], 'install-plugin_' . $this->_args['plugin_download_link'] );
+			$url = wp_nonce_url('plugins.php?page=mp_core_install_plugin_page_' .  $this->_args['plugin_slug'] . '&action=install-plugin&plugin=' . $this->_args['plugin_slug'], 'install-plugin_' . $this->plugin_name_slug );
 			if (false === ($creds = request_filesystem_credentials($url, $method, false, false) ) ) {
 			
 				// if we get here, then we don't have credentials yet,
@@ -120,7 +166,7 @@ if ( !class_exists( 'MP_CORE_Plugin_Installer' ) ){
 			
 			fclose($file);
 												
-			//If we are unable to find the file, let the user know
+			//If we are unable to find the file, let the user know. This will also fail if a license is incorrect - but it should be caught further up the page
 			if ( ! $result ) {
 				die('<p>' . __('Unable to download file! Your webhost may be blocking cross-server connections. You will have to manually download and install this plugin. <br /><br />It looks like this plugin may be available for download here: <a href="' . $this->_args['plugin_download_link'] . '" target="_blank" >' . $this->_args['plugin_download_link'] . '</a><br /><br /> Download it, and then go to "Plugins > Add New > Upload" to upload the plugin and activate it. <br /><br /> If the plugin link above does not download the plugin for you, contact the author of the plugin for a download link.', 'mp_core') . '</p>');
 			}
@@ -134,11 +180,17 @@ if ( !class_exists( 'MP_CORE_Plugin_Installer' ) ){
 			//Display a successfully installed message
 			echo '<p>' . __('Successfully Installed ', 'mp_core') .  $this->_args['plugin_name']  . '</p>';
 			
-			//Activate button
-			echo '<a href="' . wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $this->_args['plugin_slug'] . '/' . $this->_args['plugin_filename'] . '&amp;plugin_status=all&amp;paged=1&amp;s=', 'activate-plugin_' . $this->_args['plugin_slug'] . '/' . $this->_args['plugin_filename']) . '" title="' . esc_attr__('Activate this plugin') . '" class="button">' . __('Activate', 'mp_core') . ' "' . $this->_args['plugin_name'] . '"</a>'; 	
+			//Activate button -- this has been removed to test direct activation
+			//echo '<a href="' . wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $this->_args['plugin_slug'] . '/' . $this->_args['plugin_filename'] . '&amp;plugin_status=all&amp;paged=1&amp;s=', 'activate-plugin_' . $this->_args['plugin_slug'] . '/' . $this->_args['plugin_filename']) . '" title="' . esc_attr__('Activate this plugin') . '" class="button">' . __('Activate', 'mp_core') . ' "' . $this->_args['plugin_name'] . '"</a>'; 	
 						
 			//Display link to plugins page
-			echo '<p><a href="' . network_admin_url('plugins.php') . '">' . __('View all Plugins', 'mp_core') . '</a></p>'; 
+			//echo '<p><a href="' . network_admin_url('plugins.php') . '">' . __('View all Plugins', 'mp_core') . '</a></p>'; 
+			
+			//Activate plugin
+			activate_plugin( trailingslashit($upload_dir) . $this->_args['plugin_slug'] . '/' . $this->_args['plugin_filename'] );
+			
+			//Redirect user back to dashboard
+			header( 'Location: ' . $_SERVER['HTTP_REFERER'] );	
 			
 			echo '</div>';
 			
