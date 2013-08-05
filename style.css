@@ -139,6 +139,7 @@ a img {
 	width:100%;
 	z-index:99999;
 	background-color:rgba(255, 255, 255, 0.89);
+	min-height: 50px;
 }
 
 #page > header .header-inner{
@@ -161,6 +162,7 @@ a img {
 #mp-core-logo{
 	display:block;
 	position:absolute;
+	top:15px;
 }
 .site-description{
 	display:none;	
@@ -168,6 +170,10 @@ a img {
 
 /* Header Menu
 ----------------------------------------------- */
+#mp-menu-toggle-button-holder {
+	float:right;
+	margin-top:10px;	
+}
 .menu-main-navigation-container{
 	float:left;
 }
@@ -179,8 +185,8 @@ a img {
 	margin-left:10px;	
 }
 #site-navigation .mp-links li a:before{
-	font-size:35px;
-	font-size:3.5rem;
+	font-size:18px;
+	font-size:1.8rem;
 }
 #site-navigation{
 	display:inline-block;
@@ -623,7 +629,8 @@ input[type=submit]:hover, button:hover{
 	float:left;	
 }
 .mp-links li a:before{
-	font-size:50px;	
+	font-size:18px;
+	font-size:1.8rem;
 }
 /* Footer
 ----------------------------------------------- */
