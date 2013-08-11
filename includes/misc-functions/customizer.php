@@ -36,7 +36,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => '#page #masthead',
+					'element'    => '#page #masthead, #site-navigation .menu > li ul',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
