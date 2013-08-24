@@ -144,7 +144,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit], button',
+					'element'    => 'input[type=submit], .button, .edd-submit',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -153,7 +153,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit]:hover, button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, .edd-submit:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
