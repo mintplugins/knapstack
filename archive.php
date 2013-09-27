@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php mp_core_content_nav( 'nav-below' ); ?>
+			<?php function_exists( 'mp_core_paginate_links' ) ? mp_core_paginate_links() : paginate_links(); ?>
 
 		<?php else : ?>
 

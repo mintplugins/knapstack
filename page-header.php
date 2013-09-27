@@ -14,7 +14,7 @@
 	<div class="page-header-inner">
 
         <h1 class="page-title">
-            <?php function_exists ( 'mp_core_archive_page_title' ) ? mp_core_archive_page_title() : _e( 'Archives', 'mt_malachi' ); ?>
+            <?php function_exists ( 'mp_core_page_title' ) ? mp_core_page_title() : _e( 'Archives', 'mp_knapstack' ); ?>
         </h1>
         <?php
             if ( is_category() ) :

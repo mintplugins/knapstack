@@ -1,19 +1,4 @@
 <?php
-/**
- * Set default width for the logo
- */
-function mp_knapstack_logo_width(){
-	return 300;
-}
-add_filter( 'mp_core_logo_width', 'mp_knapstack_logo_width'); 
-
-/**
- * Set default width for the logo
- */
-function mp_knapstack_logo_height(){
-	return 75;
-}
-add_filter( 'mp_core_logo_height', 'mp_knapstack_logo_height'); 
 
 /**
  * Set size for comment avatar

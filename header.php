@@ -27,7 +27,7 @@
     	<div class="header-inner">
             <div class="site-branding">
                 
-                <?php function_exists( 'mp_core_logo_image' ) ? mp_core_logo_image() : ''; ?>
+                <?php function_exists( 'mp_core_logo_image' ) ? mp_core_logo_image( 300, 75 ) : ''; ?>
                 
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             </div>
