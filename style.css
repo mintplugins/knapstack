@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.1.8
+Version: 1.0.1.9
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -35,9 +35,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
+	margin: 0;
 	outline: 0;
 	padding: 0;
-	margin:0px;
 	vertical-align: baseline;
 }
 html {
@@ -178,7 +178,6 @@ a img {
 	float:left;
 }
 #site-navigation .mp-links{
-	font-size:0px;
 	margin-top:5px;
 	float:left;
 }
@@ -243,8 +242,13 @@ a img {
 /* Applies to all dropdowns
 ----------------------------------------------- */
 #site-navigation .menu > li ul{
-	background-color:rgba(255, 255, 255, 0.89);
+	background-color:rgba(0, 0, 0, 0.52);
 }
+
+#site-navigation .menu > li ul a{
+	color:#fff;		
+}
+
 
 /* Second level dropdown
 ----------------------------------------------- */
@@ -437,27 +441,22 @@ textarea{
 	max-width: 400px;	
 	margin:0px;
 }
-input[type=submit], .button, .edd-submit.button{
-	display:inline-block;
+input[type=submit], button{
 	-webkit-appearance: none;
 	text-indent: 0px;
 	color:#fff!important;
-	padding:12px 17px 12px 17px!important;
-	margin: 0px 10px 10px 0px;
+	padding:10px 20px 10px 20px!important;
 	border-radius: 3px;
 	border:none!important;
 	text-shadow:none!important;
-	background:none;
 	background-color: #00bb85;
 	-webkit-transition: background-color .25s linear;
 	-moz-transition: background-color .25s linear;
 	-o-transition: background-color .25s linear;
 	-ms-transition: background-color .25s linear;
 	transition: background-color .25s linear;
-	text-decoration:none;
-	white-space: nowrap;
 }
-input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
+input[type=submit]:hover, button:hover{
 	box-shadow: none!important;
 	border-radius: 3px;
 	background-color: #00D396;
