@@ -64,10 +64,9 @@ add_action( 'init', 'mp_knapstack_textdomain', 1 );
 */
 
 /**
- * If mp_core isn't active, stop and install it now
+ * If any of our required plugins aren't active, stop and install ithem now
  */
-if (!function_exists('mp_core_textdomain')){
-	
+if ( !function_exists('mp_core_textdomain') || !function_exists('mp_slide_textdomain') || !function_exists('mp_links_textdomain') || !function_exists('mp_stacks_textdomain') ){
 	
 	/**
 	 * Include Plugin Checker
@@ -80,28 +79,12 @@ if (!function_exists('mp_core_textdomain')){
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
 	
 	/**
-	 * Check if wp_core in installed
+	 * Check if mp_core is installed
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-core-check.php' );
 	
-}
-/**
- * Otherwise, if mp_core is active, carry out the plugin's functions
- */
-else{
-	
 	/**
-	 * Check Malachi Theme for updates
-	 */
-	require( MP_KNAPSTACK_THEME_DIR . '/includes/updater/mp-knapstack-update.php' );
-	
-	/**
-	 * Include all the theme specific scripts from the mp_core
-	 */
-	add_action( 'after_setup_theme', 'mp_core_theme_specific_scripts' );
-	
-	/**
-	 * Check if mp_slide is installed
+	 * Check if mp_slide is installed 
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-slide.php' );
 	
@@ -114,6 +97,24 @@ else{
 	 * Check if mp_stacks is installed
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-stacks.php' );
+	
+}
+/**
+ * Otherwise, if required plugins are active, carry out the plugin's functions
+ */
+else{
+	
+	//Optional plugins call be included for checking here.
+	
+	/**
+	 * Check Knapstack Theme for updates
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/updater/mp-knapstack-update.php' );
+	
+	/**
+	 * Include all the theme specific scripts from the mp_core
+	 */
+	add_action( 'after_setup_theme', 'mp_core_theme_specific_scripts' );
 
 	/**
 	 * Initial Theme Setup
