@@ -66,7 +66,7 @@ add_action( 'init', 'mp_knapstack_textdomain', 1 );
 /**
  * If any of our required plugins aren't active, stop and install ithem now
  */
-if ( !function_exists('mp_core_textdomain') || !function_exists('mp_slide_textdomain') || !function_exists('mp_links_textdomain') || !function_exists('mp_stacks_textdomain') ){
+if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdomain') || !function_exists('mp_stacks_textdomain') ){
 	
 	/**
 	 * Include Plugin Checker

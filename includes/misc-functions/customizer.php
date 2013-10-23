@@ -144,7 +144,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit], .button, .edd-submit.button',
+					'element'    => 'input[type=submit], .button, a.edd-submit.button, .edd-submit.button, .edd-submit, input.edd-submit.button',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),

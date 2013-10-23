@@ -36,7 +36,7 @@
                 <h1 class="menu-toggle"><?php _e( 'Menu', 'mp_knapstack' ); ?></h1>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mp_knapstack' ); ?>"><?php _e( 'Skip to content', 'mp_knapstack' ); ?></a></div>
     
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'mp_core_link_to_menu_editor' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'mp_core_link_to_menu_editor', 'container_class' => 'menu-main-navigation-container', ) ); ?>
                 
                 <?php  echo function_exists( 'mp_links' ) ? mp_links( get_theme_mod('mp_knapstack_header_link_group') ) : NULL; ?>
                 
