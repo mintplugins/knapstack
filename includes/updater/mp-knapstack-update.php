@@ -31,4 +31,4 @@
 		$mp_knapstack_plugin_updater = new MP_CORE_Theme_Updater($args);
 	}
  }
-add_action( 'init', 'mp_knapstack_update' );
+add_action( 'admin_init', 'mp_knapstack_update' );

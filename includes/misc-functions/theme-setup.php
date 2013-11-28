@@ -14,10 +14,7 @@ if ( ! isset( $content_width ) )
  */
 if ( ! function_exists( 'mp_knapstack_setup' ) ):
 	function mp_knapstack_setup() {
-	
-		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style();
-	
+		
 		// This theme uses post thumbnails
 		add_theme_support( 'post-thumbnails' );
 	

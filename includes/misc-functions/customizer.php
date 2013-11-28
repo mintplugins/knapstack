@@ -402,6 +402,7 @@ function mp_knapstack_customizer(){
 	$args = has_filter('mp_knapstack_customizer_args') ? apply_filters('mp_knapstack_customizer_args', $args) : $args;
 	
 	new MP_CORE_Customizer($args);
+	
 }
 
 add_action ('init', 'mp_knapstack_customizer');
@@ -417,4 +418,4 @@ function mp_knapstack_font(){
     new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'MP Stacks Font 1' );
 
 }
-add_action( 'wp', 'mp_knapstack_font' );
+add_action( 'wp_loaded', 'mp_knapstack_font' );
