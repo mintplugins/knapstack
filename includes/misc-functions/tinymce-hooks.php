@@ -22,18 +22,16 @@
  * @param    array $args See link for description.
  * @return   void
  */
-function addTinyMCELinkClasses( $wp ) {	
+function mp_knapstack_addTinyMCELinkClasses( $wp ) {	
 	add_editor_style( get_bloginfo('stylesheet_directory') . '/style.css' );
-	add_editor_style( 'http://localhost:8888/wordpress1/wp-content/plugins/mp-core/includes/theme-specific/css/the-content.css' );
-	add_editor_style( 'http://localhost:8888/wordpress1/wp-content/plugins/mp-core/includes/css/core/tinymce-css.php' );
 	add_editor_style( get_bloginfo('stylesheet_directory') . '/editor-style.css' );
 }
-add_filter( 'init', 'addTinyMCELinkClasses' );
+add_action( 'mp_core_editor_styles', 'mp_knapstack_addTinyMCELinkClasses' );
 
-function my_custom_tinymce( $init ) {
+function mp_knapstack_tinymce_styles( $init ) {
 	$init['theme_advanced_buttons2_add_before'] = 'styleselect';
 	//$init['theme_advanced_styles'] = 'Button=button,Margin 20px=margin20';
 	$init['theme_advanced_styles'] = 'Button=button';
 	return $init;
 }
-add_filter( 'tiny_mce_before_init', 'my_custom_tinymce' );
+add_filter( 'tiny_mce_before_init', 'mp_knapstack_tinymce_styles' );
