@@ -23,8 +23,8 @@
  * @return   void
  */
 function mp_knapstack_addTinyMCELinkClasses( $wp ) {	
-	add_editor_style( get_bloginfo('stylesheet_directory') . '/style.css' );
-	add_editor_style( get_bloginfo('stylesheet_directory') . '/editor-style.css' );
+	add_editor_style( get_bloginfo('stylesheet_directory') . '/style.css' ); //This refers to the child theme if there is one
+	add_editor_style( get_template_directory_uri() . '/editor-style.css' ); //This refers to the parent if there is a child theme
 }
 add_action( 'mp_core_editor_styles', 'mp_knapstack_addTinyMCELinkClasses' );
 

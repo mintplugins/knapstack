@@ -34,7 +34,7 @@
             endif;
         
 		//If this is a single pge, show the date
-		if ( is_single() ){?>
+		if ( is_singular('post') ){?>
         <div class="taxonomy-description">
 			<?php mp_core_posted_on(); ?>
 		</div>
