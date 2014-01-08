@@ -2,8 +2,8 @@
 /**
  * Enqueue scripts and styles
  */
-if ( ! function_exists( 'malachi_scripts' ) ):
-	function malachi_scripts() {
+if ( ! function_exists( 'knapstack_scripts' ) ):
+	function knapstack_scripts() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 			
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -17,6 +17,9 @@ if ( ! function_exists( 'malachi_scripts' ) ):
 		//Jquery
 		wp_enqueue_script( 'jquery' );
 		
+		//Front End JS for the Knapstack Theme
+		wp_enqueue_script( 'knapstack-front-end', get_template_directory_uri() . '/js/front-end.js', array( 'jquery' ) );
+		
 		//Responsive CSS - load if the user hasn't disabled it
 		$responsive_check = get_theme_mod('mp_knapstack_responsive_off');
 		if ( empty( $responsive_check ) ){
@@ -24,5 +27,5 @@ if ( ! function_exists( 'malachi_scripts' ) ):
 		}
 		
 	}
-endif; //malachi_scripts
-add_action( 'wp_enqueue_scripts', 'malachi_scripts' );
+endif; //knapstack_scripts
+add_action( 'wp_enqueue_scripts', 'knapstack_scripts' );
