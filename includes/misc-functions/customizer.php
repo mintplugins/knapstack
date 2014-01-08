@@ -239,41 +239,41 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
-		array( 'section_id' => 'mp_knapstack_footer_widget_area', 'section_title' => __( 'Footer Widget Area', 'mp_core' ),'section_priority' => 5,
+		array( 'section_id' => 'mp_knapstack_footer_widget_area', 'section_title' => __( 'Footer Area', 'mp_core' ),'section_priority' => 5,
 			'settings' => array(
 				'mp_knapstack_footer_widget_area_bg_color' => array(
-					'label'      => __( 'Footer Widget Area Background Color', 'mp_core' ),
+					'label'      => __( 'Footer Area Background Color', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#footer-widgets-container',
+					'element'    => '#colophon',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
 				'mp_knapstack_footer_widget_area_text_color' => array(
-					'label'      => __( 'Footer Widget Text Color', 'mp_core' ),
+					'label'      => __( 'Footer Text Color', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#footer-widgets-container',
+					'element'    => '#colophon',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
 				'mp_knapstack_footer_widget_area_link_color' => array(
-					'label'      => __( 'Footer Widget Link Color', 'mp_core' ),
+					'label'      => __( 'Footer Link Color', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#footer-widgets-container a',
+					'element'    => '#colophon a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
 				'mp_knapstack_footer_widget_area_link_hover_color' => array(
-					'label'      => __( 'Footer Widget Link Hover Color', 'mp_core' ),
+					'label'      => __( 'Footer Link Hover Color', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#footer-widgets-container a:hover',
+					'element'    => '#colophon a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
