@@ -34,7 +34,7 @@ function mp_knapstack_customizer(){
 				'mp_knapstack_header_bg_color' => array(
 					'label'      => __( 'Header Background Color', 'mp_core' ),
 					'type'       => 'color',
-					'default'    => '',
+					'default'    => '#00bb85',
 					'priority'   => 1,
 					'element'    => '#page #masthead, #site-navigation .menu > li ul',
 					'jquery_function_name' => 'css',
@@ -43,7 +43,7 @@ function mp_knapstack_customizer(){
 				'mp_knapstack_header_nav_text_color' => array(
 					'label'      => __( 'Navigation Text Color', 'mp_core' ),
 					'type'       => 'color',
-					'default'    => '',
+					'default'    => '#FFFFFF',
 					'priority'   => 1,
 					'element'    => '#masthead .menu a, #site-navigation .mp-links li a',
 					'jquery_function_name' => 'css',
@@ -199,50 +199,6 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
-		array( 'section_id' => 'mp_knapstack_odd', 'section_title' => __( 'Odd Archive Items', 'mp_core' ),'section_priority' => 5,
-			'settings' => array(
-				'mp_knapstack_odd_archive_bg_color' => array(
-					'label'      => __( 'Odd Background Color', 'mp_core' ),
-					'type'       => 'color',
-					'default'    => '',
-					'priority'   => 10,
-					'element'    => '.archive article:nth-child(odd)',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_odd_archive_text_color' => array(
-					'label'      => __( 'Odd Text Color', 'mp_core' ),
-					'type'       => 'color',
-					'default'    => '',
-					'priority'   => 10,
-					'element'    => '.archive article:nth-child(odd) a, .archive article:nth-child(odd) p',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-			)
-		),
-		array( 'section_id' => 'mp_knapstack_even', 'section_title' => __( 'Even Archive Items', 'mp_core' ),'section_priority' => 5,
-			'settings' => array(
-				'mp_knapstack_even_archive_bg_color' => array(
-					'label'      => __( 'Even Background Color', 'mp_core' ),
-					'type'       => 'color',
-					'default'    => '',
-					'priority'   => 10,
-					'element'    => '.archive article:nth-child(2n)',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_even_archive_text_color' => array(
-					'label'      => __( 'Even Text Color', 'mp_core' ),
-					'type'       => 'color',
-					'default'    => '',
-					'priority'   => 10,
-					'element'    => '.archive #main article:nth-child(2n) a, .archive #main article:nth-child(2n) p',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-			)
-		),
 		array( 'section_id' => 'mp_knapstack_comment_area', 'section_title' => __( 'Comment Area', 'mp_core' ),'section_priority' => 4,
 			'settings' => array(
 				'mp_knapstack_comment_area_bg_color' => array(
@@ -290,7 +246,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#secondary-container',
+					'element'    => '#footer-widgets-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -299,7 +255,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '##secondary-container',
+					'element'    => '#footer-widgets-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -308,7 +264,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '##secondary-container a',
+					'element'    => '#footer-widgets-container a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -317,7 +273,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '##secondary-container a:hover',
+					'element'    => '#footer-widgets-container a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),

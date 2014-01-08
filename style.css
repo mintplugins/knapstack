@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.2.6
+Version: 1.0.2.7
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -95,11 +95,7 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
 	border: 0;
 }
-/* The WP admin bar conflicts with our menu so hide it on the front end
------------------------------------------------ */
-#mp-core-upload-logo{
-	margin-top:10px;	
-}
+
 /* Background Classes 
 ----------------------------------------------- */
 .mp-dark-background{
@@ -147,25 +143,35 @@ a img {
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	max-width:1100px;
+	width:100%;
 	margin:0px auto;	
 	padding:0px 20px 0px 20px;
 }
+.header-inner-content{
+	display:table;
+	width:100%;
+}
 
-/* Header SIte Branding Area
+/* Header Site Branding Area
 ----------------------------------------------- */
 .site-branding{
-	display:inline-block;	
+	display:table-cell;	
+	vertical-align:middle;
 }
 .site-branding a{
 	display: block;	
+	margin:10px;
 }
 #mp-core-logo{
 	display:block;
-	position:absolute;
-	top:15px;
+	position:relative;
 }
 .site-description{
 	display:none;	
+}
+.middle-padder{
+	display: table-cell;
+    width: auto;	
 }
 
 /* Header Menu
@@ -189,11 +195,14 @@ a img {
 	font-size:1.8rem;
 }
 #site-navigation{
-	display:inline-block;
-	float:right;
+	display:table-cell;
+	vertical-align:middle;
 	margin-top:9px;	
 	font-size: 13px; 
 	font-size: 1.3rem;
+}
+#site-navigation .nav-inner{
+	float:right;
 }
 #site-navigation .menu{
 	position:relative;
@@ -283,7 +292,7 @@ a img {
 	width:100%;
 	margin:0px auto;	
 	position: relative;	
-	padding-top:50px;
+	padding-top: 47px;
 	font-size:115%;
 }
 /* Page and Entry Header
@@ -294,9 +303,12 @@ a img {
 	color:#fff;
 }
 #main-container > .page-header > .page-header-inner{
-	display:table;
+	display:block;
 	margin:0px auto;
-	text-align:center;
+	max-width:1100px;
+	text-align:left;
+	padding:0px 20px 0px 20px;
+	box-sizing: border-box;
 }
 #main-container > .page-header > .page-header-inner a {
 	color:#fff;	
@@ -312,7 +324,7 @@ a img {
 	padding:20px;
 }
 /* Content div when the stacks page template is used */
-.page-template-templatespage-template-stack-php #content{
+.page-template-templatespage-template-stack-php #content, #content.stack-content{
 	max-width:100%;
 	background-color:none;
 	padding:0px;
@@ -329,28 +341,39 @@ a img {
 }
 
 
-/* Secondary div
+/* Footer Site Info div
 ----------------------------------------------- */
-#secondary-container{
-	padding: 40px 0px 40px 0px;
-	background-color: #00bb85;
-	color: #fff;	
+#footer-site-info{
+	margin:0px auto;
+	max-width:1100px;
+	box-sizing:border-box;
+	padding:0px 20px 0px 20px;
 }
-#secondary{
+
+/* Footer Widgets div
+----------------------------------------------- */
+#footer-widgets-container{
+	margin:0px auto;
+	color: #fff;	
+	max-width:1100px;
+	box-sizing:border-box;
+}
+#footer-widgets{
 	max-width:1100px;
 	margin: 0px auto;
 	clear:both;
 	float:none;	
 }
-#secondary a{
+#footer-widgets a{
 	color:#fff;
 }
-#secondary .footer-widget{
+#footer-widgets .footer-widget{
 	float:left;
 	width:255px;	
-	margin-right:20px;
+	margin:0px 10px;
+	padding:40px 0px 40px 0px;
 }
-#secondary .footer-widget .title{
+#footer-widgets .footer-widget .title{
 	margin-bottom:15px;
 }
 
@@ -358,9 +381,12 @@ a img {
 ----------------------------------------------- */
 #colophon{
 	float:none;	
-	max-width:1140px;
-	margin:0px auto;
 	padding:20px 0px 20px 0px;
+	background-color: #00bb85;
+	color:#fff;
+}
+#colophon a{
+	color:#fff;
 }
 /* Main H Tag settings
 ----------------------------------------------- */
@@ -497,6 +523,7 @@ input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
 	background-color:#65ecb5;
 }
 #comments{
+	box-sizing: border-box;
 	margin:0px auto;
 	max-width:1100px;	
 	padding:20px;

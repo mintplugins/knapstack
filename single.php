@@ -34,5 +34,4 @@ get_header(); ?>
     
 <?php endwhile; // end of the loop. ?>
 
-<?php get_template_part( 'footer-widgets' ); ?>
 <?php get_footer(); ?>

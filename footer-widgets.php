@@ -5,8 +5,8 @@
  * @package mp_knapstack
  */
 ?>
-<div id="secondary-container" class="widget-area">
-	<div id="secondary" class="widget-area">
+<div id="footer-widgets-container" class="widget-area">
+	<div id="footer-widgets" class="widget-area">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'footer-widgets' ) ) : ?>
 

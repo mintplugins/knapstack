@@ -41,6 +41,5 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
-
-<?php get_template_part( 'footer-widgets' ); ?>
+    
 <?php get_footer(); ?>

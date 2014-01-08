@@ -1,12 +1,14 @@
 <?php
 /**
- * Template Name: Stack
+ * The Template for displaying all EDD download posts.
+ *
+ * @package mp_knapstack
  */
 
 get_header(); ?>
 
 	<div class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content stack-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
