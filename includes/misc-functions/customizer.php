@@ -36,7 +36,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#00bb85',
 					'priority'   => 1,
-					'element'    => '#page #masthead, #site-navigation .menu > li ul',
+					'element'    => '#page #masthead',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -73,13 +73,22 @@ function mp_knapstack_customizer(){
 		array( 'section_id' => 'mp_knapstack_links', 'section_title' => __( 'Site Text and Fonts', 'mp_core' ),'section_priority' => 3,
 			'settings' => array(
 				'mp_knapstack_text_color' => array(
-					'label'      => __( 'Text Color', 'mp_core' ),
+					'label'      => __( 'Main Text Color', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => 'body',
+					'element'    => array( 'body, .archive #content article a' ),
 					'jquery_function_name' => 'css',
-					'arg' => 'color'
+					'arg' => array( 'color' )
+				),
+				'mp_knapstack_subtext_color' => array(
+					'label'      => __( 'Sub-Text Color (Slightly Faded)', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 10,
+					'element'    => array( '#content .sub-text, #content .sub-text a', '.archive #content article .entry-header' ),
+					'jquery_function_name' => 'css',
+					'arg' => array( 'color', 'border-color' )
 				),
 				'mp_knapstack_link_color' => array(
 					'label'      => __( 'Link Color', 'mp_core' ),

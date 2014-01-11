@@ -7,6 +7,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
+    	<?php 
+		//Check if there is a featured image
+		$featured_image = mp_core_the_featured_image( get_the_ID(), 10000, 10000, '<a class="archive_feat_image" href="' . get_permalink() . '"><img width="50%" src="', '" /></a>');		
+		
+		//Show featured image - if there is one	
+		if ( $featured_image ) { ?>
+			
+			<div class="entry-image">
+				<?php echo $featured_image;  ?>
+			</div><!-- .entry-content -->
+		  
+		<?php } ?>  
+    
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
