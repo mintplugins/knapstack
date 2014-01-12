@@ -77,7 +77,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => array( 'body, .archive #content article a' ),
+					'element'    => array( 'body, .archive #content article .entry-header a' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color' )
 				),
@@ -86,7 +86,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => array( '#content .sub-text, #content .sub-text a', '.archive #content article .entry-header' ),
+					'element'    => array( '#content .sub-text, #content .sub-text a', '.archive #content article .entry-header, table, th, td, form[id^="edd"] fieldset' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color', 'border-color' )
 				),
@@ -95,7 +95,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#main-container a, #colophon a',
+					'element'    => 'a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -104,7 +104,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 10,
-					'element'    => '#main a:hover, #colophon a:hover',
+					'element'    => 'a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -153,18 +153,36 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit], .button, a.edd-submit.button, .edd-submit.button, .edd-submit, input.edd-submit.button',
+					'element'    => 'input[type=submit], .button',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
+				),
+				'mp_knapstack_form_input_submit_text' => array(
+					'label'      => __( 'Button Text Color', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input[type=submit], .button',
+					'jquery_function_name' => 'css',
+					'arg' => 'color'
 				),
 				'mp_knapstack_form_input_submit_hover' => array(
 					'label'      => __( 'Button Color when Mouse-Over', 'mp_core' ),
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit]:hover, .button:hover, .edd-submit.button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
+				),
+				'mp_knapstack_form_input_submit_text_hover' => array(
+					'label'      => __( 'Button Text Color when Mouse-Over', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => 'input[type=submit]:hover, .button:hover',
+					'jquery_function_name' => 'css',
+					'arg' => 'color'
 				),
 			)
 		),

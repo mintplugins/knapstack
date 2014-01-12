@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.3.0
+Version: 1.0.3.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -73,10 +73,12 @@ ol, ul {
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
+	border: 1px solid #00cb90;
 }
 caption, th, td {
 	font-weight: normal;
 	text-align: left;
+	border: 1px solid #00cb90;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -516,8 +518,8 @@ a img {
 /* Main H Tag settings
 ----------------------------------------------- */
 .page-header h1, .entry-header h1{
-	font-size: 50px; 
-	font-size: 5.0rem;
+	font-size: 40px; 
+	font-size: 4.0rem;
 	font-weight:400;
 	line-height: 6rem;
 }
@@ -557,12 +559,14 @@ a img {
 
 /* Form Elements
 ----------------------------------------------- */
-input, input[type=search], textarea{
+input, 
+input[type=search], 
+textarea{
 	border: 2px solid #bdc3c7;
 	color: #34495e;
 	font-family: "Lato", sans-serif;
 	font-size: 14px;
-	padding: 8px 5px!important;
+	padding: 8px 5px;
 	text-indent: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -587,15 +591,16 @@ textarea{
 	max-width: 400px;	
 	margin:0px;
 }
-input[type=submit], .button, a.edd-submit.button, .edd-submit.button, .edd-submit, input.edd-submit.button{
+input[type=submit], 
+.button{
 	display:inline-block;
 	-webkit-appearance: none;
 	text-indent: 0px;
-	color:#fff!important;
-	padding:10px 20px 10px 20px!important;
+	color:#fff;
+	padding:10px 20px 10px 20px;
 	border-radius: 3px;
-	border:none!important;
-	text-shadow:none!important;
+	border:none;
+	text-shadow:none;
 	background:none;
 	background-color: #00bb85;
 	-webkit-transition: background-color .25s linear;
@@ -604,9 +609,17 @@ input[type=submit], .button, a.edd-submit.button, .edd-submit.button, .edd-submi
 	-ms-transition: background-color .25s linear;
 	transition: background-color .25s linear;
 	text-decoration:none;
+	font-size:inherit;
+	font-weight:inherit;
+	line-height:inherit;
+	text-align: center;
+	white-space:inherit;
+	vertical-align:inherit;
+	cursor: pointer;
 }
-input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
-	box-shadow: none!important;
+input[type=submit]:hover, 
+.button:hover{
+	box-shadow: none;
 	border-radius: 3px;
 	background-color: #00D396;
 	-webkit-transition: background-color .25s linear;
@@ -615,16 +628,6 @@ input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
 	-ms-transition: background-color .25s linear;
 	transition: background-color .25s linear;
 }
-
-/* EDD Styles
------------------------------------------------ */
-.edd_success{
-	border: none;
-	margin: 20px 0;
-	background: #58DD88;
-	color: #FFFFFF;	
-}
-
 /* bbPress Styles
 ----------------------------------------------- */
 .bbp-template-notice.info {
@@ -718,20 +721,49 @@ input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
 	position:relative;
 	display:inline-block;	
 	width:23%;
-	margin-left:2%;
+	margin:0px 0px 20px 2%;
 	float:left;
 	box-sizing: border-box;
 	z-index:1;
 }
+.archive #content article:first-child,
+.archive #content article:nth-child(4n+1){
+	margin:0px 0px 20px 0%;
+}
+/* When Archive Page is between 1100px and 800px
+----------------------------------------------- */
+@media screen and (max-width: 1100px) and (min-width: 800px){
+	.archive #content article{ 
+		width:31.33%;
+		margin:0px 0px 20px 2%;
+	}
+	.archive #content article:first-child,
+	.archive #content article:nth-child(3n+1){
+		margin:0px 0px 20px 0%;
+	}
+}
+/* When Archive Page is between 800px and 400px
+----------------------------------------------- */
+@media screen and (max-width: 800px) and (min-width: 600px){
+	.archive #content article{ 
+		width:48%;
+		margin:0px 0px 20px 2%;
+	}
+	.archive #content article:first-child,
+	.archive #content article:nth-child(2n+1){
+		margin:0px 0px 20px 0%;
+	}
+}
+/* When Archive Page is less than 400px
+----------------------------------------------- */
+@media screen and (max-width: 600px){
+	.archive #content article{ 
+		width:100%;
+		margin:0px 0px 20px 0%;
+	}
+}
 .archive #content article a{
 	text-decoration:none;
-}
-.archive #content article:first-child,
-.archive #content article:nth-child(5n+0){
-	margin-left:0px;
-}
-.archive #content article:nth-child(4n+0){
-	margin-right:0px;
 }
 .archive #content article .entry-header{
 	padding:20px;
@@ -830,12 +862,15 @@ input[type=submit]:hover, .button:hover, .edd-submit.button:hover{
 	display: inline-block;
 	margin-right:5px;
 }
-.archive #content article .edd-cart-added-alert{
+.archive #content article .edd-cart-ajax-alert{
 	color:inherit;
 	position: absolute;
 	top: -23px;
 	left: 40px;
 	white-space: nowrap;
+}
+.archive #content article .edd_purchase_tax_rate{
+	display:none;	
 }
 
 /* MP Links
@@ -884,4 +919,107 @@ pre{
 ----------------------------------------------- */
 .mp-brick-outer{
 	max-width:1000px;	
+}
+/* Easy Digital Downloads
+----------------------------------------------- */
+table[id^="edd"] {
+	text-align: left;
+	width: 100%;
+	border: 0;
+	margin: 0 0 21px;
+}
+table[id^="edd"] thead th {
+	padding: 1.387em;
+	font-weight: 700;
+}	
+table[id^="edd"] td,
+table[id^="edd"] th {
+	line-height: 25px;
+	vertical-align: middle;
+	padding: .5em 1.387em;
+}
+table[id^="edd"] td img {
+	float: left;
+	margin: 0 8px 0 0;
+	background: 0 0;
+	padding: none;
+	border: 0;
+}
+table[id^="edd"] td.edd_cart_actions, 
+table[id^="edd"] th.edd_cart_actions,
+table[id^="edd"] th.edd_cart_total {
+	text-align: right;
+}
+form[id^="edd"] fieldset {
+	padding: 1.387em;
+	margin: 0 0 21px;
+	border: 1px solid #00cb90;
+}
+form[id^="edd"] legend {
+	display: block;
+	font-size: 120%;
+	line-height: 1;
+	font-weight: 700;
+	width: 100%;
+	margin: 0 0 21px;
+	padding: 0;
+}
+form[id^="edd"] span.edd-description {
+	font-size: 80%;
+	display: block;
+	margin: 0 0 5px;
+}
+label[for^="edd"] {
+	display: inline-block;
+	font-weight: 700;
+	position: relative;
+	line-height: 100%;
+	font-size: 95%;
+	margin: 0 0 5px;
+}
+#edd_profile_editor_form label{
+	width: 200px;
+}
+.edd_errors {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #E6DB55;
+	margin: 0 0 21px;
+	background: #FFFFE0;
+	color: #333;
+	padding: 1.387em;
+}
+.edd_errors p{
+	margin-bottom:0px!important;	
+}
+.edd_success{
+	border: none;
+	margin: 20px 0;
+	background: #58DD88;
+	color: #FFFFFF;	
+}
+form[id^="edd"] #edd-payment-mode-wrap label {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+form[id^="edd"] .edd-payment-icons img.payment-icon {
+	max-height: 32px;
+	width: auto;
+	margin: 0 3px 0 0;
+	background: 0 0;
+	padding: none;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+#edd_profile_billing_address_wrap{
+	max-width:500px;	
+}
+#edd_address_country{
+	margin: 1.5rem 0px;	
+}
+#edd-save-cart-button{
+	float:right;	
 }
