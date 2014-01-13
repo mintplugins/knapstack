@@ -188,6 +188,9 @@ em{
 	display:block;	
 	margin: 0px auto;
 }
+#page .entry-content{
+	max-width:100%;
+}
 
 /* Header 
 ----------------------------------------------- */
@@ -602,7 +605,7 @@ em{
 
 /* Pagination
 ----------------------------------------------- */
-.post-type-archive-download #posts-navigation{
+.download-archive #posts-navigation{
 	clear:both;	
 	margin: 0px 0px 0px 1%;
 }
@@ -923,9 +926,9 @@ time.entry-date:before{
 	}
 }
 
-/* Easy Digital Downloads "Download" Archive Page
+/* Easy Digital Downloads "Download" Archive/Category/Tax Page
 ----------------------------------------------- */
-.post-type-archive-download #content .hentry{
+#content.download-archive .hentry{
 	position:relative;
 	display:inline-block;	
 	width:23%;
@@ -937,43 +940,43 @@ time.entry-date:before{
 /* When Archive Page is between 1100px and 800px
 ----------------------------------------------- */
 @media screen and (max-width: 1100px) and (min-width: 800px){
-	.post-type-archive-download #content .hentry{ 
+	#content.download-archive .hentry{ 
 		width:31.33%;
 	}
 }
 /* When Archive Page is between 800px and 400px
 ----------------------------------------------- */
 @media screen and (max-width: 800px) and (min-width: 600px){
-	.post-type-archive-download #content .hentry{ 
+	#content.download-archive .hentry{ 
 		width:48%;
 	}
 }
 /* When Archive Page is less than 400px
 ----------------------------------------------- */
 @media screen and (max-width: 600px){
-	.post-type-archive-download #content .hentry{ 
+	#content.download-archive .hentry{ 
 		width:98%;
 	}
 }
-.post-type-archive-download #content .hentry .entry-header{
+#content.download-archive .hentry .entry-header{
 	padding:20px;
 	box-sizing:border-box;
 	border: 1px solid;
 	border-top: 0;
 }
-.post-type-archive-download #content .hentry .page-header h1, 
-.post-type-archive-download #content .hentry .entry-header h1{
+#content.download-archive .hentry .page-header h1, 
+#content.download-archive .hentry .entry-header h1{
 	font-size: 14px; 
 	font-size: 1.4rem;
 	line-height: 1.4rem;
 	font-weight:400;
 	margin-bottom:10px;
 }
-.post-type-archive-download #content .hentry .entry-image{
+#content.download-archive .hentry .entry-image{
 	position:relative;	
 }
-.post-type-archive-download #content .hentry .entry-image archive_feat_image, 
-.post-type-archive-download #content .hentry .entry-image img{
+#content.download-archive .hentry .entry-image archive_feat_image, 
+#content.download-archive .hentry .entry-image img{
 	width:100%;	
 }
 .archive-item-overlay{
@@ -1042,18 +1045,18 @@ time.entry-date:before{
 .archive-item-overlay .item-price{
 	margin:10px 0px 10px 0px;
 }
-.post-type-archive-download #content .hentry .edd_download_purchase_form{
+#content.download-archive .hentry .edd_download_purchase_form{
 	display: inline-block;
 	margin-right:5px;
 }
-.post-type-archive-download #content .hentry .edd-cart-ajax-alert{
+#content.download-archive .hentry .edd-cart-ajax-alert{
 	color:inherit;
 	position: absolute;
 	top: -23px;
 	left: 40px;
 	white-space: nowrap;
 }
-.post-type-archive-download #content .hentry .edd_purchase_tax_rate{
+#content.download-archive .hentry .edd_purchase_tax_rate{
 	display:none;	
 }
 
