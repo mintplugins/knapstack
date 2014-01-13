@@ -153,7 +153,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit], .button',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -162,7 +162,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit], .button',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li, #posts-navigation .page-numbers li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -171,7 +171,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit]:hover, .button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -180,7 +180,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => 'input[type=submit]:hover, .button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover, #posts-navigation .page-numbers li:hover a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),

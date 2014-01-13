@@ -8,6 +8,7 @@
 
 	<div class="entry-content">
     	<?php 
+		
 		//Check if there is a featured image
 		$featured_image = mp_core_the_featured_image( get_the_ID(), 10000, 10000, '<a class="archive_feat_image" href="' . get_permalink() . '"><img width="50%" src="', '" /></a>');		
 		
