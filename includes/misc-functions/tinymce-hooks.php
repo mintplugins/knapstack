@@ -27,11 +27,3 @@ function mp_knapstack_addTinyMCELinkClasses( $wp ) {
 	add_editor_style( get_template_directory_uri() . '/editor-style.css' ); //This refers to the parent if there is a child theme
 }
 add_action( 'mp_core_editor_styles', 'mp_knapstack_addTinyMCELinkClasses' );
-
-function mp_knapstack_tinymce_styles( $init ) {
-	$init['theme_advanced_buttons2_add_before'] = 'styleselect';
-	//$init['theme_advanced_styles'] = 'Button=button,Margin 20px=margin20';
-	$init['theme_advanced_styles'] = 'Button=button';
-	return $init;
-}
-add_filter( 'tiny_mce_before_init', 'mp_knapstack_tinymce_styles' );
