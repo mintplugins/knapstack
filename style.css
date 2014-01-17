@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.3.1
+Version: 1.0.3.2
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -510,16 +510,22 @@ em{
 	text-decoration:none;
 }
 #main-container > .page-header > .page-header-inner .page-info,
-#main-container > .page-header > .page-header-inner .feat-img{
+#main-container > .page-header > .page-header-inner .feat-img,
+#main-container > .page-header > .page-header-inner .page-header-right-column{
 	display:table-cell;
 	vertical-align:middle;
 	margin-right:20px;
+	white-space: nowrap;
 }
 #main-container > .page-header > .page-header-inner .feat-img img{
 	width:150px;
 	height:150px;
 	border-radius: 50%;
 	margin-right:20px;
+}
+#main-container > .page-header > .page-header-inner .page-header-right-column{
+	text-align:right;
+	width:100%;	
 }
 /* When Single Page is less than 850
 ----------------------------------------------- */
@@ -880,7 +886,7 @@ time.entry-date:before{
 	content: "\f073";
 	margin-right:5px;
 }
-.entry-meta span{
+.entry-meta > span{
 	margin-right:10px;
 }
 .entry-meta .author .avatar{
@@ -1223,4 +1229,22 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 }
 #edd-save-cart-button{
 	float:right;	
+}
+.page-header .edd-buy-form{
+	margin-top:.6em;	
+}
+
+/* MP ECommerce Previews */
+.mp-ecommerce-preview	{
+	width:600px;
+	float:left;
+	margin:0px 20px 20px 0px;	
+}
+/* When Single Download Page is less than 850
+----------------------------------------------- */
+@media screen and (max-width: 850px) {
+.mp-ecommerce-preview	{
+	width:100%;
+	margin:0px 0px 20px 0px;	
+
 }

@@ -122,6 +122,16 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/theme-setup.php' );
 	
 	/**
+	 * Header Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/page-header-hooks.php' );
+	
+	/**
+	 * Footer Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/footer-hooks.php' );
+	
+	/**
 	 * Register Sidebars
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/register-sidebars.php' );

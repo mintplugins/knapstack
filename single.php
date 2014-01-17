@@ -25,7 +25,6 @@ get_header(); ?>
                 <div style="clear: both;"></div>
         
             </div><!-- #content -->
-                
         </div><!-- #primary -->
         
 <?php

@@ -13,19 +13,7 @@
 
 	<div class="page-header-inner">
 		
-        <?php
-		if ( !is_archive() ){
-			//Check if there is a featured image
-			$featured_image = mp_core_the_featured_image( get_the_ID(), 75, 75, '<a class="page_header_feat_image" href="' . get_permalink() . '"><img width="150px" height="150px" src="', '" /></a>');
-			
-			//Show featured image - if there is one	
-			if ( $featured_image ) { 
-				echo '<div class="feat-img">';
-					echo $featured_image;
-				echo '</div>';
-			}
-		}
-		?>
+        <?php do_action( 'mp_knapstack_header_before_page_title'); ?>
     	
         <div class="page-info">
         
@@ -49,45 +37,22 @@
         
                 endif;
             
-            //If this is a single page/post, show the date and info
-            if ( is_singular('post') ){?>
-               
-               <div class="entry-meta sub-text">
-                                    
-                    <span class="author vcard">
-                        <a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'mp_core' ), get_the_author() ) ); ?>" rel="author">
-                            <?php 
-                                echo mp_core_get_avatar( get_the_author_meta('user_email') , 60 );
-                                echo get_the_author();  
-                            ?>
-                         </a>
-                    </span>
-                    
-                    <span class="date">
-                    	<?php mp_core_posted_on(); ?>
-                    </span>
-                    <?php 
-					
-                    //Get number of comments on this post
-                    $comments_count = get_comments_number();
-                    
-                    //If there is more than 1 comment, show the comment counter
-                    if ( $comments_count > 0 && comments_open() ) { ?>
-                    
-                         <span class="comment-numbers">
-                            <a href="<?php comments_link(); ?>"><?php comments_number( '0 comments', '1 comment', '% comments' ); ?></a>
-                         </span>
-                     
-                    <?php } ?>
-                    
-                    <?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<span class="edit-link">', '</span>' ); ?>
-                       
-               </div><!-- .entry-meta -->
-    
-            <?php } ?>
-            
+			//If this is singular
+            if ( is_singular() ){
+				
+				//Action to allow custom post types to filter the subtext output
+				do_action( 'mp_knapstack_header_singular_entry_meta' );
+						
+			} ?>
             
         </div><!-- .page-info -->
+        
+        <div class="page-header-right-column">
+			<?php
+                //Action to allow for additional columns in the header
+                do_action( 'mp_knapstack_header_right_column' );
+            ?>
+        </div>
         
 	</div><!-- .page-header-inner -->
 </div><!-- .page-header -->

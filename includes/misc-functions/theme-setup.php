@@ -20,6 +20,12 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 	
 		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
+		
+		//Add Post format for stacks - We use the gallery one and change the name to "Full-Width"
+		add_theme_support( 'post-formats', array( 'gallery' ) );
+		
+		//Add Post Formats to Downloads
+		add_post_type_support( 'download', 'post-formats' );
 						
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -52,27 +58,31 @@ function mp_knapstack_viewport(){
 add_action( 'wp_head', 'mp_knapstack_viewport' );
 
 /**
- * Show Credits in Footer
+ * Set name of gallery post format
  */
-function mp_knapstack_show_credits(){
-	?>
-    <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'mp_knapstack' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'mp_knapstack' ), 'WordPress' ); ?></a>
-    <?php echo __( 'and', 'mp_knapstack' ); ?>
-    <a href="http://moveplugins.com/" title="<?php esc_attr_e( 'WordPress Plugins and Themes', 'mp_knapstack' ); ?>" rel="generator"><?php printf( __( '%s', 'mp_knapstack' ), 'Move Plugins' ); 	?></a>
-	<?php
+function mp_knapstack_rename_post_formats( $safe_text ) {
+    if ( $safe_text == 'Gallery' )
+        return __('Full-Width (Use for Stacks)', 'mp_knapstack');
+
+    return $safe_text;
 }
-add_action('mp_knapstack_credits', 'mp_knapstack_show_credits');
+add_filter( 'esc_html', 'mp_knapstack_rename_post_formats' );
 
-/**
- * Show Copyright in Footer
- */
-function mp_knapstack_show_copyright(){
-	?>
-  	<p><?php echo __('Copyright', 'mp_knapstack'); ?> &copy; <?php echo date('Y') . ' ' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '. ' . __('All rights reserved.', 'mp_knapstack'); ?></p> 	
-	<?php
+//rename Aside in posts list table
+function mp_knapstack_live_rename_formats() { 
+    global $current_screen;
+
+    if ( $current_screen->id == 'edit-post' ) { ?>
+        <script type="text/javascript">
+        jQuery('document').ready(function() {
+
+            jQuery("span.post-state-format").each(function() { 
+                if ( jQuery(this).text() == "Gallery" )
+                    jQuery(this).text("<?php echo __('Full-Width (Use for Stacks)', 'mp_knapstack'); ?>");             
+            });
+
+        });      
+        </script>
+<?php }
 }
-add_action('mp_knapstack_copyright', 'mp_knapstack_show_copyright');
-
-
-
-  
+add_action('admin_head', 'mp_knapstack_live_rename_formats');

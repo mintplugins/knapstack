@@ -17,9 +17,7 @@ get_header(); ?>
             <div id="content" class="site-content" role="main">
     
                 <?php get_template_part( 'content', 'single-download' ); ?>
-    
-                <?php mp_core_content_nav( 'nav-below' ); ?>
-                
+                    
                 <div style="clear: both;"></div>
         
             </div><!-- #content -->
