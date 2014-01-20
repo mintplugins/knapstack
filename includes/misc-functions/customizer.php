@@ -86,9 +86,9 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#777777',
 					'priority'   => 10,
-					'element'    => array( '#content .sub-text, #content .sub-text a', '.archive #content article .entry-header, table, th, td, form[id^="edd"] fieldset' ),
+					'element'    => array( '#content .sub-text, #content .sub-text a' ),
 					'jquery_function_name' => 'css',
-					'arg' => array( 'color', 'border-color' )
+					'arg' => array( 'color' )
 				),
 				'mp_knapstack_link_color' => array(
 					'label'      => __( 'Link Color', 'mp_knapstack' ),
@@ -122,7 +122,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
 					'priority'   => 14,
-					'element'    => 'input[type=submit], .button',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -131,7 +131,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					'priority'   => 15,
-					'element'    => 'input[type=submit], .button',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -140,7 +140,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#5e5e5e',
 					'priority'   => 16,
-					'element'    => 'input[type=submit]:hover, .button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -149,9 +149,18 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					'priority'   => 17,
-					'element'    => 'input[type=submit]:hover, .button:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
+				),
+				'mp_knapstack_borders' => array(
+					'label'      => __( 'Border Color (Wherever borders are used)', 'mp_knapstack' ),
+					'type'       => 'color',
+					'default'    => '#e2e2e2',
+					'priority'   => 17,
+					'element'    => '.archive #content article .entry-header, table, th, td, form[id^="edd"] fieldset',
+					'jquery_function_name' => 'css',
+					'arg' => 'border-color'
 				),
 			)
 		),
@@ -169,7 +178,7 @@ function mp_knapstack_customizer(){
 				'mp_knapstack_form_input_inactive_color' => array(
 					'label'      => __( 'Inactive Text-Field\'s Border Color', 'mp_knapstack' ),
 					'type'       => 'color',
-					'default'    => '#333333',
+					'default'    => '#e2e2e2',
 					'priority'   => 1,
 					'element'    => 'input',
 					'jquery_function_name' => 'css',
@@ -414,7 +423,7 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
-		array( 'section_id' => 'mp_knapstack_background', 'section_title' => __('Background', 'mp_knapstack'),'section_priority' => 6,
+		array( 'section_id' => 'mp_knapstack_background', 'section_title' => __('Site Background', 'mp_knapstack'),'section_priority' => 6,
 			'settings' => array(
 				'mp_knapstack_background_color' => array(
 					'label'      => __( 'Background Color', 'mp_knapstack' ),
