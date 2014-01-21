@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.3.3
+Version: 1.0.3.4
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -74,12 +74,14 @@ ol, ul {
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
-	border: 1px solid #00cb90;
+	border-style:solid;
+	border: 1px;
 }
 caption, th, td {
 	font-weight: normal;
 	text-align: left;
-	border: 1px solid #00cb90;
+	border-style:solid;
+	border: 1px;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -941,7 +943,6 @@ time.entry-date:before{
 	margin:0px 1% 20px 1%;
 	float:left;
 	box-sizing: border-box;
-	z-index:1;
 }
 /* When Archive Page is between 1100px and 800px
 ----------------------------------------------- */
@@ -967,7 +968,8 @@ time.entry-date:before{
 #content.download-archive .hentry .entry-header{
 	padding:20px;
 	box-sizing:border-box;
-	border: 1px solid;
+	border-style:solid;
+	border-width: 1px;
 	border-top: 0;
 }
 #content.download-archive .hentry .page-header h1, 
@@ -1050,6 +1052,7 @@ time.entry-date:before{
 }
 .archive-item-overlay .item-price{
 	margin:10px 0px 10px 0px;
+	color:#ffffff;
 }
 #content.download-archive .hentry .edd_download_purchase_form{
 	display: inline-block;
@@ -1236,7 +1239,7 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 }
 
 /* MP ECommerce Previews */
-.mp-ecommerce-preview	{
+.entry-content .mp-ecommerce-preview	{
 	width:600px;
 	float:left;
 	margin:0px 20px 20px 0px;	

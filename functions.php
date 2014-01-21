@@ -127,6 +127,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/page-header-hooks.php' );
 	
 	/**
+	 * Archive Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/archive-hooks.php' );
+	
+	/**
 	 * Footer Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/footer-hooks.php' );

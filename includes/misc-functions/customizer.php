@@ -327,7 +327,7 @@ function mp_knapstack_customizer(){
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
-				'mp_knapstack_page_header_button_hover' => array(
+				'mp_knapstack_comment_button_hover' => array(
 					'label'      => __( 'Mouse-Over Button Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
