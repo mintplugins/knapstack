@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.3.4
+Version: 1.0.3.5
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -75,13 +75,13 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 	border-style:solid;
-	border: 1px;
+	border-width: 1px;
 }
 caption, th, td {
 	font-weight: normal;
 	text-align: left;
 	border-style:solid;
-	border: 1px;
+	border-width: 1px;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -189,9 +189,6 @@ em{
 	width:100%;
 	display:block;	
 	margin: 0px auto;
-}
-#page .entry-content{
-	max-width:100%;
 }
 
 /* Header 
@@ -543,6 +540,9 @@ em{
 	#main-container > .page-header > .page-header-inner .feat-img img{
 		margin-right:0px;
 	}
+	#main-container > .page-header > .page-header-inner .page-info{
+		white-space:normal;
+	}
 	.entry-content {
 		text-align:left;
 		margin: 1em auto 0 auto;
@@ -559,14 +559,13 @@ em{
 
 /* Primary div
 ----------------------------------------------- */
-#content{
+.site-content{
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	max-width: 1100px;
 	margin: 0px auto;
 	padding:20px;
-	overflow:hidden;
 }
 
 /* Footer Site Info div
@@ -613,9 +612,17 @@ em{
 
 /* Pagination
 ----------------------------------------------- */
-.download-archive #posts-navigation{
+#posts-navigation{
+	display:inline-block;
 	clear:both;	
-	margin: 0px 0px 0px 1%;
+	margin: 0px 0 19px 0;
+	float: left;
+}
+.download-archive #posts-navigation{
+	display:inline-block;
+	clear:both;	
+	margin: 0px 1% 19px 1%;
+	float: left;
 }
 #posts-navigation .page-numbers{
 	list-style:none;	
@@ -652,8 +659,7 @@ em{
 
 /* Post and Page "Content" H Tag Elements
 ----------------------------------------------- */
-.entry-content h1, .page-content h1,
-.entry-content h2, .page-content h2,
+.site-content h1, .site-content h2,
 .mceContentBody h1, .mceContentBody h2{
 	font-size: 40px; 
 	font-size: 4.0rem;
@@ -662,7 +668,7 @@ em{
 	margin: .8333333333333334em 0 .34em;
 	letter-spacing: -.02rem;
 }
-.entry-content h3, .page-content h3, .mceContentBody h3{
+.site-content h3, .mceContentBody h3{
 	font-size: 35px; 
 	font-size: 3.5rem;
 	font-weight:400;
@@ -670,21 +676,21 @@ em{
 	margin: .8333333333333334em 0 .34em;
 	letter-spacing: -.02rem;
 }
-.entry-content h4, .page-content h4, .mceContentBody h4{
+.site-content h4, .mceContentBody h4{
 	font-size: 30px; 
 	font-size: 3.0rem;
 	font-weight:400;
 	line-height: 4.0rem;
 	margin: .8333333333333334em 0 .34em;
 }
-.entry-content h5, .page-content h5, .mceContentBody h5{
+.site-content h5, .mceContentBody h5{
 	font-size: 60px; 
 	font-size: 6.0rem;
 	font-weight:400;
 	line-height: 7.0rem;
 	margin: .8333333333333334em 0 .34em;
 }
-.entry-content h6, .page-content h6, .mceContentBody h6{
+.site-content h6, .mceContentBody h6{
 	font-size: 65px; 
 	font-size: 6.5rem;
 	font-weight:400;
@@ -701,7 +707,7 @@ textarea{
 	color: #34495e;
 	font-family: "Lato", sans-serif;
 	font-size: 14px;
-	padding: 8px 5px;
+	padding: 12.5px 5px;
 	text-indent: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -769,7 +775,7 @@ input[type=submit]:hover,
 ----------------------------------------------- */
 
 /* Content div when the bbPress is used */
-.bbpress #content{
+.bbpress .site-content{
 	max-width: 1100px;	
 }
 
@@ -838,7 +844,7 @@ input[type=submit]:hover,
 }
 /* Nav Below
 ----------------------------------------------- */
-#content footer{
+.site-content footer{
 	font-size:12px;
 	font-size:1.2rem;
 	margin-top:25px;		
@@ -861,6 +867,8 @@ input[type=submit]:hover,
 ----------------------------------------------- */
 .archive .hentry{
 	margin-bottom:4em;	
+}
+.sticky, .bypostauthor {
 }
 .col1{
 	display:inline-block;
@@ -933,10 +941,15 @@ time.entry-date:before{
 		float:none;
 	}
 }
+/* Easy Digital Downloads "Download" Single Page
+----------------------------------------------- */
+.single .type-download .entry-content{
+	max-width:100%;	
+}
 
 /* Easy Digital Downloads "Download" Archive/Category/Tax Page
 ----------------------------------------------- */
-#content.download-archive .hentry{
+.download-archive .hentry{
 	position:relative;
 	display:inline-block;	
 	width:23%;
@@ -947,44 +960,46 @@ time.entry-date:before{
 /* When Archive Page is between 1100px and 800px
 ----------------------------------------------- */
 @media screen and (max-width: 1100px) and (min-width: 800px){
-	#content.download-archive .hentry{ 
+	.download-archive .hentry{ 
 		width:31.33%;
 	}
 }
 /* When Archive Page is between 800px and 400px
 ----------------------------------------------- */
 @media screen and (max-width: 800px) and (min-width: 600px){
-	#content.download-archive .hentry{ 
+	.download-archive .hentry{ 
 		width:48%;
 	}
 }
 /* When Archive Page is less than 400px
 ----------------------------------------------- */
 @media screen and (max-width: 600px){
-	#content.download-archive .hentry{ 
+	.download-archive .hentry{ 
 		width:98%;
 	}
 }
-#content.download-archive .hentry .entry-header{
+.download-archive .hentry .entry-header{
 	padding:20px;
 	box-sizing:border-box;
 	border-style:solid;
 	border-width: 1px;
 	border-top: 0;
 }
-#content.download-archive .hentry .page-header h1, 
-#content.download-archive .hentry .entry-header h1{
+.download-archive .hentry .page-header h1, 
+.download-archive .hentry .entry-header h1{
 	font-size: 14px; 
 	font-size: 1.4rem;
 	line-height: 1.4rem;
 	font-weight:400;
-	margin-bottom:10px;
 }
-#content.download-archive .hentry .entry-image{
+.download-archive .hentry .entry-header .sub-text{
+	margin-top:10px;	
+}
+.download-archive .hentry .entry-image{
 	position:relative;	
 }
-#content.download-archive .hentry .entry-image archive_feat_image, 
-#content.download-archive .hentry .entry-image img{
+.download-archive .hentry .entry-image archive_feat_image, 
+.download-archive .hentry .entry-image img{
 	width:100%;	
 }
 .archive-item-overlay{
@@ -1054,19 +1069,22 @@ time.entry-date:before{
 	margin:10px 0px 10px 0px;
 	color:#ffffff;
 }
-#content.download-archive .hentry .edd_download_purchase_form{
+.download-archive .hentry .edd_download_purchase_form{
 	display: inline-block;
 	margin-right:5px;
 }
-#content.download-archive .hentry .edd-cart-ajax-alert{
+.download-archive .hentry .edd-cart-ajax-alert{
 	color:inherit;
 	position: absolute;
-	top: -23px;
-	left: 40px;
+	top: 23px;
 	white-space: nowrap;
+	color:#ffffff;
 }
-#content.download-archive .hentry .edd_purchase_tax_rate{
+.download-archive .hentry .edd_purchase_tax_rate{
 	display:none;	
+}
+.related-downloads{
+	margin:0px -1% 0px -1%;	
 }
 
 /* MP Links
@@ -1109,6 +1127,11 @@ pre{
 	padding: 20px;
 	margin-bottom:20px;	
 }
+/* Full Width Page Templlate
+----------------------------------------------- */
+.page-template-templatespage-template-ful-width-php .entry-content{
+	width:100%;
+}
 /* Styles passed through TinyMCE
 ----------------------------------------------- */
 .margin20{
@@ -1119,7 +1142,7 @@ pre{
 ----------------------------------------------- */
 
 /* #Content div when the stacks page template is used */
-.page-template-templatespage-template-stack-php #content, #content.stack-content{
+.page-template-templatespage-template-stack-php .site-content, .site-content.stack-content{
 	max-width:100%;
 	background-color:none;
 	padding:0px;
@@ -1247,7 +1270,7 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 /* When Single Download Page is less than 850
 ----------------------------------------------- */
 @media screen and (max-width: 850px) {
-.mp-ecommerce-preview	{
+.entry-content .mp-ecommerce-preview	{
 	width:100%;
 	margin:0px 0px 20px 0px;	
 

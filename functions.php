@@ -132,6 +132,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/archive-hooks.php' );
 	
 	/**
+	 * Single Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/single-hooks.php' );
+	
+	/**
 	 * Footer Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/footer-hooks.php' );

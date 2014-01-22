@@ -56,3 +56,5 @@
 		<?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
+
+<?php do_action( 'mp_knapstack_after_single_download', wp_get_post_terms( get_the_ID(), 'download_tag' ) ); ?>

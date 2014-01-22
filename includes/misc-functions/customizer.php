@@ -77,7 +77,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#4c4c4c',
 					'priority'   => 10,
-					'element'    => array( 'body, .archive #content article .entry-header a' ),
+					'element'    => array( 'body, .download-archive .hentry .entry-header a' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color' )
 				),
@@ -158,7 +158,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 17,
-					'element'    => '.archive #content article .entry-header, table, th, td, form[id^="edd"] fieldset',
+					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),

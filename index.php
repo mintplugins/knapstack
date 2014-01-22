@@ -19,7 +19,13 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
+        
+        <?php 
+		if ( function_exists( 'mp_isotopes' ) ){ 
+			mp_isotopes(); 
+		};
+		?>
+        
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -35,7 +41,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php mp_core_content_nav( 'nav-below' ); ?>
+			<?php function_exists( 'mp_core_paginate_links' ) ? mp_core_paginate_links() : paginate_links(); ?>
 
 		<?php else : ?>
 
@@ -45,5 +51,5 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
-
+    
 <?php get_footer(); ?>

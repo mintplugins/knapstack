@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-download-article' ); ?>>
  	
 	<?php 
     //Check if there is a featured image
@@ -40,14 +40,21 @@
     <?php } ?>  
     
     <header class="entry-header">
-        <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-        <div class="entry-meta sub-text">
-            
-       		<?php do_action( 'mp_knapstack_archive_download_subtext' ); ?>
-                       
-            <?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+        <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a> <?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?></h1>
         
-        </div>
+            
+       		<?php if ( has_action( 'mp_knapstack_archive_download_subtext'  ) ){
+				
+				echo '<div class="entry-meta sub-text">';
+				
+					do_action( 'mp_knapstack_archive_download_subtext' );
+				
+				echo '</div>'; 
+				 
+			} 
+						
+			?>
+        
     </header><!-- .entry-header --> 
     
 </article><!-- #post-## -->
