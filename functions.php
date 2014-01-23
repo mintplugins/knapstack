@@ -172,6 +172,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/bbpress-hooks.php' );
 	
 	/**
+	 * EDD Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/edd-hooks.php' );
+	
+	/**
 	 * TinyMCE Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/tinymce-hooks.php' );

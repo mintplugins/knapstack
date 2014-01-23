@@ -57,4 +57,6 @@
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
 
+<div style="clear: both;"></div>
+ 
 <?php do_action( 'mp_knapstack_after_single_download', wp_get_post_terms( get_the_ID(), 'download_tag' ) ); ?>
