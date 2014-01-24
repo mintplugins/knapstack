@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.3.6
+Version: 1.0.3.7
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -191,11 +191,23 @@ em{
 	margin: 0px auto;
 }
 
-/* Header 
+/* Header With Admin Bar when logged in
 ----------------------------------------------- */
 .admin-bar #page > header{
 	margin-top:32px;	
 }
+@media screen and (max-width: 782px) {
+	.admin-bar #page > header{
+		margin-top:46px;	
+	}
+}
+@media screen and (max-width: 600px) {
+	.admin-bar #page > header{
+		margin-top:0px;	
+	}
+}
+/* Header 
+----------------------------------------------- */
 #page > header{
 	position:fixed;
 	top:0px;
@@ -231,6 +243,14 @@ em{
 #mp-core-logo{
 	display:block;
 	position:relative;
+}
+/* When Page is less than 600px
+----------------------------------------------- */
+@media screen and (max-width: 600px){
+	#mp-core-logo{
+		max-width:90%;
+		height:inherit;
+	}
 }
 .site-description{
 	display:none;	
@@ -545,7 +565,6 @@ em{
 	}
 	.entry-content {
 		text-align:left;
-		margin: 1em auto 0 auto;
 	}
 }
 /* When Single Page is less than 400
@@ -646,6 +665,9 @@ em{
 }
 #colophon a{
 	color:#fff;
+}
+#colophon .footer-site-info p{
+	margin-bottom:0px;	
 }
 
 /* Main H Tag settings
@@ -964,14 +986,14 @@ time.entry-date:before{
 		width:31.33%;
 	}
 }
-/* When Archive Page is between 800px and 400px
+/* When Archive Page is between 800px and 600px
 ----------------------------------------------- */
 @media screen and (max-width: 800px) and (min-width: 600px){
 	.download-archive .hentry{ 
 		width:48%;
 	}
 }
-/* When Archive Page is less than 400px
+/* When Archive Page is less than 600px
 ----------------------------------------------- */
 @media screen and (max-width: 600px){
 	.download-archive .hentry{ 
