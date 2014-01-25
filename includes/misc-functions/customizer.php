@@ -180,9 +180,9 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 1,
-					'element'    => 'input',
+					'element'    => array('input', '#searchform #searchsubmit'),
 					'jquery_function_name' => 'css',
-					'arg' => 'border-color'
+					'arg' => array('border-color', 'color')
 				),
 				'mp_knapstack_form_input_active_color' => array(
 					'label'      => __( 'Active Text-Field\'s Border Color', 'mp_knapstack' ),
