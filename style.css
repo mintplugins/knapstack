@@ -272,13 +272,13 @@ em{
 .menu-main-navigation-container{
 	float:left;
 }
-#site-navigation .mp-links{
+#masthead .mp-links{
 	float:left;
 }
-#site-navigation .mp-links li{
+#masthead .mp-links li{
 	margin:0px 0px 0px 10px;	
 }
-#site-navigation .mp-links li a:before{
+#masthead .mp-links li a:before{
 	font-size:18px;
 	font-size:1.8rem;
 }
@@ -289,10 +289,10 @@ em{
 	font-size: 13px; 
 	font-size: 1.3rem;
 }
-#site-navigation .nav-inner{
+#masthead .nav-inner{
 	float:right;
 }
-#site-navigation .menu{
+#masthead .menu{
 	position:relative;
 	z-index:1000;
 }
@@ -308,43 +308,44 @@ em{
 }
 
 
-#site-navigation .menu {
+#masthead .menu {
 	float: right;
 }
 
-#site-navigation .search-form {
+#masthead .search-form {
 	float: right;
 }
 
-#site-navigation .main-menu {
+#masthead .main-menu {
 	float: right;
 }
 
-#site-navigation ul {
+#masthead ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 	white-space: nowrap;
 }
 
-#site-navigation li {
+#masthead li {
 	margin-left: 20px;
-	float: left;
 	position: relative;
+	vertical-align:middle;
+	float:left;
 }
 
-#site-navigation a {
+#masthead a {
 	display: block;
 	border-color: transparent;
 	text-decoration:none;
 }
 
-#site-navigation a:hover {
+#masthead a:hover {
 	color: #fff;
 	border-color: #fff;
 }
 
-#site-navigation ul ul {
+#masthead ul ul {
 	background: #fff;
 	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.08);
 	border-radius: 4px;
@@ -369,7 +370,7 @@ em{
 	transition:         all 0.2s ease-in-out;
 }
 
-#site-navigation ul ul:after {
+#masthead ul ul:after {
 	width: 0;
 	height: 0;
 	border: 7px solid transparent;
@@ -381,7 +382,7 @@ em{
 	margin-right: -4px;
 }
 
-#site-navigation ul ul ul {
+#masthead ul ul ul {
 	top: -1px;
 	left: 100%;
 	min-width:100%;
@@ -394,13 +395,13 @@ em{
 	transform:         translate(0, 0) scale(1);
 }
 
-#site-navigation ul ul ul:after {
+#masthead ul ul ul:after {
 	border-width: 0 0 0 7px;
 	top: 14px;
 	right: -14px;
 }
 
-#masthead #site-navigation .menu ul a {
+#masthead .menu ul a {
 	font-size: 12px;
 	letter-spacing: 0;
 	color: #515a63;
@@ -409,39 +410,39 @@ em{
 	
 }
 
-#site-navigation ul ul li:first-child a {
+#masthead ul ul li:first-child a {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 }
 
-#site-navigation ul ul li {
+#masthead ul ul li {
 	margin-left: 0;
 	display:block;
 	width:100%;
 }
 
-#site-navigation ul ul li:last-child a {
+#masthead ul ul li:last-child a {
 	border-bottom: 0;
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
 }
 
-#site-navigation li:hover > a {
+#masthead li:hover > a {
 }
 
 /* First level dropdown
 ----------------------------------------------- */
 
-#site-navigation ul ul :hover > a {
+#masthead ul ul :hover > a {
 }
 
-#site-navigation ul ul a:hover {
+#masthead ul ul a:hover {
 	color: #404040;
 	border: 0;
 	background: #fbfbfb;
 }
 
-#site-navigation ul li:hover > ul {
+#masthead ul li:hover > ul {
 	display: block;
 	opacity: 1;
 
@@ -450,7 +451,7 @@ em{
 	transform:         translate(-50%, 0) scale(1);
 }
 
-#site-navigation ul ul li:hover > ul {
+#masthead ul ul li:hover > ul {
 	display: block;
 
 	-webkit-transform: translate(0, 0) scale(1);
@@ -458,21 +459,21 @@ em{
 	transform:         translate(0, 0) scale(1);
 }
 
-#site-navigation li.current_page_item a,
-#site-navigation li.current-menu-item a {
+#masthead li.current_page_item a,
+#masthead li.current-menu-item a {
 }
 
-#site-navigation li a:first-child:nth-last-child(2):hover {
+#masthead li a:first-child:nth-last-child(2):hover {
 	border-color: transparent;
 }
 
 /* Second level dropdown
 ----------------------------------------------- */
-#site-navigation .menu > li > ul > li > ul{
+#masthead .menu > li > ul > li > ul{
 	position:absolute;
 	list-style:none;
 }
-#site-navigation .menu > li > ul > li:hover > ul{
+#masthead .menu > li > ul > li:hover > ul{
 	display: block;
 	opacity: 1;
 
@@ -483,11 +484,11 @@ em{
 
 /* Third level dropdown
 ----------------------------------------------- */
-#site-navigation .menu > li > ul > li > ul > li > ul{
+#masthead .menu > li > ul > li > ul > li > ul{
 	position:absolute;
 	list-style:none;
 }
-#site-navigation .menu > li > ul > li > ul > li:hover > ul{
+#masthead .menu > li > ul > li > ul > li:hover > ul{
 	display: block;
 	opacity: 1;
 
@@ -1151,8 +1152,9 @@ pre{
 }
 /* Full Width Page Templlate
 ----------------------------------------------- */
-.page-template-templatespage-template-ful-width-php .entry-content{
+.page-template-templatespage-full-width-php .entry-content{
 	width:100%;
+	max-width:100%;
 }
 /* Styles passed through TinyMCE
 ----------------------------------------------- */

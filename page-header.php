@@ -34,6 +34,13 @@
                     if ( ! empty( $tag_description ) ) :
                         echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
                     endif;
+					
+				elseif ( is_tax() ) :
+					 // show an optional tax description
+                    $tax_description = $wp_query->queried_object->description;
+                    if ( ! empty( $tax_description ) ) :
+                        echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tax_description . '</div>' );
+                    endif;
         
                 endif;
             
