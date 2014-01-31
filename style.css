@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.4.0
+Version: 1.0.4.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -749,7 +749,7 @@ input:focus, input[type=search]:focus, textarea:focus{
 	border: 2px solid #000;
 	outline: none;
 }
-textarea{
+textarea#comment{
 	height: 132px;
 	width:90%;
 	max-width: 400px;	
@@ -794,6 +794,10 @@ input[type=submit]:hover,
 	-ms-transition: background-color .25s linear;
 	transition: background-color .25s linear;
 }
+input[type=checkbox],
+input[type=checkbox]:hover{
+	border:none;	
+}
 /* bbPress Styles
 ----------------------------------------------- */
 
@@ -801,17 +805,20 @@ input[type=submit]:hover,
 .bbpress .site-content{
 	max-width: 1100px;	
 }
-
-.bbp-template-notice.info {
-	border: none!important;
-	background-color: #EEEEEE!important;
-	padding: 5px 10px 5px 10px;
-}
 .bp-the-content, .wp-editor-area{
-	border: none;
+	border-top: none;
+}
+#bbpress-forums .wp-editor-container{
+	border-style:solid;
+	border-width: 2px;	
+	border-radius:3px;
+}
+#bbpress-forums .wp-editor-area,
+#bbpress-forums .wp-editor-area:hover{
+	border:none;	
 }
 .bp-the-content:hover, .wp-editor-area:hover{
-	border: none;
+	border-top: none;
 }
 .bbp-search-form{
 	margin-bottom:10px;	

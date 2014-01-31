@@ -44,13 +44,17 @@
         
                 endif;
             
+			do_action( 'mp_knapstack_header_after_page_title'); 
+            
 			//If this is singular
             if ( is_singular() ){
 				
 				//Action to allow custom post types to filter the subtext output
 				do_action( 'mp_knapstack_header_singular_entry_meta' );
 						
-			} ?>
+			} 
+						
+			?>
             
         </div><!-- .page-info -->
         

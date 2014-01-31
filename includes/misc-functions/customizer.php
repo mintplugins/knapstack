@@ -158,7 +158,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 17,
-					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset',
+					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, #bbpress-forums .wp-editor-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),
