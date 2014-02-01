@@ -84,11 +84,6 @@ if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdo
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-core-check.php' );
 	
 	/**
-	 * Check if mp_slide is installed 
-	 */
-	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-slide.php' );
-	
-	/**
 	 * Check if mp_links is installed
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-links.php' );

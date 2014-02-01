@@ -6,7 +6,7 @@
 function mp_knapstack_avatar_size(){
 	return 60;
 }
-add_filter( 'mp_core_avatar_size', 'mp_knapstack_avatar_size'); 
+add_filter( 'mp_core_comment_avatar_size', 'mp_knapstack_avatar_size'); 
 
 /**
  * Remove labels from Name Email and Website for comment form

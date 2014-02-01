@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.4.1
+Version: 1.0.4.2
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -437,7 +437,7 @@ em{
 }
 
 #masthead ul ul a:hover {
-	color: #404040;
+	color: #404040!important;
 	border: 0;
 	background: #fbfbfb;
 }
@@ -855,19 +855,50 @@ input[type=checkbox]:hover{
 .logged-in-as, .comment-notes{
 	margin:5px 0px 10px 0px;	
 }
-.comment-author img{
+.mp-core-comment-avatar img{
 	border-radius: 30px;
 	float:left;
 	margin-right:10px;	
 }
-.comment-author .fn{
-	font-weight:400;
-	font-size:16px;
-	font-size:1.6rem;
+.commentmetadata a{
+	text-decoration:none;	
 }
-#comments .comment time{
-	font-size:12px;
-	font-size:1.2rem;
+.mp-core-comment-meta{
+	display:inline-block;
+	margin-bottom:10px;	
+}
+.mp-core-comment-meta .comment-author{
+	margin-bottom:5px;	
+}
+.mp-core-comment-meta .mp-core-comment-time,
+.mp-core-comment-meta .reply{
+	float:left;	
+	font-size: 1.2rem;
+	line-height: 1.2rem;	
+}
+.mp-core-comment-time-link,
+.mp-core-comment-meta .reply .comment-reply-link{
+	margin-right:10px;	
+}
+.mp-core-comment-time-link:before{
+	font-family: 'fontawesome';
+	content: "\f073";
+	margin-right: 5px;	
+}
+.mp-core-comment-meta .reply .comment-reply-link:before{
+	font-family: 'fontawesome';
+	content: "\f112";
+	margin-right: 5px;	
+}
+.mp-core-comment-meta .reply .comment-edit-link:before{
+	font-family: 'fontawesome';
+	content: "\f044";
+	margin-right: 5px;	
+}
+.comment-content{
+	font-size:14px;
+	font-size: 1.4rem;	
+	line-height:2.0rem;
 }
 #comments .children{
 	margin-left:50px;	
