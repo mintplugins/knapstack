@@ -9,8 +9,10 @@ jQuery(document).ready(function($){
 		
 		//Set top padding for content based on height of header
 		$('#main-container').css('padding-top', header_height );
+		
+		$(window).trigger('resize');
 	}
-	
+		
 	mp_knapstack_resize_header();
 	
 	$(window).on('resize', function(){

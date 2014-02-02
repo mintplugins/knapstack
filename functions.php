@@ -176,5 +176,10 @@ else{
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/tinymce-hooks.php' );
 	
+	/**
+	 * EDD Front End Submissions Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/edd-fes-hooks.php' );
+	
 	
 }
