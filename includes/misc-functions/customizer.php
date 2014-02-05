@@ -54,7 +54,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#f2f2f2',
 					'priority'   => 1,
-					'element'    => '#masthead .menu a:hover, #site-navigation .mp-links li a:hover',
+					'element'    => '#masthead .menu a:hover, #masthead .current-menu-item a, #site-navigation .mp-links li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -158,7 +158,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 17,
-					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, #bbpress-forums .wp-editor-container',
+					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),
@@ -171,7 +171,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#333333',
 					'priority'   => 1,
-					'element'    => 'input',
+					'element'    => 'input, textarea, select',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -180,7 +180,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 1,
-					'element'    => array('input', '#searchform #searchsubmit'),
+					'element'    => array('input, textarea, select', '#searchform #searchsubmit'),
 					'jquery_function_name' => 'css',
 					'arg' => array('border-color', 'color')
 				),
@@ -189,7 +189,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#919191',
 					'priority'   => 1,
-					'element'    => 'input:focus',
+					'element'    => 'input:focus, textarea:focus, select:focus',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),

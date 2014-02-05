@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.4.3
+Version: 1.0.4.4
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -260,7 +260,7 @@ em{
     width: auto;	
 }
 
-/* Header Menu
+/* Header Menu Container
 ----------------------------------------------- */
 #mp-menu-toggle-button-holder {
 	display:table-cell;
@@ -298,7 +298,7 @@ em{
 }
 
 
-/* =Menu
+/* Header Menu
 ----------------------------------------------- */
 
 .main-navigation a,{
@@ -340,7 +340,8 @@ em{
 	text-decoration:none;
 }
 
-#masthead a:hover {
+#masthead a:hover,
+#masthead .current-menu-item a {
 	color: #fff;
 	border-color: #fff;
 }
@@ -725,7 +726,8 @@ em{
 ----------------------------------------------- */
 input, 
 input[type=search], 
-textarea{
+textarea,
+select{
 	border: 2px solid #bdc3c7;
 	color: #34495e;
 	font-family: "Lato", sans-serif;
@@ -743,6 +745,7 @@ textarea{
 	-o-transition: border .25s linear, color .25s linear;
 	transition: border .25s linear, color .25s linear;
 	-webkit-backface-visibility: hidden;
+	box-sizing: border-box;
 }
 input:focus, input[type=search]:focus, textarea:focus{
 	-webkit-appearance: none;
@@ -754,6 +757,11 @@ textarea#comment{
 	width:90%;
 	max-width: 400px;	
 	margin:0px;
+}
+select{
+	line-height: 28px;
+	height: 28px;
+	text-indent:0px;
 }
 input[type=submit], 
 .button,
@@ -1220,23 +1228,28 @@ pre{
 
 /* Easy Digital Downloads
 ----------------------------------------------- */
-table[id^="edd"] {
+table[id^="edd"], 
+table[id^="fes"] {
 	text-align: left;
 	width: 100%;
 	border: 0;
 	margin: 0 0 21px;
 }
-table[id^="edd"] thead th {
+table[id^="edd"] thead th, 
+table[id^="fes"] thead th {
 	padding: 1.387em;
 	font-weight: 700;
 }	
 table[id^="edd"] td,
-table[id^="edd"] th {
+table[id^="edd"] th,
+table[id^="fes"] td,
+table[id^="fes"] th {
 	line-height: 25px;
 	vertical-align: middle;
 	padding: .5em 1.387em;
 }
-table[id^="edd"] td img {
+table[id^="edd"] td img,
+table[id^="fes"] td img {
 	float: left;
 	margin: 0 8px 0 0;
 	background: 0 0;
@@ -1248,12 +1261,18 @@ table[id^="edd"] th.edd_cart_actions,
 table[id^="edd"] th.edd_cart_total {
 	text-align: right;
 }
-form[id^="edd"] fieldset {
+form[id^="edd"] fieldset,
+form[class^="fes"] fieldset {
 	padding: 1.387em;
 	margin: 0 0 21px;
 	border: 1px solid #00cb90;
 }
-form[id^="edd"] legend {
+form[id^="edd"] input[type=text],
+form[class^="fes"] input[type=text] {
+	width:100%;
+}
+form[id^="edd"] legend,
+form[class^="fes"] legend {
 	display: block;
 	font-size: 120%;
 	line-height: 1;
@@ -1262,12 +1281,14 @@ form[id^="edd"] legend {
 	margin: 0 0 21px;
 	padding: 0;
 }
-form[id^="edd"] span.edd-description {
+form[id^="edd"] span.edd-description,
+form[class^="fes"] span.edd-description {
 	font-size: 80%;
 	display: block;
 	margin: 0 0 5px;
 }
-label[for^="edd"] {
+label[for^="edd"],
+label[for^="fes"] {
 	display: inline-block;
 	font-weight: 700;
 	position: relative;
@@ -1325,12 +1346,87 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	margin-top:.6em;	
 }
 
+.fes-vendor-menu ul{
+	list-style:none;
+	display: inline-block;	
+}
+.fes-vendor-menu li{
+	float:left;
+	margin-right:10px;	
+}
+.fes-help{
+	font-size: 13px;
+	font-size: 1.3rem;	
+}
+.fes-el{
+	margin-bottom:30px;	
+}
+.fes-attachment-list{
+	list-style:none;	
+}
+.fes-submit .fes-label{
+	display:none;	
+}
+.fes-fields #post_content{
+	width:100%;	
+}
+.edd-fes-adf-submission-option-description,
+.edd-fes-adf-submission-option-price,
+.edd-fes-adf-submission-option-remove,
+.edd-fes-adf-submission-option-file{
+	float:left;
+	margin-right:1%;
+}
+.edd-fes-adf-submission-option{
+	display:inline-block;
+	width:100%;	
+	float:left;
+}
+.edd-fes-adf-submission-option-description,
+.edd-fes-adf-submission-option-price,
+.edd-fes-adf-submission-option-file,
+.edd-fes-adf-submission-option-remove{
+	width:22%;	
+	font-size:10px;
+	font-size:1.0rem;
+}
+.edd-fes-adf-submission-option-description input,
+.edd-fes-adf-submission-option-price input,
+.edd-fes-adf-submission-option-file input,
+.edd-fes-adf-submission-option-remove input{
+	width:100%%;
+}
+.edd-fes-adf-submission-option-remove{
+	float:right;	
+}
+.edd-fes-adf-submission-option-remove a{
+	font-size:60px;
+	font-size:6rem;
+	text-decoration:none;
+	margin-top: 8px;
+	display: inline-block;
+}
+.fes-loading{
+	font-family: 'fontawesome';
+	content: "\f013";
+	font-size:18px;
+	font-size: 1.8rem;
+	
+	-webkit-animation: spin 2s infinite linear;
+	-moz-animation: spin 2s infinite linear;
+	-o-animation: spin 2s infinite linear;
+	animation: spin 2s infinite linear;	
+}
+.fes-form fieldset.has-error{
+	background-color:#FFE4E4;
+}
 /* MP ECommerce Previews */
 .entry-content .mp-ecommerce-preview	{
 	width:600px;
 	float:left;
 	margin:0px 20px 20px 0px;	
 }
+
 /* When Single Download Page is less than 850
 ----------------------------------------------- */
 @media screen and (max-width: 850px) {
