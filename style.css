@@ -4,7 +4,7 @@ Theme URI: http://moveplugins.com/
 Author: Move Plugins
 Author URI: http://moveplugins.com/
 Description: A theme designed around the MP Stacks plugin.
-Version: 1.0.4.4
+Version: 1.0.4.5
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -597,6 +597,9 @@ em{
 	max-width:1100px;
 	box-sizing:border-box;
 	padding:0px 20px 0px 20px;
+}
+#footer-site-info p{
+	margin-bottom:0;	
 }
 
 /* Footer Widgets div
@@ -1267,7 +1270,6 @@ form[class^="fes"] fieldset {
 	margin: 0 0 21px;
 	border: 1px solid #00cb90;
 }
-form[id^="edd"] input[type=text],
 form[class^="fes"] input[type=text] {
 	width:100%;
 }
@@ -1296,8 +1298,16 @@ label[for^="fes"] {
 	font-size: 95%;
 	margin: 0 0 5px;
 }
-#edd_profile_editor_form label{
+#edd_profile_editor_form label,
+#edd_login_form label{
 	width: 200px;
+}
+#edd_profile_editor_form span{
+	margin:20px 0px 0px 0px;
+	display:inline-block;
+}
+#edd_profile_editor_form span:first-child{
+	margin:0;
 }
 .edd_errors {
 	-webkit-border-radius: 2px;
@@ -1333,7 +1343,7 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
-#edd_profile_billing_address_wrap{
+#edd_profile_editor_form p{
 	max-width:500px;	
 }
 #edd_address_country{
@@ -1345,7 +1355,9 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 .page-header .edd-buy-form{
 	margin-top:.6em;	
 }
-
+#edd_login_form input{
+	width:inherit;
+}
 .fes-vendor-menu ul{
 	list-style:none;
 	display: inline-block;	

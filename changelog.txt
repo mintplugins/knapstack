@@ -1,4 +1,7 @@
 == Changelog ==
 
+= 1.0.4.5 = February 7, 2014
+* Style Updates for account pages and FES
+
 = 1.0.0.0 =
 * Original release
