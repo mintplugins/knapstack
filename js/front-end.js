@@ -15,8 +15,4 @@ jQuery(document).ready(function($){
 		
 	mp_knapstack_resize_header();
 	
-	$(window).on('resize', function(){
-		mp_knapstack_resize_header();
-	});
-	
 });
