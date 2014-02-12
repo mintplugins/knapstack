@@ -93,6 +93,11 @@ if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdo
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-stacks.php' );
 	
+	/**
+	 * Check if mp_menu is installed
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-menu.php' );
+	
 }
 /**
  * Otherwise, if required plugins are active, carry out the plugin's functions

@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0.4.7 = February 12, 2014
+* Style Updates for Gravity Forms
+* Style Updates for Footer Widgets
+* Theme Screenshot Updated
+* Do a check for MP Menu upon install
+
 = 1.0.4.6 = February 8, 2014
 * Removed call to ‘mp_knapstack_resize_header’ js function on page resize.
 
