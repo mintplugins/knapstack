@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.4.8 = February 13, 2014 (unreleased)
+* New Plugin Installer without open uses wpfilesystem api instead
+
 = 1.0.4.7 = February 12, 2014
 * Style Updates for Gravity Forms
 * Style Updates for Footer Widgets
@@ -7,7 +10,7 @@
 * Do a check for MP Menu upon install
 
 = 1.0.4.6 = February 8, 2014
-* Removed call to ‘mp_knapstack_resize_header’ js function on page resize.
+* Removed call to 'mp_knapstack_resize_header' js function on page resize.
 
 = 1.0.4.5 = February 7, 2014
 * Style Updates for account pages and FES
