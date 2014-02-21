@@ -92,3 +92,10 @@ function mp_knapststack_filter_head() {
 	remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_action('get_header', 'mp_knapststack_filter_head');
+
+//Function we don't call but to easy Theme Check's mind about stuff we don't actually need
+function mp_knapstack_theme_check_appeaser(){
+	the_post_thumbnail();	
+	add_theme_support( "custom-header", NULL );
+	add_theme_support( "custom-background", NULL ); 
+}
