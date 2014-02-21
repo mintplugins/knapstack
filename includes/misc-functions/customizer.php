@@ -180,7 +180,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 1,
-					'element'    => array('input, textarea, select', '#searchform #searchsubmit'),
+					'element'    => array('input, textarea', '#searchform #searchsubmit'),
 					'jquery_function_name' => 'css',
 					'arg' => array('border-color', 'color')
 				),
@@ -189,7 +189,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#919191',
 					'priority'   => 1,
-					'element'    => 'input:focus, textarea:focus, select:focus',
+					'element'    => 'input:focus, textarea:focus',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),

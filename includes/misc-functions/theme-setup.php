@@ -86,3 +86,9 @@ function mp_knapstack_live_rename_formats() {
 <?php }
 }
 add_action('admin_head', 'mp_knapstack_live_rename_formats');
+
+//remove responsive options for admin bar
+function mp_knapststack_filter_head() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('get_header', 'mp_knapststack_filter_head');

@@ -44,13 +44,15 @@
 
 			} // end check for categories on this blog
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink(),
-				the_title_attribute( 'echo=0' )
-			);
+			if ( !empty($category_list) || !empty($tag_list) ){
+				printf(
+					$meta_text,
+					$category_list,
+					$tag_list,
+					get_permalink(),
+					the_title_attribute( 'echo=0' )
+				);
+			}
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<span class="edit-link">', '</span>' ); ?>

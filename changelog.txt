@@ -1,7 +1,9 @@
 == Changelog ==
 
-= 1.0.4.8 = February 13, 2014 (unreleased)
+= 1.0.4.8 = February 20, 2014 (unreleased)
 * New Plugin Installer without open uses wpfilesystem api instead
+* Footer Credits Update
+* Mobile Header Resize Works
 
 = 1.0.4.7 = February 12, 2014
 * Style Updates for Gravity Forms

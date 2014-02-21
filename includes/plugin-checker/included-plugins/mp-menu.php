@@ -27,7 +27,7 @@ if (!function_exists('mp_menu_plugin_check')){
 			array(
 				'plugin_name' => 'MP Menu',
 				'plugin_message' => __('You require the MP Menu plugin. Install it here.', 'mp_knapstack'),
-				'plugin_filename' => 'mp-links.php',
+				'plugin_filename' => 'mp-menu.php',
 				'plugin_download_link' => 'http://moveplugins.com/repo/mp-menu/?downloadfile=true',
 				'plugin_info_link' => 'http://moveplugins.com/plugins/mp-menu',
 				'plugin_group_install' => true,

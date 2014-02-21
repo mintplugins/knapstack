@@ -1,10 +1,10 @@
 /*
 Theme Name: KnapStack Theme
-Theme URI: http://moveplugins.com/
+Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
-Author URI: http://moveplugins.com/
+Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.4.7
+Version: 1.0.4.8
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -194,19 +194,26 @@ em{
 
 /* Header With Admin Bar when logged in
 ----------------------------------------------- */
-.admin-bar #page > header{
+.admin-bar #page > header,
+.admin-bar #page #main-container{
 	margin-top:32px;	
 }
 @media screen and (max-width: 782px) {
-	.admin-bar #page > header{
+	.admin-bar #page > header,
+	.admin-bar #page #main-container{
 		margin-top:46px;	
 	}
 }
 @media screen and (max-width: 600px) {
-	.admin-bar #page > header{
+	.admin-bar #page > header,
+	.admin-bar #page #main-container{
 		margin-top:0px;	
 	}
+	#wpadminbar{
+		display:none;	
+	}
 }
+
 /* Header 
 ----------------------------------------------- */
 #page > header{
@@ -239,7 +246,7 @@ em{
 }
 .site-branding a{
 	display: block;	
-	margin:10px;
+	margin:10px 10px 10px 0px;
 }
 #mp-core-logo{
 	display:block;
@@ -590,6 +597,21 @@ em{
 	padding:20px;
 }
 
+/* Primary div content grid
+----------------------------------------------- */
+.site-content-container.content-grid{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	max-width: 1100px;
+	margin: 0px auto;
+	padding:20px;
+}
+.site-content.content-grid{
+	margin:0px -1%; 
+	padding:0px;
+}
+
 /* Footer Site Info div
 ----------------------------------------------- */
 #footer-site-info,
@@ -602,7 +624,12 @@ em{
 #footer-site-info p{
 	margin-bottom:0;	
 }
-
+.mp-font-moveplugins-logo{
+	font-size:0px;		
+}
+.mp-font-moveplugins-logo:before{
+	font-size:25px;
+}
 /* Footer Widgets div
 ----------------------------------------------- */
 #footer-widgets-container{
@@ -778,6 +805,7 @@ textarea#comment{
 	margin:0px;
 }
 select{
+	border: 1px solid #ddd;
 	line-height: 28px;
 	height: 28px;
 	text-indent:0px;
@@ -1174,6 +1202,17 @@ time.entry-date:before{
 .related-downloads{
 	margin:0px -1% 0px -1%;	
 }
+.knapstack_sort_downloads_by_asc:before,
+.knapstack_sort_downloads_by_desc:before{
+	font-family: 'fontawesome';
+	
+}
+.knapstack_sort_downloads_by_asc:before{
+	content: "\f176";
+}
+.knapstack_sort_downloads_by_desc:before{
+	content: "\f175";
+}
 
 /* MP Links
 ----------------------------------------------- */
@@ -1416,6 +1455,9 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	border: none;
 	margin: 0px 0px 1.5rem 0px;
 	padding: 0px;	
+}
+.edd-cart-added-alert{
+	margin-right:10px;	
 }
 .fes-vendor-menu ul{
 	list-style:none;

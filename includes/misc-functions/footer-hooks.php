@@ -5,9 +5,7 @@
  */
 function mp_knapstack_show_credits(){
 	?>
-    <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'mp_knapstack' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'mp_knapstack' ), 'WordPress' ); ?></a>
-    <?php echo __( 'and', 'mp_knapstack' ); ?>
-    <a href="http://moveplugins.com/" title="<?php esc_attr_e( 'WordPress Plugins and Themes', 'mp_knapstack' ); ?>" rel="generator"><?php printf( __( '%s', 'mp_knapstack' ), 'Move Plugins' ); 	?></a>
+    <a class="mp-font-moveplugins-logo" href="<?php echo 'http://moveplugins.com/'; ?>" title="<?php esc_attr_e( 'Move Plugins - WordPress Plugins and Themes', 'mp_knapstack' ); ?>" rel="generator"><?php printf( __( '%s', 'mp_knapstack' ), 'Move Plugins' ); 	?></a>
 	<?php
 }
 add_action('mp_knapstack_credits', 'mp_knapstack_show_credits');
