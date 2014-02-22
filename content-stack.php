@@ -10,12 +10,6 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mp_knapstack' ),
-				'after'  => '</div>',
-			) );
-		?>
 	</div><!-- .entry-content -->
 	<?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

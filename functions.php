@@ -12,7 +12,7 @@
 */
 // Theme version
 if( !defined( 'MP_KNAPSTACK_VERSION' ) )
-	define( 'MP_KNAPSTACK_VERSION', '1.0.4.8' );
+	define( 'MP_KNAPSTACK_VERSION', '1.0.5.0' );
 
 // Theme Folder Path
 if( !defined( 'MP_KNAPSTACK_THEME_DIR' ) )
@@ -67,6 +67,14 @@ add_action( 'init', 'mp_knapstack_textdomain', 1 );
  * If any of our required plugins aren't active, stop and install ithem now
  */
 if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdomain') || !function_exists('mp_stacks_textdomain') ){
+	
+	//Show notice on front end that items need to be installed
+	if ( !is_admin() ){
+		echo '<div style="font-size:30px; margin:10px; padding:100px 10px; background-color:#ff7878; color: #fff; text-align:center">' . __('There are items that need to be installed.', 'mp_knapstack') . '<br /><a style="font-size:20px; color:#fff;" href="' . admin_url() . '">' . __( 'Go to the top of your WordPress dashboard to review them - Click Here', 'mp_knapstack' ) . '</a></div>';	
+	}
+	
+	//Tell the installer to redirect to the themes pages after install
+	update_option('mp_core_theme_redirect_after_install', true);
 	
 	/**
 	 * Include Plugin Checker
@@ -185,6 +193,11 @@ else{
 	 * EDD Front End Submissions Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/edd-fes-hooks.php' );
+	
+	/**
+	 * Stack Page template metabox
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/custom-width-page-template-metabox.php' );
 	
 	
 }

@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0.5.0 = February 22, 2014
+* Plugin Installer upgrade for Themes Redirect
+* Better Page Templates with custom width settings
+* Default Page Template is for MP Stacks at full-width now
+* Front End notice if plugins needed
+
 = 1.0.4.9 = February 20, 2014
 https footer MP link
 

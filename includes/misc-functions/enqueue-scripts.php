@@ -34,3 +34,11 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 	}
 endif; //knapstack_scripts
 add_action( 'wp_enqueue_scripts', 'knapstack_scripts' );
+
+function mp_knapstack_admin_enqueue_scripts(){
+		
+		//Admin End JS for the Knapstack Theme
+		wp_enqueue_script( 'knapstack-admin-js', get_template_directory_uri() . '/js/admin.js', array( 'jquery' ) );
+		
+}
+add_action( 'admin_enqueue_scripts', 'mp_knapstack_admin_enqueue_scripts' );
