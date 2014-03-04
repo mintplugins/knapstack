@@ -28,10 +28,11 @@ function mp_knapstack_show_sort_by_options(){
 		wp_enqueue_script( 'knapstack-edd-front-end-js', get_template_directory_uri() . '/includes/misc-functions/edd-front-end.js', array( 'jquery' ) );               
 		
 		?>  
+        <div class="knapstack_title_sort_downloads_by"><?php echo __( 'Sort By: ', 'mp_knapstack' ); ?></div>
         <select id="knapstack_sort_downloads_by" name="knapstack_sort_downloads_by" class="knapstack_sort_downloads_by">
                 <option value="?knapstack_edd_sorter=date&order=<?php echo $asc_desc; ?>&orderby=date" <?php echo $knapstack_edd_sorter == 'date' ? 'selected' : NULL; ?>><?php echo __( 'Date', 'mp_knapstack' ); ?></option>
                 <option value="?knapstack_edd_sorter=sales&order=<?php echo $asc_desc; ?>&meta_key=_edd_download_sales" <?php echo $knapstack_edd_sorter == 'sales' ? 'selected' : NULL; ?>><?php echo __( 'Sales', 'mp_knapstack' ); ?></option>
-                <option value="" <?php echo $knapstack_edd_sorter == 'Rating' ? 'selected' : NULL; ?>><?php echo __( 'Rating', 'mp_knapstack' ); ?></option>
+                <option value="?knapstack_edd_sorter=rating&order=<?php echo $asc_desc; ?>&meta_key=ratings_average" <?php echo $knapstack_edd_sorter == 'Rating' ? 'selected' : NULL; ?>><?php echo __( 'Rating', 'mp_knapstack' ); ?></option>
                 <option value="?knapstack_edd_sorter=price&order=<?php echo $asc_desc; ?>&meta_key=edd_price" <?php echo $knapstack_edd_sorter == 'price' ? 'selected' : NULL; ?>><?php echo __( 'Price', 'mp_knapstack' ); ?></option>
         </select>
        	

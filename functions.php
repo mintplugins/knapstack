@@ -12,7 +12,7 @@
 */
 // Theme version
 if( !defined( 'MP_KNAPSTACK_VERSION' ) )
-	define( 'MP_KNAPSTACK_VERSION', '1.0.5.0' );
+	define( 'MP_KNAPSTACK_VERSION', '1.0.5.1' );
 
 // Theme Folder Path
 if( !defined( 'MP_KNAPSTACK_THEME_DIR' ) )
@@ -70,7 +70,7 @@ if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdo
 	
 	//Show notice on front end that items need to be installed
 	if ( !is_admin() ){
-		echo '<div style="font-size:30px; margin:10px; padding:100px 10px; background-color:#ff7878; color: #fff; text-align:center">' . __('There are items that need to be installed.', 'mp_knapstack') . '<br /><a style="font-size:20px; color:#fff;" href="' . admin_url() . '">' . __( 'Go to the top of your WordPress dashboard to review them - Click Here', 'mp_knapstack' ) . '</a></div>';	
+		add_action( 'mp_knapstack_prepend_body', function() { echo '<div style="font-size:30px; margin:10px; padding:100px 10px; background-color:#ff7878; color: #fff; text-align:center">' . __('There are items that need to be installed.', 'mp_knapstack') . '<br /><a style="font-size:20px; color:#fff;" href="' . admin_url() . '">' . __( 'Go to the top of your WordPress dashboard to review them - Click Here', 'mp_knapstack' ) . '</a></div>'; } );	
 	}
 	
 	//Tell the installer to redirect to the themes pages after install

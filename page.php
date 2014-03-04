@@ -10,7 +10,15 @@
  * @package mp_knapstack
  */
 
-get_header(); ?>
+get_header(); 
+
+/**
+ * Use Full-width if the post type is a page. 
+ * BBpress uses this template too so don't use full-width for other post types that depend on this one
+ *
+ * @package mp_knapstack
+ */
+if ( get_post_type() == 'page' ){ ?>
 	
     <div id="main" class="site-main">
     
@@ -31,5 +39,33 @@ get_header(); ?>
     
             </div><!-- #content -->
         </div><!-- #primary -->
+<?php } 
 
+//If this isn't a 'page' type
+else{
+	
+	get_template_part( 'page-header' ); ?>
+
+	<div id="main" class="site-main">
+	
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+	
+				<?php get_template_part( 'content', 'single' ); ?>
+					
+				<div style="clear: both;"></div>
+		
+			</div><!-- #content -->
+				
+		</div><!-- #primary -->
+	
+		<?php
+		
+		// If comments are open or we have at least one comment, load up the comment template
+		if ( comments_open() || '0' != get_comments_number() ){
+			comments_template();
+		}
+		
+}
+?>
 <?php get_footer(); ?>

@@ -15,7 +15,7 @@ if ( has_post_format( 'gallery' )) { ?>
     <div id="main" class="site-main">
     
         <div class="content-area">
-            <div id="content" class="site-content" role="main">
+            <div id="content" class="site-content stack-content" role="main">
     
                 <?php while ( have_posts() ) : the_post(); ?>
     

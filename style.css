@@ -4,7 +4,7 @@ Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
 Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.5.0
+Version: 1.0.5.1
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -612,6 +612,11 @@ em{
 	padding:0px;
 }
 
+.site-content.content-grid h1, 
+.site-content.content-grid h2{
+	margin:0px;	
+}
+
 /* Footer Site Info div
 ----------------------------------------------- */
 #footer-site-info,
@@ -625,11 +630,31 @@ em{
 	margin-bottom:0;	
 }
 .mp-font-moveplugins-logo{
-	font-size:0px;		
+	overflow: hidden;
 }
 .mp-font-moveplugins-logo:before{
 	font-size:25px;
 }
+.mp-font-moveplugins-logo-title{
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+#footer-site-info{
+	display:table;
+	width:100%;	
+}
+.site-info-left,
+.site-info-right{
+	display: table-cell;
+	vertical-align: middle;
+}
+
 /* Footer Widgets div
 ----------------------------------------------- */
 #footer-widgets-container{
@@ -710,6 +735,8 @@ em{
 	padding:20px 0px 20px 0px;
 	background-color: #00bb85;
 	color:#fff;
+	line-height:14px;
+	line-height:1.4rem;
 }
 #colophon a{
 	color:#fff;
@@ -1073,11 +1100,20 @@ time.entry-date:before{
 	float:left;
 	box-sizing: border-box;
 }
+.download-archive .hentry:nth-child(4n+1){
+	clear:left;
+}
 /* When Archive Page is between 1100px and 800px
 ----------------------------------------------- */
 @media screen and (max-width: 1100px) and (min-width: 800px){
 	.download-archive .hentry{ 
 		width:31.33%;
+	}
+	.download-archive .hentry:nth-child(4n+1){
+		clear:none;
+	}
+	.download-archive .hentry:nth-child(3n+1){
+		clear:left;
 	}
 }
 /* When Archive Page is between 800px and 600px
@@ -1085,6 +1121,9 @@ time.entry-date:before{
 @media screen and (max-width: 800px) and (min-width: 600px){
 	.download-archive .hentry{ 
 		width:48%;
+	}
+	.download-archive .hentry:nth-child(2n+1){
+		clear:left;
 	}
 }
 /* When Archive Page is less than 600px
@@ -1192,7 +1231,7 @@ time.entry-date:before{
 .download-archive .hentry .edd-cart-ajax-alert{
 	color:inherit;
 	position: absolute;
-	top: 23px;
+	top: 43px;
 	white-space: nowrap;
 	color:#ffffff;
 }
@@ -1201,6 +1240,14 @@ time.entry-date:before{
 }
 .related-downloads{
 	margin:0px -1% 0px -1%;	
+}
+.knapstack_title_sort_downloads_by{
+	display:inline-block;
+	vertical-align: bottom;	
+}
+.knapstack_sort_downloads_by_asc,
+.knapstack_sort_downloads_by_desc{
+	margin: 0px 10px;
 }
 .knapstack_sort_downloads_by_asc:before,
 .knapstack_sort_downloads_by_desc:before{
@@ -1239,16 +1286,6 @@ time.entry-date:before{
 	font-size:20px;
 	font-size:2.0rem;
 }
-/* Footer
------------------------------------------------ */
-.site-info-left{
-	float:left;	
-}
-.site-info-right{
-	float:right;	
-}
-/* Footer
------------------------------------------------ */
 pre{
 	background-color: rgb(245, 245, 245);
 	padding: 20px;
@@ -1272,12 +1309,13 @@ pre{
 /* #Content div when the stacks (default) page template is used */
 .page-template-templatespage-template-stack-php .site-content,
 .page-template-default .site-content, 
-.site-content.stack-content,
-.single-format-gallery .site-content{
+.single-format-gallery .site-content,
+.site-content.stack-content{
 	max-width:100%;
 	padding:0px;
 }
 .page-template-templatespage-template-stack-php .entry-content,
+.site-content.stack-content .entry-content,
 .page-template-default .entry-content{
 	max-width:100%;
 }
@@ -1533,12 +1571,6 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 }
 .fes-form fieldset.has-error{
 	background-color:#FFE4E4;
-}
-/* MP ECommerce Previews */
-.entry-content .mp-ecommerce-preview	{
-	width:600px;
-	float:left;
-	margin:0px 20px 20px 0px;	
 }
 
 /* When Single Download Page is less than 850
