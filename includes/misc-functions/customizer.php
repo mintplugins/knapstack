@@ -17,6 +17,9 @@ function mp_knapstack_customizer(){
 	$link_groups_array = mp_core_get_all_terms_by_tax('mp_link_groups');
 	$link_groups_array['none'] = "None";
 	
+	$mp_stacks_array = mp_core_get_all_terms_by_tax('mp_stacks');
+	$mp_stacks_array['none'] = "None";
+	
 	$args = array(
 		array( 'section_id' => 'mp_knapstack_responsive', 'section_title' => __( 'Responsive Settings', 'mp_knapstack' ),'section_priority' => 100,
 			'settings' => array(
@@ -31,11 +34,20 @@ function mp_knapstack_customizer(){
 		),
 		array( 'section_id' => 'mp_knapstack_header_navigation', 'section_title' => __( 'Site-Header Area', 'mp_knapstack' ),'section_priority' => 2,
 			'settings' => array(
+				'mp_knapstack_header_bg_color_opacity' => array(
+					'label'      => __( 'Header Background Color Opacity (Enter a value from 0 to 1)', 'mp_knapstack' ),
+					'type'       => 'textbox',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#page #masthead',
+					'jquery_function_name' => 'css',
+					'arg' => 'background-color-opacity'
+				),
 				'mp_knapstack_header_bg_color' => array(
 					'label'      => __( 'Header Background Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#939393',
-					'priority'   => 1,
+					'priority'   => 2,
 					'element'    => '#page #masthead',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -44,7 +56,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#FFFFFF',
-					'priority'   => 1,
+					'priority'   => 3,
 					'element'    => '#masthead .menu a, #site-navigation .mp-links li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -53,16 +65,38 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Hover Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#f2f2f2',
-					'priority'   => 1,
+					'priority'   => 4,
 					'element'    => '#masthead .menu a:hover, #masthead .current-menu-item a, #site-navigation .mp-links li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
+				),
+				'mp_knapstack_header_fixed' => array(
+					'label'      => __( 'Scroll Header?', 'mp_knapstack' ),
+					'type'       => 'radio',
+					'choices'    => array(
+						'fixed'  	=> __('Fixed', 'mp_knapstack'),
+						'inherit'	=> __('Scroll', 'mp_knapstack'),
+					),
+					'default'    => '',
+					'priority'   => 5,
+					'element'    => '#masthead',
+					'jquery_function_name' => 'css',
+					'arg' => 'position'
+				),
+				'mp_knapstack_header_bump_site_down' => array(
+					'label'      => __( 'Bump site below Fixed header?', 'mp_knapstack' ),
+					'type'       => 'checkbox',
+					'default'    => 'true',
+					'priority'   => 6,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL
 				),
 				'mp_knapstack_header_link_group' => array(
 					'label'      => __( 'Header Link Group', 'mp_knapstack' ),
 					'type'       => 'select',
 					'default'    => '',
-					'priority'   => 1,
+					'priority'   => 7,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL,
@@ -347,79 +381,17 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
-		array( 'section_id' => 'mp_knapstack_footer_widget_area', 'section_title' => __( 'Footer Area', 'mp_knapstack' ),'section_priority' => 5,
+		array( 'section_id' => 'mp_knapstack_footer_area', 'section_title' => __( 'Footer Area', 'mp_knapstack' ),'section_priority' => 5,
 			'settings' => array(
-				'mp_knapstack_footer_widget_area_bg_color' => array(
-					'label'      => __( 'Background Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#939393',
-					'priority'   => 10,
-					'element'    => '#colophon',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_footer_widget_area_text_color' => array(
-					'label'      => __( 'Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 10,
-					'element'    => '#colophon',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_footer_widget_area_link_color' => array(
-					'label'      => __( 'Link Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 10,
-					'element'    => '#colophon a',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_footer_widget_area_link_hover_color' => array(
-					'label'      => __( 'Link Hover Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 10,
-					'element'    => '#colophon a:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_footer_button_submit' => array(
-					'label'      => __( 'Button Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#a0a0a0',
-					'priority'   => 14,
-					'element'    => '#colophon input[type=submit], #colophon .button',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_footer_button_text' => array(
-					'label'      => __( 'Button Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 15,
-					'element'    => '#colophon input[type=submit], #colophon .button',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_footer_button_hover' => array(
-					'label'      => __( 'Mouse-Over Button Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#5e5e5e',
-					'priority'   => 16,
-					'element'    => '#colophon input[type=submit]:hover, #colophon .button:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_footer_button_text_hover' => array(
-					'label'      => __( 'Mouse-Over Button Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 17,
-					'element'    => '#colophon input[type=submit]:hover, #colophon .button:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
+				'mp_knapstack_footer_stack' => array(
+					'label'      => __( 'Choose a Stack for your footer', 'mp_knapstack' ),
+					'type'       => 'select',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL,
+					'choices' => $mp_stacks_array
 				),
 			)
 		),

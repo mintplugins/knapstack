@@ -4,7 +4,7 @@ Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
 Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.5.1
+Version: 1.0.5.2
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -46,12 +46,14 @@ html {
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 	color:#00bb85;
+	height:100%;
 }
 body {
 	background: #fff;
 	font-size:14px;
 	font-size:1.4rem;
 	line-height:2.5rem;
+	height:100%;
 }
 a{
 	color:#00bb85;	
@@ -187,9 +189,9 @@ em{
 #page{
 	min-width:1100px;
 	width:100%;
+	min-height:100%;
 	display:block;	
 	margin: 0px auto;
-	overflow:hidden;
 }
 
 /* Header With Admin Bar when logged in
@@ -617,91 +619,6 @@ em{
 	margin:0px;	
 }
 
-/* Footer Site Info div
------------------------------------------------ */
-#footer-site-info,
-#footer-widgets-container{
-	margin:0px auto;
-	max-width:1100px;
-	box-sizing:border-box;
-	padding:0px 20px 0px 20px;
-}
-#footer-site-info p{
-	margin-bottom:0;	
-}
-.mp-font-moveplugins-logo{
-	overflow: hidden;
-}
-.mp-font-moveplugins-logo:before{
-	font-size:25px;
-}
-.mp-font-moveplugins-logo-title{
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-#footer-site-info{
-	display:table;
-	width:100%;	
-}
-.site-info-left,
-.site-info-right{
-	display: table-cell;
-	vertical-align: middle;
-}
-
-/* Footer Widgets div
------------------------------------------------ */
-#footer-widgets-container{
-	margin:0px auto;
-	color: #fff;	
-	max-width:1100px;
-	box-sizing:border-box;
-}
-#footer-widgets{
-	max-width:1100px;
-	width: 100%;
-	clear:both;
-	display:table;
-}
-#footer-widgets .footer-widget:nth-child(3) .footer-widget-inner,
-#footer-widgets .footer-widget:nth-child(4) .footer-widget-inner{
-	float:right;
-}
-#footer-widgets a{
-	color:#fff;
-}
-#footer-widgets .footer-widget{
-	width:255px;	
-	margin:0px 20px;
-	padding:10px 0px 10px 0px;
-	display: table-cell;
-	vertical-align: bottom;
-}
-#footer-widgets .footer-widget .title{
-	margin-bottom:15px;
-}
-
-#footer-widgets .footer-widget ul{
-	margin-bottom:0px;
-}
-#footer-widgets .footer-widget .menu{
-	list-style:none;	
-}
-#footer-widgets .footer-widget .menu a{
-	text-decoration:none;	
-}
-#footer-widgets h3{
-	font-size: 2.0rem;
-	font-weight: 400;
-	line-height: 2.5rem;	
-}
-
 /* Pagination
 ----------------------------------------------- */
 #posts-navigation{
@@ -726,23 +643,6 @@ em{
 }
 #posts-navigation .page-numbers li a{
 	text-decoration:none;	
-}
-
-/* Colophon div
------------------------------------------------ */
-#colophon{
-	float:none;	
-	padding:20px 0px 20px 0px;
-	background-color: #00bb85;
-	color:#fff;
-	line-height:14px;
-	line-height:1.4rem;
-}
-#colophon a{
-	color:#fff;
-}
-#colophon .footer-site-info p{
-	margin-bottom:0px;	
 }
 
 /* Main H Tag settings

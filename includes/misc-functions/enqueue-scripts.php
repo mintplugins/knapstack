@@ -22,8 +22,11 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		//Jquery
 		wp_enqueue_script( 'jquery' );
 		
-		//Front End JS for the Knapstack Theme
-		wp_enqueue_script( 'knapstack-front-end', get_template_directory_uri() . '/js/front-end.js', array( 'jquery' ) );
+		$header_bump = get_theme_mod('mp_knapstack_header_bump_site_down');
+		if ( !empty( $header_bump ) ){
+			//Front End JS for the Knapstack Theme
+			wp_enqueue_script( 'knapstack-header-bump', get_template_directory_uri() . '/js/header-bump.js', array( 'jquery' ) );
+		}
 		
 		//Responsive CSS - load if the user hasn't disabled it
 		$responsive_check = get_theme_mod('mp_knapstack_responsive_off');

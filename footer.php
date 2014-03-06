@@ -10,29 +10,15 @@
             <div style="clear: both;"></div>
         </div><!-- #main -->
 	</div><!-- main-container -->
-	<footer id="colophon" class="site-footer" role="contentinfo">
+ </div><!-- #page -->
+ 
+<footer id="colophon" class="site-footer" role="contentinfo">
+
+    <?php do_action( 'mp_knapstack_footer_stack' ); ?>
     
-    	<?php get_template_part( 'footer-widgets' ); ?>
-        
-        <div id="footer-site-info">
-            <div class="site-info-left">
-            	<?php do_action( 'mp_knapstack_copyright' ); ?>    	
-             </div><!-- .site-info left-->
-            
-            <div class="site-info-right">
-                <?php do_action( 'mp_knapstack_credits' ); ?>               
-            </div><!-- .site-info right-->
-       		
-            <div style="clear: both;"></div>
-            
-            <?php wp_footer(); ?>
-            
-        </div>
-       
-        <div style="clear: both;"></div>
-               
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<?php wp_footer(); ?>
+           
+</footer><!-- #colophon -->
 
 </body>
 </html>
