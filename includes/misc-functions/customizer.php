@@ -75,16 +75,16 @@ function mp_knapstack_customizer(){
 					'type'       => 'radio',
 					'choices'    => array(
 						'fixed'  	=> __('Fixed', 'mp_knapstack'),
-						'inherit'	=> __('Scroll', 'mp_knapstack'),
+						'absolute'	=> __('Scroll', 'mp_knapstack'),
 					),
 					'default'    => '',
 					'priority'   => 5,
-					'element'    => '#masthead',
+					'element'    => '#page .site-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'position'
 				),
 				'mp_knapstack_header_bump_site_down' => array(
-					'label'      => __( 'Bump site below Fixed header?', 'mp_knapstack' ),
+					'label'      => __( 'Bump site below header?', 'mp_knapstack' ),
 					'type'       => 'checkbox',
 					'default'    => 'true',
 					'priority'   => 6,
@@ -239,6 +239,15 @@ function mp_knapstack_customizer(){
 					'element'    => '#main-container > .page-header, #main-container > .entry-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
+				),
+				'mp_knapstack_page_header_bg_image' => array(
+					'label'      => __( 'Background Image', 'mp_knapstack' ),
+					'type'       => 'image',
+					'default'    => '#main-container .page-header',
+					'priority'   => 10,
+					'element'    => '#main-container > .page-header',
+					'jquery_function_name' => 'css',
+					'arg' => 'background-image'
 				),
 				'mp_knapstack_page_header_text_color' => array(
 					'label'      => __( 'Text Color', 'mp_knapstack' ),

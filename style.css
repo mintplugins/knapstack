@@ -4,7 +4,7 @@ Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
 Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.5.2
+Version: 1.0.5.3
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -527,6 +527,7 @@ em{
 	padding:40px 0px 40px 0px;
 	background-color:#00bb85;
 	color:#fff;
+	background-size:cover;
 }
 #main-container > .page-header > .page-header-inner{
 	margin:0px auto;
@@ -535,6 +536,7 @@ em{
 	text-align:left;
 	padding:0px 20px 0px 20px;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 #main-container > .page-header > .page-header-inner a {
 	color:#fff;	
