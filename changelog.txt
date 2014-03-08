@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.0.5.4 = March 8, 2014
+* Hide Empty Footer stack if “none” selected
+
+= 1.0.5.3 = March 7, 2014
+* Added Sub-Header Background Image
+* Header can be fixed or scroll.
+* It can also be either above the sub header, or on top of it.
+* Include MP Buttons upon install.
+
 = 1.0.5.2 = March 5, 2014
 * Footer widgets are replaced with a Stack.
 * Header can either be fixed or scroll
