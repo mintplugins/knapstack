@@ -15,13 +15,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-        
-        <?php 
-		if ( function_exists( 'mp_isotopes' ) ){ 
-			mp_isotopes(); 
-		};
-		?>
-        
+                
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

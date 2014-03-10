@@ -17,7 +17,7 @@ get_header(); ?>
 			<article id="post-0" class="post error404 not-found">
 				
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mp_knapstack' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'mp_knapstack' ); ?></p>
 
 					<?php get_search_form(); ?>
 

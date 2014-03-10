@@ -13,35 +13,27 @@ function mp_knapstack_show_related_downloads( $tags ){
 		elseif (is_array( $tags ) ){
 			$tags_array = $tags[0];
 		}
+		
+		$post_id = get_the_ID();
+		
+		$tag_slugs = wp_get_post_terms( $post_id, 'download_tag', array("fields" => "slugs") );
+					
+		if ($tag_slugs){
 
-		echo '<h1>' . __('Related Downloads', 'mp_knapstack') . '</h1>';
+			echo '<h1>' . __('Related Downloads', 'mp_knapstack') . '</h1>';
 		
-		echo '<div class="related-downloads download-archive">';
-		
-			$tag_slugs = array();
-			
-			$counter = 0;
-			
-			//Set tag slugs
-			foreach( $tags_array as $key => $value ){
-				if ($key == 'slug' ){
-					
-					$tag_slugs[$counter] = $value;	
-					
-					$counter = $counter + 1;
-				}
-			}
-			
+			echo '<div class="related-downloads download-archive">';
+									
 			//Set the args for the new query
 			$download_args = array(
 				'post_type' => 'download',
+				'post__not_in' => array($post_id),
 				'tax_query' => array(
-					'relation' => 'AND',
 					array(
 						'taxonomy' => 'download_tag',
 						'field'    => 'slug',
 						'terms'    => $tag_slugs,
-						'operator' => 'IN'
+						
 					)
 				)
 			);	
@@ -58,6 +50,7 @@ function mp_knapstack_show_related_downloads( $tags ){
 					
 				endwhile;	
 			}
+		}
 		
 		echo '</div>';
 	}

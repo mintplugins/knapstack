@@ -4,7 +4,7 @@ Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
 Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.5.4
+Version: 1.0.5.5
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -1227,18 +1227,32 @@ pre{
 
 /* Gravity Forms Styling
 ----------------------------------------------- */
-.gform_wrapper{
-	text-align:left;	
-}
 .gform_wrapper ul{
 	list-style:none;	
 }
 .gform_wrapper ul li{
 	display:inline-block;
 	margin-bottom:20px;
+	width:100%;
 }
-.gform_wrapper .ginput_complex input[type=text], .gform_wrapper .ginput_complex input[type=url], .gform_wrapper .ginput_complex input[type=email], .gform_wrapper .ginput_complex input[type=tel], .gform_wrapper .ginput_complex input[type=number], .gform_wrapper .ginput_complex input[type=password], .gform_wrapper .ginput_complex select {
-	width: 95% !important;
+.gform_wrapper ul li{
+	width:100%;	
+}
+.gform_heading{
+	margin-bottom:20px;	
+}
+.gform_wrapper input,
+.gform_wrapper textarea{
+	width:100%;	
+}
+.gform_wrapper .ginput_complex input[type=text], 
+.gform_wrapper .ginput_complex input[type=url], 
+.gform_wrapper .ginput_complex input[type=email], 
+.gform_wrapper .ginput_complex input[type=tel], 
+.gform_wrapper .ginput_complex input[type=number], 
+.gform_wrapper .ginput_complex input[type=password], 
+.gform_wrapper .ginput_complex select {
+	width: 100% !important;
 }
 .gform_wrapper .gfield_required {
 	color: #790000;
@@ -1252,8 +1266,13 @@ pre{
 }
 .gform_wrapper .ginput_complex .ginput_left,
 .gform_wrapper .ginput_complex .ginput_right {
-	width: 50%;
-	float: left;
+	width: 48%;
+}
+.gform_wrapper .ginput_complex .ginput_left{
+	float:left;	
+}
+.gform_wrapper .ginput_complex .ginput_right{
+	float:right;	
 }
 .gform_wrapper .ginput_container{
 	margin-top:5px;
@@ -1261,6 +1280,16 @@ pre{
 .gform_wrapper .gfield_checkbox,
 .gform_wrapper .gfield_checkbox li{
 	margin-bottom:0px;	
+}
+
+/*Isotopes Styling*/
+.isotopenav {
+	list-style:none;	
+	margin-top:15px;
+}
+.isotopenav li{
+	margin-right:10px;
+	display:inline;	
 }
 
 /* Easy Digital Downloads

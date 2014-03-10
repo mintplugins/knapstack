@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0.5.5 = March 9, 2014
+* Added Translation mo and po files
+* Simple 404
+* Added Isotopes support
+* Improved Gravity Forms Styling
+
 = 1.0.5.4 = March 8, 2014
 * Hide Empty Footer stack if “none” selected
 

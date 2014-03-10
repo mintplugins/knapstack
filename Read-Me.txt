@@ -1,0 +1,6 @@
+Reflatsive Theme 
+License: GNU General Public License
+
+For help in getting this theme set up - including tutorial videos, written documentation, and one-on-one support, please visit:
+
+https://moveplugins.com/support/reflatsive-theme-support/
