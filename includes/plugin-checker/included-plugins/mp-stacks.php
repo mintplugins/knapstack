@@ -7,7 +7,7 @@
  * @package    MP Knapstack
  * @subpackage Functions
  *
- * @copyright  Copyright (c) 2013, Move Plugins
+ * @copyright  Copyright (c) 2014, Move Plugins
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @author     Philip Johnston
  */
@@ -29,7 +29,7 @@ if (!function_exists('mp_stacks_plugin_check')){
 				'plugin_message' => __('You require the MP Stacks plugin. Install it here.', 'mp_knapstack'),
 				'plugin_filename' => 'mp-stacks.php',
 				'plugin_download_link' => 'http://moveplugins.com/repo/mp-stacks/?downloadfile=true',
-				'plugin_info_link' => 'http://moveplugins.com/plugins/mp-stacks',
+				'plugin_info_link' => 'http://moveplugins.com/downloads/mp-stacks',
 				'plugin_group_install' => true,
 				'plugin_required' => true,
 				'plugin_wp_repo' => true,

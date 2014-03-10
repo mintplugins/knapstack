@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.5.8 = March 10, 2014
+* Updated links for previewing of plugins that need to be installed
+
 = 1.0.5.7 = March 10, 2014
 * Changed anonymous function in theme setup to allow for old versions of PHP
 
@@ -13,7 +16,7 @@
 * Improved Gravity Forms Styling
 
 = 1.0.5.4 = March 8, 2014
-* Hide Empty Footer stack if “none” selected
+* Hide Empty Footer stack if none selected
 
 = 1.0.5.3 = March 7, 2014
 * Added Sub-Header Background Image

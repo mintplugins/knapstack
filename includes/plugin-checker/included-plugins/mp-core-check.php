@@ -7,7 +7,7 @@
  * @package    MP Knapstack
  * @subpackage Functions
  *
- * @copyright  Copyright (c) 2013, Move Plugins
+ * @copyright  Copyright (c) 2014, Move Plugins
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @author     Philip Johnston
  */
@@ -29,7 +29,7 @@ if (!function_exists('mp_core_plugin_check')){
 				'plugin_message' => __('You require the MP Core plugin. Install it here.', 'mp_knapstack'), 
 				'plugin_filename' => 'mp-core.php',
 				'plugin_download_link' => 'http://moveplugins.com/repo/mp-core/?downloadfile=true',
-				'plugin_info_link' => 'http://moveplugins.com/plugins/mp-core',
+				'plugin_info_link' => 'http://moveplugins.com/mp-core',
 				'plugin_group_install' => true,
 				'plugin_required' => true,
 				'plugin_wp_repo' => true,
