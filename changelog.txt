@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.5.6 = March 9, 2014
+* issue with versioning. Purely a version bump.
+
 = 1.0.5.5 = March 9, 2014
 * Added Translation mo and po files
 * Simple 404
