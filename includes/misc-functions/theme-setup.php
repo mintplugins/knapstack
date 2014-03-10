@@ -93,7 +93,7 @@ function mp_knapststack_filter_head() {
 }
 add_action('get_header', 'mp_knapststack_filter_head');
 
-//Function we don't call but to easy Theme Check's mind about stuff we don't actually need
+//Function we don't call but to ease Theme Check's mind about stuff we don't actually need
 function mp_knapstack_theme_check_appeaser(){
 	the_post_thumbnail();	
 	add_theme_support( "custom-header", NULL );
