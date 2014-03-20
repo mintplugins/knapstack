@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.5.9 = March 20, 2014
+* Gravity Forms Styling Improvements
+* MP Ecomm Previews Styling Improvements for single page with max-width of 600px
+
 = 1.0.5.8 = March 10, 2014
 * Updated links for previewing of plugins that need to be installed
 
