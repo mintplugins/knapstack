@@ -48,6 +48,9 @@
                     </div><!-- .nav-inner -->
                     
                 </nav><!-- #site-navigation -->
+                
+                <?php do_action( 'mp_knapstack_header_additional_cell' ); ?>
+                
             </div><!-- .header-inner-content -->     
         </div><!-- .header-inner -->
         

@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.6.0 = March 21, 2014
+* Added hook to header to allow for additional cells after the nav
+
 = 1.0.5.9 = March 20, 2014
 * Gravity Forms Styling Improvements
 * MP Ecomm Previews Styling Improvements for single page with max-width of 600px
