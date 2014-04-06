@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.6.2 = April 6, 2014
+* Checkout Page design improvements. Bigger Thumbnails, no Borders.
+
 = 1.0.6.1 = March 21, 2014
 * Version Bump
 

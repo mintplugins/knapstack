@@ -4,7 +4,7 @@ Theme URI: https://moveplugins.com/downloads/knapstack-theme
 Author: Move Plugins
 Author URI: https://moveplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.6.1
+Version: 1.0.6.2
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -74,16 +74,12 @@ ol, ul {
 	margin: 0 0 1.5rem 0;
 }
 table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
-	border-style:solid;
-	border-width: 1px;
+	border:none;
 }
 caption, th, td {
 	font-weight: normal;
 	text-align: left;
-	border-style:solid;
-	border-width: 1px;
+	border:none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -701,8 +697,7 @@ em{
 ----------------------------------------------- */
 input, 
 input[type=search], 
-textarea,
-select{
+textarea{
 	border: 2px solid #bdc3c7;
 	color: #34495e;
 	font-family: "Lato", sans-serif;
@@ -732,12 +727,6 @@ textarea#comment{
 	width:90%;
 	max-width: 400px;	
 	margin:0px;
-}
-select{
-	border: 1px solid #ddd;
-	line-height: 28px;
-	height: 28px;
-	text-indent:0px;
 }
 input[type=submit], 
 .button,
@@ -779,7 +768,9 @@ input[type=submit]:hover,
 	transition: background-color .25s linear;
 }
 input[type=checkbox],
-input[type=checkbox]:hover{
+input[type=checkbox]:hover,
+input[type=radio],
+input[type=radio]:hover{
 	border:none;	
 }
 /* bbPress Styles
@@ -1038,9 +1029,7 @@ time.entry-date:before{
 .download-archive .hentry .entry-header{
 	padding:20px;
 	box-sizing:border-box;
-	border-style:solid;
-	border-width: 1px;
-	border-top: 0;
+	border:none;
 }
 .download-archive .hentry .page-header h1, 
 .download-archive .hentry .entry-header h1{
@@ -1341,11 +1330,44 @@ table[id^="edd"] th.edd_cart_actions,
 table[id^="edd"] th.edd_cart_total {
 	text-align: right;
 }
+table[id^="edd"] tr.edd_cart_item td{
+	border-style:solid;
+	border-bottom-width: 1px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+}
+table[id^="edd"] .edd_cart_header_row{
+	display:none;	
+}
+#edd_checkout_cart{
+	padding:25px;
+}
+#edd_checkout_cart td{
+	padding: 15px 0px 15px 0px;	
+}
+#edd_checkout_cart tr:first-child td{
+	padding: 0px 0px 15px 0px;	
+}
+#edd_checkout_cart .edd_cart_total,
+#edd_checkout_cart .edd_cart_subtotal,
+#edd_checkout_cart .edd_cart_tax{
+	padding: 15px 0 0 0;
+	text-align:right;
+}
+#edd_checkout_cart td div,
+#edd_checkout_cart td span{
+	display: table-cell;
+	vertical-align: middle;	
+}
+#edd_checkout_cart .edd_cart_item_image img{
+	width:80px;
+	height:80px;	
+}
 form[id^="edd"] fieldset,
 form[class^="fes"] fieldset {
-	padding: 1.387em;
+	padding: 25px;
 	margin: 0 0 21px;
-	border: 1px solid #00cb90;
 }
 form[class^="fes"] input[type=text] {
 	width:100%;

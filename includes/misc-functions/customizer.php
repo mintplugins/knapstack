@@ -190,11 +190,20 @@ function mp_knapstack_customizer(){
 				'mp_knapstack_borders' => array(
 					'label'      => __( 'Border Color (Wherever borders are used)', 'mp_knapstack' ),
 					'type'       => 'color',
-					'default'    => '#e2e2e2',
-					'priority'   => 17,
-					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container',
+					'default'    => '#d8d8d8',
+					'priority'   => 18,
+					'element'    => 'table[id^="edd"] tr.edd_cart_item td',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
+				),
+				'mp_knapstack_secondary_bg_color' => array(
+					'label'      => __( 'Secondary Background Color (Form/Table Backgrounds)', 'mp_knapstack' ),
+					'type'       => 'color',
+					'default'    => '#e2e2e2',
+					'priority'   => 19,
+					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container',
+					'jquery_function_name' => 'css',
+					'arg' => 'background-color'
 				),
 			)
 		),
