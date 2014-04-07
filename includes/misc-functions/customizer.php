@@ -192,7 +192,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#d8d8d8',
 					'priority'   => 18,
-					'element'    => 'table[id^="edd"] tr.edd_cart_item td',
+					'element'    => 'table[id^="edd"] tbody tr td',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),

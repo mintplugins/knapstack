@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.6.3 = April 7, 2014
+* More checkout page style upgrades
+* Added filter to turn off Archive overlay for downloads
+
 = 1.0.6.2 = April 6, 2014
 * Checkout Page design improvements. Bigger Thumbnails, no Borders.
 

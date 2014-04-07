@@ -13,7 +13,17 @@
     //Show featured image - if there is one	
     if ( $featured_image ) { ?>
         
-        <div class="entry-image">
+        <div class="entry-image">  
+        
+        	<?php
+			
+			//Filter which allows the user to turn off the overlay popup
+			$show_overlay = apply_filters( 'mp_knapstack_show_download_archive_overlay', true );
+			
+			if ($show_overlay){
+				
+			?>
+                      
         	<div class="archive-item-overlay">
                 <div class="archive-item-overlay-inner">
                     <div class="actions">
@@ -34,7 +44,13 @@
                     </div>
         		</div>
             </div>
-            <?php echo $featured_image;  ?>
+            <?php 
+			
+			} 
+			
+			echo $featured_image;  
+			
+			?>
         </div><!-- .entry-content -->
       
     <?php } ?>  
