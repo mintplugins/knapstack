@@ -117,6 +117,6 @@ add_action('mp_knapstack_header_after_page_title', 'mp_knapstack_show_isotopes')
  * Remove Isotopes default styling
  */
 function mp_knapstack_dequeue_isotopes_scripts() {
-	wp_dequeue_style( 'moveplugins_isotopes_css', plugins_url( '/css/style.css', dirname(__FILE__)));
+	wp_dequeue_style( 'mintplugins_isotopes_css', plugins_url( '/css/style.css', dirname(__FILE__)));
 }
 add_action( 'wp_enqueue_scripts', 'mp_knapstack_dequeue_isotopes_scripts' );

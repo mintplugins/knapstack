@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.6.4 = May 14, 2014
+* Move To Mint
+* MP Stacks Footer Styling output
+
 = 1.0.6.3 = April 7, 2014
 * More checkout page style upgrades
 * Added filter to turn off Archive overlay for downloads

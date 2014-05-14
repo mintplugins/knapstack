@@ -2,13 +2,13 @@
 /**
  * Page contains functions used to change the TinyMCE area in WordPress
  *
- * @link http://moveplugins.com/doc/
+ * @link http://mintplugins.com/doc/
  * @since 1.0.0
  *
  * @package    Knapstack
  * @subpackage Functions
  *
- * @copyright  Copyright (c) 2013, Move Plugins
+ * @copyright  Copyright (c) 2013, Mint Plugins
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @author     Philip Johnston
  */

@@ -37,6 +37,15 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 			wp_enqueue_style( 'mt_responsive', get_template_directory_uri() . '/css/responsive.css' );
 		}
 		
+		$footer_stack_id = get_theme_mod('mp_knapstack_footer_stack'); 
+	
+		if ( !empty( $footer_stack_id  ) && $footer_stack_id != 'none' ){
+			
+			//The footer stack CSS
+			mp_stack_css( get_theme_mod('mp_knapstack_footer_stack'), true ); 
+		
+		}
+		
 	}
 endif; //knapstack_scripts
 add_action( 'wp_enqueue_scripts', 'knapstack_scripts' );

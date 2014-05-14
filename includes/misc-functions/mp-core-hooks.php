@@ -32,11 +32,11 @@ function mp_knapstack_comment_form_args($args, $commenter, $req, $aria_req){
 }
 add_filter( 'mp_core_comment_form_args', 'mp_knapstack_comment_form_args', 10, 4); 
 
-//Include Move Plugins font with Move Plugins Logo
-function mp_knapstack_moveplugins_font_enqueue(){
+//Include Mint Plugins font with Mint Plugins Logo
+function mp_knapstack_mintplugins_font_enqueue(){
 	
 	//Enqueue Font Awesome CSS
-	wp_enqueue_style( 'mp_core_moveplugins_font', MP_CORE_PLUGIN_URL . 'includes/fonts/movepluginsfont.css' );
+	wp_enqueue_style( 'mp_core_mintplugins_font', MP_CORE_PLUGIN_URL . 'includes/fonts/mintpluginsfont.css' );
 	
 }
-add_action( 'wp_enqueue_scripts', 'mp_knapstack_moveplugins_font_enqueue' );
+add_action( 'wp_enqueue_scripts', 'mp_knapstack_mintplugins_font_enqueue' );

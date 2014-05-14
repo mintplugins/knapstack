@@ -156,7 +156,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
 					'priority'   => 14,
-					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -165,7 +165,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					'priority'   => 15,
-					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a',
+					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a, #posts-navigation .page-numbers li span',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -174,7 +174,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#5e5e5e',
 					'priority'   => 16,
-					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li a:hover, #posts-navigation .page-numbers li span',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -183,7 +183,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					'priority'   => 17,
-					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li:hover a',
+					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -201,7 +201,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 19,
-					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container',
+					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container, #edd-login-account-wrap, #edd_checkout_user_info, #edd_register_account_fields',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
