@@ -1,6 +1,7 @@
 <?php
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
+ * Deprecated because users can now use the widget add-on for MP Stacks.
  *
  * To override malachi_widgets_init() in a child theme, remove the action hook and add your own
  * function tied to the init hook.
@@ -22,4 +23,4 @@ function malachi_widgets_init() {
 	
 }
 /** Register sidebars by running malachi_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'malachi_widgets_init' );	
+//add_action( 'widgets_init', 'malachi_widgets_init' );	

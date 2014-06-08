@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.6.5 = June 8, 2014
+* Doubled size of featured images on single pages for retina.
+* Footer Sidebar Removed. Now use the MP Stacks Widgets Add On instead.
+* Removed importing of styles into TinyMce.
+
 = 1.0.6.4 = May 14, 2014
 * Move To Mint
 * MP Stacks Footer Styling output

@@ -4,7 +4,7 @@ Theme URI: https://mintplugins.com/downloads/knapstack-theme
 Author: Mint Plugins
 Author URI: https://mintplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.6.4
+Version: 1.0.6.5
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -57,6 +57,7 @@ body {
 }
 a{
 	color:#00bb85;	
+	transition: all .10s linear;
 }
 article,
 aside,
@@ -701,9 +702,9 @@ input[type=search],
 textarea{
 	border: 2px solid #bdc3c7;
 	color: #34495e;
-	font-family: "Lato", sans-serif;
+	font-family: 'MP Stacks Font 1';
 	font-size: 14px;
-	padding: 12.5px 5px;
+	padding: 8px 5px;
 	text-indent: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -716,12 +717,17 @@ textarea{
 	-o-transition: border .25s linear, color .25s linear;
 	transition: border .25s linear, color .25s linear;
 	-webkit-backface-visibility: hidden;
-	box-sizing: border-box;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 }
 input:focus, input[type=search]:focus, textarea:focus{
 	-webkit-appearance: none;
 	border: 2px solid #000;
 	outline: none;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 }
 textarea#comment{
 	height: 132px;
@@ -738,6 +744,7 @@ input[type=submit],
 	text-indent: 0px;
 	color:#fff;
 	padding:10px 20px 10px 20px;
+	font-family: 'MP Stacks Font 1';
 	border-radius: 3px;
 	border:none;
 	text-shadow:none;
@@ -756,6 +763,9 @@ input[type=submit],
 	white-space:inherit;
 	vertical-align:inherit;
 	cursor: pointer;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 input[type=submit]:hover, 
 .button:hover,
@@ -1587,8 +1597,8 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	top: 0;
 	right: 0;
 	border:none;
-	padding: 13px;
-	padding: 1.3rem;
+	padding: 11px;
+	padding: 1.1rem;
 }	
 #searchform #searchsubmit:after{
 	font-family: 'fontawesome';

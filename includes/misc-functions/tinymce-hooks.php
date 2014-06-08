@@ -26,4 +26,4 @@ function mp_knapstack_addTinyMCELinkClasses( $wp ) {
 	add_editor_style( get_stylesheet_directory_uri() . '/style.css' ); //This refers to the child theme if there is one
 	add_editor_style( get_template_directory_uri() . '/editor-style.css' ); //This refers to the parent if there is a child theme
 }
-add_action( 'mp_core_editor_styles', 'mp_knapstack_addTinyMCELinkClasses' );
+//add_action( 'mp_core_editor_styles', 'mp_knapstack_addTinyMCELinkClasses' );
