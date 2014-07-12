@@ -18,7 +18,7 @@
         	<?php
 			
 			//Filter which allows the user to turn off the overlay popup
-			$show_overlay = apply_filters( 'mp_knapstack_show_download_archive_overlay', true );
+			$show_overlay = apply_filters( 'mp_knapstack_show_download_archive_overlay', false );
 			
 			if ($show_overlay){
 				

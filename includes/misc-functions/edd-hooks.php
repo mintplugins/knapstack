@@ -13,9 +13,18 @@ remove_action( 'wp_enqueue_scripts', 'edd_register_styles' );
  * Show Sort-By Option for downloads
  */
 function mp_knapstack_show_sort_by_options(){
-	 
-	 if (is_archive('download') ){
-		 
+	
+	global $wp_query;
+		
+	if ( is_single() ){
+		 return;	
+	}
+	?>
+    <div class="knapstack-sorting-container"><?php
+	
+	//If this is a download archive page or a category or tag
+	if (is_post_type_archive('download') || isset( $wp_query->query_vars['download_category'] ) || isset( $wp_query->query_vars['download_tag'] ) ){
+				
 		$knapstack_edd_sorter = isset( $_GET['knapstack_edd_sorter']) ? $_GET['knapstack_edd_sorter'] : NULL;
 		
 		if (isset( $_GET['order'] )){
@@ -26,20 +35,33 @@ function mp_knapstack_show_sort_by_options(){
 		}
 		 
 		wp_enqueue_script( 'knapstack-edd-front-end-js', get_template_directory_uri() . '/includes/misc-functions/edd-front-end.js', array( 'jquery' ) );               
+		 
+		?>
+		<div class="knapstack-sorting-container-cell">
+			<div class="knapstack-sorting-title"><?php echo __( 'Sort By: ', 'mp_knapstack' ); ?></div>
+		</div>
 		
-		?>  
-        <div class="knapstack_title_sort_downloads_by"><?php echo __( 'Sort By: ', 'mp_knapstack' ); ?></div>
-        <select id="knapstack_sort_downloads_by" name="knapstack_sort_downloads_by" class="knapstack_sort_downloads_by">
-                <option value="?knapstack_edd_sorter=date&order=<?php echo $asc_desc; ?>&orderby=date" <?php echo $knapstack_edd_sorter == 'date' ? 'selected' : NULL; ?>><?php echo __( 'Date', 'mp_knapstack' ); ?></option>
-                <option value="?knapstack_edd_sorter=sales&order=<?php echo $asc_desc; ?>&meta_key=_edd_download_sales" <?php echo $knapstack_edd_sorter == 'sales' ? 'selected' : NULL; ?>><?php echo __( 'Sales', 'mp_knapstack' ); ?></option>
-                <option value="?knapstack_edd_sorter=rating&order=<?php echo $asc_desc; ?>&meta_key=ratings_average" <?php echo $knapstack_edd_sorter == 'Rating' ? 'selected' : NULL; ?>><?php echo __( 'Rating', 'mp_knapstack' ); ?></option>
-                <option value="?knapstack_edd_sorter=price&order=<?php echo $asc_desc; ?>&meta_key=edd_price" <?php echo $knapstack_edd_sorter == 'price' ? 'selected' : NULL; ?>><?php echo __( 'Price', 'mp_knapstack' ); ?></option>
-        </select>
-       	
-        <a title="<?php echo __('Sort By ', 'mp_knapstack') .  $asc_desc; ?>" href="<?php echo add_query_arg( array('order' => $asc_desc) ); ?>" class="knapstack_sort_downloads_by_<?php echo $asc_desc; ?>"></a>
-    
-   	 <?php
-	 }
+		<div class="knapstack-sorting-container-cell">
+			<select id="knapstack_sort_downloads_by" name="knapstack_sort_downloads_by" class="knapstack_sort_downloads_by">
+					<option value="?knapstack_edd_sorter=date&order=<?php echo $asc_desc; ?>&orderby=date" <?php echo $knapstack_edd_sorter == 'date' ? 'selected' : NULL; ?>><?php echo __( 'Date', 'mp_knapstack' ); ?></option>
+					<option value="?knapstack_edd_sorter=sales&order=<?php echo $asc_desc; ?>&meta_key=_edd_download_sales" <?php echo $knapstack_edd_sorter == 'sales' ? 'selected' : NULL; ?>><?php echo __( 'Sales', 'mp_knapstack' ); ?></option>
+					<option value="?knapstack_edd_sorter=rating&order=<?php echo $asc_desc; ?>&meta_key=ratings_average" <?php echo $knapstack_edd_sorter == 'Rating' ? 'selected' : NULL; ?>><?php echo __( 'Rating', 'mp_knapstack' ); ?></option>
+					<option value="?knapstack_edd_sorter=price&order=<?php echo $asc_desc; ?>&meta_key=edd_price" <?php echo $knapstack_edd_sorter == 'price' ? 'selected' : NULL; ?>><?php echo __( 'Price', 'mp_knapstack' ); ?></option>
+			</select>
+		</div>
+		<div class="knapstack-sorting-container-cell">
+			<a title="<?php echo __('Sort By ', 'mp_knapstack') .  $asc_desc; ?>" href="<?php echo add_query_arg( array('order' => $asc_desc) ); ?>" class="knapstack_sort_downloads_by_<?php echo $asc_desc; ?>"></a>
+		</div>
+		
+		<?php
+	}
+	
+	do_action( 'mp_knapstack_more_sorting_options', '' );
+	
+	?>
+    </div>
+	<?php
+	
 }
 //add_action('mp_knapstack_header_right_column', 'mp_knapstack_show_sort_by_options');
 

@@ -76,7 +76,7 @@ function mp_knapstack_show_front_end_install_check() {
 /**
  * If any of our required plugins aren't active, stop and install ithem now
  */
-if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdomain') || !function_exists('mp_stacks_textdomain') ){
+if ( !function_exists('mp_core_textdomain') || !function_exists('mp_stacks_textdomain') || !function_exists('mp_menu_textdomain') ){
 	
 	//Show notice on front end that items need to be installed
 	if ( !is_admin() ){
@@ -100,11 +100,6 @@ if ( !function_exists('mp_core_textdomain') || !function_exists('mp_links_textdo
 	 * Check if mp_core is installed
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-core-check.php' );
-	
-	/**
-	 * Check if mp_links is installed
-	 */
-	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-links.php' );
 	
 	/**
 	 * Check if mp_stacks is installed
