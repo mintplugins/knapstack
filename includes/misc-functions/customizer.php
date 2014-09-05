@@ -111,7 +111,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#4c4c4c',
 					'priority'   => 10,
-					'element'    => array( 'body, .download-archive .hentry .entry-header a' ),
+					'element'    => array( 'body, .download-archive .archive-download-article .entry-header a' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color' )
 				),
@@ -201,7 +201,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 19,
-					'element'    => '.download-archive .hentry .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container, #edd-login-account-wrap, #edd_checkout_user_info, #edd_register_account_fields',
+					'element'    => '.download-archive .archive-download-article .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container, #edd-login-account-wrap, #edd_checkout_user_info, #edd_register_account_fields',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),

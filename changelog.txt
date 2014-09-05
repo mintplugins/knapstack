@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.6.8 = September 5, 2014
+* Changed reference to .hentry in the customizer as well
+
 = 1.0.6.7 = September 5, 2014
 * Changed style references from .hentry to .archive-download-article because .hentry was removed from EDD 2.1
 * Added styling support for the Disqus plugin
