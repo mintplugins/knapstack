@@ -72,7 +72,7 @@ add_action('init', 'mp_knapstack_page_template_create_meta_box', 2);
 function mp_knapstack_change_default_page_template_title( $translated_text, $text, $domain ) {
 	
 	if ( is_admin() && 'Default Template' == $text ) {
-		$translated_text = __( 'Hide Page Title - Custom Width (See below)', 'mp_knapstack' );
+		$translated_text = __( 'MP Stack - 100% Width', 'mp_knapstack' );
 	}
 
     return $translated_text;

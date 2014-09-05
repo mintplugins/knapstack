@@ -330,7 +330,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#6d6d6d',
 					'priority'   => 10,
-					'element'    => '#comments-container',
+					'element'    => '#comments-container, #disqus_thread',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),

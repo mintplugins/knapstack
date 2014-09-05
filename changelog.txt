@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.6.7 = September 5, 2014
+* Changed style references from .hentry to .archive-download-article because .hentry was removed from EDD 2.1
+* Added styling support for the Disqus plugin
+* Clearer communication on page template title from “Hide Page Title (Custom Width) to MP Stack - 100% width
+
 = 1.0.6.6 = July 12, 2014
 * Added styling for checkboxes
 * Added display:none for hidden fields in Gravity Forms
