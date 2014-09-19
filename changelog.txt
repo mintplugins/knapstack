@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.6.9 = September 19, 2014
+* Utility update. No changes.
+
 = 1.0.6.8 = September 5, 2014
 * Changed reference to .hentry in the customizer as well
 

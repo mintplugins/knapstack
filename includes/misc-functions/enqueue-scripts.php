@@ -30,6 +30,19 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 			//Bump sub header content below main header overlap
 			wp_enqueue_script( 'knapstack-sub-header-bump', get_template_directory_uri() . '/js/sub-header-bump.js', array( 'jquery' ) );	
 		}
+		
+		//If we are on mobile, force the header to scroll - it's too invasive on a small screen
+		if ( mp_core_is_android() || mp_core_is_iphone() ){
+			?>
+            <style type="text/css">
+				
+				#page .site-header{
+					position:absolute!important;	
+				}
+				
+			</style>
+            <?php	
+		}
 				
 		//Responsive CSS - load if the user hasn't disabled it
 		$responsive_check = get_theme_mod('mp_knapstack_responsive_off');
