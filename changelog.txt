@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.0.7.0 = December 16, 2014
+* Added Sidebar Support
+* Made Knapstack updates free
+* Moved Comments directly below blog content - no longer has its own area.
+* Updated Theme Screenshot
+* Add Tracking upon installation
+* Added Microformats
+
 = 1.0.6.9 = September 19, 2014
 * Utility update. No changes.
 

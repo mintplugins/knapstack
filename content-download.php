@@ -6,6 +6,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-download-article' ); ?>>
  	
+    <?php mp_core_invisible_microformats(); ?>
+    
 	<?php 
     //Check if there is a featured image
     $featured_image = mp_core_the_featured_image( get_the_ID(), 524, 426, '<a class="archive_feat_image" href="' . get_permalink() . '"><img src="', '" /></a>');		

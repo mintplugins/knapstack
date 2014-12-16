@@ -31,8 +31,33 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 		register_nav_menus( array(
 			'primary' => __( 'Primary Navigation', 'mp_knapstack' ),
 		) );
-	
 		
+		//Setup the sidebar that appears beside blog posts
+		$knapstack_sidebar_args = array(
+			'name'          => __( 'Post Sidebar', 'mp_knapstack' ),
+			'id'            => 'knapstack-post-sidebar',
+			'description'   => __( 'This sidebar appears beside blog posts', 'mp_knapstack' ),
+			'class'         => '',
+			'before_widget' => '<div class="knapstack-widgets-item">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="knapstack-widgets-title">',
+			'after_title'   => '</div>' 
+		);
+		register_sidebar( $knapstack_sidebar_args );
+		
+		//Setup the sidebar that appears beside blog posts
+		$knapstack_sidebar_args = array(
+			'name'          => __( 'Page Sidebar', 'mp_knapstack' ),
+			'id'            => 'knapstack-page-sidebar',
+			'description'   => __( 'This sidebar appears beside pages set to be 600px wide.', 'mp_knapstack' ),
+			'class'         => '',
+			'before_widget' => '<div class="knapstack-widgets-item">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="knapstack-widgets-title">',
+			'after_title'   => '</div>' 
+		);
+		register_sidebar( $knapstack_sidebar_args );
+	
 	}
 endif;
 

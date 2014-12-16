@@ -22,9 +22,9 @@
  if (!function_exists('mp_knapstack_update')){
 	function mp_knapstack_update() {
 		$args = array(
-			'software_name' => 'Knapstack Theme', //<- The name of this theme in the style.css file, mp_repo, and edd. The slug must also match when URL converted (malachi-theme)
+			'software_name' => 'Knapstack Theme', //<- The name of this theme in the style.css file, mp_repo, and edd. The slug must also match when URL converted (knapstack-theme)
 			'software_api_url' => 'http://mintplugins.com/',//The URL where EDD and mp_repo are installed and checked
-			'software_licensed' => true, //<-Boolean
+			'software_licensed' => false, //<-Boolean
 		);
 		
 		//Since this is a plugin, call the Plugin Updater class

@@ -31,8 +31,8 @@ if ( get_post_type() == 'page' ){ ?>
     
                     <?php
                         // If comments are open or we have at least one comment, load up the comment template
-                        if ( comments_open() || '0' != get_comments_number() )
-                            comments_template();
+                        //if ( comments_open() || '0' != get_comments_number() )
+                           //comments_template();
                     ?>
     
                 <?php endwhile; // end of the loop. ?>
@@ -51,9 +51,20 @@ else{
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 	
-				<?php get_template_part( 'content', 'single' ); ?>
-					
-				<div style="clear: both;"></div>
+				<div class="content-area-one">
+				<?php while ( have_posts() ) : the_post(); ?>
+    
+                    <?php get_template_part( 'content', 'single' ); ?>
+                    
+                <?php endwhile; // end of the loop. ?>
+                
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() )
+                        comments_template();
+                ?>
+    
+                </div>
 		
 			</div><!-- #content -->
 				

@@ -69,15 +69,12 @@ add_action('init', 'mp_knapstack_page_template_create_meta_box', 2);
  * Function which Changes the name of the default template to "100% Width Template"
  * https://core.trac.wordpress.org/ticket/27178
  */
-function mp_knapstack_change_default_page_template_title( $translated_text, $text, $domain ) {
+function mp_knapstack_change_default_page_template_title( $default_title ) {
 	
-	if ( is_admin() && 'Default Template' == $text ) {
-		$translated_text = __( 'MP Stack - 100% Width', 'mp_knapstack' );
-	}
-
-    return $translated_text;
+	return __( 'MP Stack - 100% Width', 'mp_knapstack' );
+	
 }
-add_filter( 'gettext', 'mp_knapstack_change_default_page_template_title', 10, 3 );
+add_filter( 'default_page_template_title', 'mp_knapstack_change_default_page_template_title', 10, 3 );
 
 /**
  * Function which sets the width for the Custom Width Page Template

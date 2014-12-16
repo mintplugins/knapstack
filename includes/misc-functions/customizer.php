@@ -323,6 +323,8 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
+		
+		/*
 		array( 'section_id' => 'mp_knapstack_comment_area', 'section_title' => __( 'Comment Area', 'mp_knapstack' ),'section_priority' => 5,
 			'settings' => array(
 				'mp_knapstack_comment_area_bg_color' => array(
@@ -399,6 +401,7 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
+		*/
 		array( 'section_id' => 'mp_knapstack_footer_area', 'section_title' => __( 'Footer Area', 'mp_knapstack' ),'section_priority' => 5,
 			'settings' => array(
 				'mp_knapstack_footer_stack' => array(

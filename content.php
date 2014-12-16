@@ -6,6 +6,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
  	
+    <?php mp_core_invisible_microformats(); ?>
+    
 	<?php 
     //Check if there is a featured image
     $featured_image = mp_core_the_featured_image( get_the_ID(), 400, 300, '<div class="img"><a href="' . get_permalink() . 
