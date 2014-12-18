@@ -56,6 +56,9 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 			
 			//The footer stack CSS
 			mp_stack_css( get_theme_mod('mp_knapstack_footer_stack'), true ); 
+			
+			//Reset the post data for the footer
+			wp_reset_postdata();
 		
 		}
 		
