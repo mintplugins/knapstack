@@ -120,6 +120,11 @@ else{
 	//Optional plugins call be included for checking here.
 	
 	/**
+	 * Installation Function
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/install.php' );
+	
+	/**
 	 * Check Knapstack Theme for updates
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/updater/mp-knapstack-update.php' );
