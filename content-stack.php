@@ -13,5 +13,5 @@
 	<div class="entry-content">        
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'mp_knapstack' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+    
 </article><!-- #post-## -->
