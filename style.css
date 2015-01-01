@@ -966,6 +966,7 @@ input[type=checkbox]:checked:before {
 }
 .col2{
 	display:inline-block;	
+	max-width:600px;
 }
 .entry-header a{
 	text-decoration:none;
@@ -1278,6 +1279,21 @@ pre{
 	float:right;
 	display:inline-block;	
 }
+/* Archive Page Template
+----------------------------------------------- */
+.archive .content-area-one{
+	display:inline-block;
+	max-width:800px;	
+	margin-right:10px;
+	float:left;
+}
+.archive .content-area-two{
+	display:inline-block;
+	width:100%;
+	max-width:280px;	
+	float:left;	
+}
+
 /* Styles passed through TinyMCE
 ----------------------------------------------- */
 .margin20{
@@ -1711,4 +1727,9 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	font-size: 2.0rem;
 	font-weight:400;
 	margin-bottom:10px;
+}
+
+/* The box that we use as a placeholder if there in no image on the blog archive */
+.knapstack-no-img-box{
+	background-color:#f8f8f8;	
 }

@@ -57,6 +57,19 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 			'after_title'   => '</div>' 
 		);
 		register_sidebar( $knapstack_sidebar_args );
+		
+		//Setup the sidebar that appears beside blog posts
+		$knapstack_sidebar_args = array(
+			'name'          => __( 'Category Sidebar', 'mp_knapstack' ),
+			'id'            => 'knapstack-category-sidebar',
+			'description'   => __( 'This sidebar appears beside category pages.', 'mp_knapstack' ),
+			'class'         => '',
+			'before_widget' => '<div class="knapstack-widgets-item">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="knapstack-widgets-title">',
+			'after_title'   => '</div>' 
+		);
+		register_sidebar( $knapstack_sidebar_args );
 	
 	}
 endif;

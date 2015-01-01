@@ -8,25 +8,23 @@
  	
     <?php mp_core_invisible_microformats(); ?>
     
-	<?php 
-    //Check if there is a featured image
-    $featured_image = mp_core_the_featured_image( get_the_ID(), 400, 300, '<div class="img"><a href="' . get_permalink() . 
-    '"><img src="', '" width="400px" height="300px" /></a></div>');
-    ?>
-		
 	<?php
     //Check if there is a featured image
-    $featured_image = mp_core_the_featured_image( get_the_ID(), 300, 300, '<a class="archive_feat_image" href="' . get_permalink() . '"><img src="', '" /></a>');
+    $featured_image = mp_core_the_featured_image( get_the_ID(), 300, 300 );
     
-    //Show featured image - if there is one	
-    if ( $featured_image ) { 
-        echo '<div class="col1 feat-img">';
-            echo $featured_image;
-			?>
-            <div style="clear: both;"></div>
-        <?php echo '</div>';
+    //If there is no featured image, use a placeholder
+    if ( empty( $featured_image ) ) { 
+       $featured_image = '<div class="knapstack-no-img-box" style="width:150px; height:150px;"></div>';
     }
+	else{
+		$featured_image = '<a class="archive_feat_image" href="' . get_permalink() . '"><img src="' . $featured_image . '" /></a>';
+	}
     ?>
+    
+    <div class="col1 feat-img">
+		<?php echo $featured_image; ?>
+        <div style="clear: both;"></div>
+    </div>
     
     <div class="col2">
   
