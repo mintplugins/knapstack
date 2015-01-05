@@ -5,6 +5,8 @@
 if ( ! function_exists( 'knapstack_scripts' ) ):
 	function knapstack_scripts() {
 		
+		global $post;
+		
 		//Enqueue Font Awesome CSS
 		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome-4.0.3/css/font-awesome.css' );
 		
@@ -61,6 +63,17 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 			wp_reset_postdata();
 		
 		}
+		
+		//Open Graph Meta Tags 
+		$featured_image = mp_core_the_featured_image( $post->ID );?>
+        
+        <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
+        <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
+		<meta property="og:description" content="<?php echo mp_core_get_excerpt_by_id( $post->ID ); ?>" />
+		<?php  if ( !empty( $featured_image ) ){ ?>	
+            <meta property="og:image" content="<?php echo $featured_image; ?>"/>
+			<meta property="og:image:secure_url" content="<?php echo str_replace( 'http://', 'https://', $featured_image ); ?>" />
+		<?php }
 		
 	}
 endif; //knapstack_scripts
