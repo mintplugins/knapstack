@@ -89,6 +89,16 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+blockquote{
+	margin-bottom: 1.8182em;
+	padding-left: 0.9091em;	
+	border-left: 4px solid rgba(51, 51, 51, 0.7);
+	font-size: 1;
+	font-style: italic;
+	line-height: 1.6667;
+	margin-bottom: 1.6667em;
+	padding-left: 0.7778em;
+}
 a:focus {
 	outline: thin dotted;
 }
