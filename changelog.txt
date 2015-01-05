@@ -9,6 +9,8 @@
 * Added Microformats
 * Fixed bug with footer CSS breaking pages in some situations. Reset post data in enqueuescripts
 * Removed “Edit Page” from bottom of Stack Page Template
+* Added Open Graph sharing meta tags
+* Header is absolute by default instead of fixed
 
 = 1.0.6.9 = September 19, 2014
 * Utility update. No changes.
