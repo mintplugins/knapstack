@@ -69,7 +69,7 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
         
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
         <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
-		<meta property="og:description" content="<?php echo mp_core_get_excerpt_by_id( $post->ID ); ?>" />
+		<meta property="og:description" content="<?php echo htmlspecialchars( mp_core_get_excerpt_by_id( $post->ID ) ); ?>" />
 		<?php  if ( !empty( $featured_image ) ){ ?>	
             <meta property="og:image" content="<?php echo $featured_image; ?>"/>
 			<meta property="og:image:secure_url" content="<?php echo str_replace( 'http://', 'https://', $featured_image ); ?>" />

@@ -2,6 +2,7 @@
 
 = 1.0.7.1 = January 4, 2015
 * Improved BlockQuote Styling
+* Added htmlspecialchars to Open Graph Excerpt. This was breaking layouts if the excerpt had a special character.
 
 = 1.0.7.0 = January 4, 2015
 * Added Sidebar Support
