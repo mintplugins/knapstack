@@ -404,7 +404,7 @@ function mp_knapstack_customizer(){
 		*/
 		array( 'section_id' => 'mp_knapstack_footer_area', 'section_title' => __( 'Footer Area', 'mp_knapstack' ),'section_priority' => 5,
 			'settings' => array(
-				'mp_knapstack_footer_stack' => array(
+				'mp_stacks_footer_stack' => array(
 					'label'      => __( 'Choose a Stack for your footer', 'mp_knapstack' ),
 					'type'       => 'select',
 					'default'    => '',
