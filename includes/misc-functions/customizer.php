@@ -14,9 +14,6 @@ function mp_knapstack_customizer(){
 	
 	$theme = wp_get_theme(); // $theme->Name
 	
-	$link_groups_array = mp_core_get_all_terms_by_tax('mp_link_groups');
-	$link_groups_array['none'] = "None";
-	
 	$mp_stacks_array = mp_core_get_all_terms_by_tax('mp_stacks');
 	$mp_stacks_array['none'] = "None";
 	
@@ -38,7 +35,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Header Background Color Opacity (Enter a value from 0 to 1)', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => '',
-					'priority'   => 1,
+					'priority'   => 2,
 					'element'    => '#page #masthead',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color-opacity'
@@ -47,7 +44,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Header Background Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#939393',
-					'priority'   => 2,
+					'priority'   => 3,
 					'element'    => '#page #masthead',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -56,7 +53,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#FFFFFF',
-					'priority'   => 3,
+					'priority'   => 4,
 					'element'    => '#masthead .menu a, #site-navigation .mp-links li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -65,10 +62,28 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Hover Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#f2f2f2',
-					'priority'   => 4,
+					'priority'   => 5,
 					'element'    => '#masthead .menu a:hover, #masthead .current-menu-item a, #site-navigation .mp-links li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
+				),
+				'mp_knapstack_header_font' => array(
+					'label'      => __( 'Navigation Google Font', 'mp_knapstack' ),
+					'type'       => 'textbox',
+					'default'    => 'Open Sans',
+					'priority'   => 5,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL
+				),
+				'mp_knapstack_header_font_size' => array(
+					'label'      => __( 'Navigation Font Size', 'mp_knapstack' ),
+					'type'       => 'textbox',
+					'default'    => '15',
+					'priority'   => 5,
+					'element'    => '#masthead #site-navigation *',
+					'jquery_function_name' => 'css',
+					'arg' => 'font-size(px)'
 				),
 				'mp_knapstack_header_fixed' => array(
 					'label'      => __( 'Scroll Header?', 'mp_knapstack' ),
@@ -78,7 +93,7 @@ function mp_knapstack_customizer(){
 						'absolute'	=> __('Scroll', 'mp_knapstack'),
 					),
 					'default'    => '',
-					'priority'   => 5,
+					'priority'   => 6,
 					'element'    => '#page .site-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'position'
@@ -87,20 +102,10 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Bump site below header?', 'mp_knapstack' ),
 					'type'       => 'checkbox',
 					'default'    => 'true',
-					'priority'   => 6,
-					'element'    => NULL,
-					'jquery_function_name' => NULL,
-					'arg' => NULL
-				),
-				'mp_knapstack_header_link_group' => array(
-					'label'      => __( 'Header Link Group', 'mp_knapstack' ),
-					'type'       => 'select',
-					'default'    => '',
 					'priority'   => 7,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
-					'arg' => NULL,
-					'choices' => $link_groups_array
+					'arg' => NULL
 				),
 			)
 		),
@@ -323,85 +328,6 @@ function mp_knapstack_customizer(){
 				),
 			)
 		),
-		
-		/*
-		array( 'section_id' => 'mp_knapstack_comment_area', 'section_title' => __( 'Comment Area', 'mp_knapstack' ),'section_priority' => 5,
-			'settings' => array(
-				'mp_knapstack_comment_area_bg_color' => array(
-					'label'      => __( 'Comment Area Background Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#6d6d6d',
-					'priority'   => 10,
-					'element'    => '#comments-container, #disqus_thread',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_comment_area_text_color' => array(
-					'label'      => __( 'Comment Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 10,
-					'element'    => '#comments',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_comment_area_link_color' => array(
-					'label'      => __( 'Comment Link Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#eaeaea',
-					'priority'   => 10,
-					'element'    => '#comments a',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_comment_area_link_hover_color' => array(
-					'label'      => __( 'Comment Link Hover Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#a5a5a5',
-					'priority'   => 10,
-					'element'    => '#comments a:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_comment_area_button_submit' => array(
-					'label'      => __( 'Button Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#a0a0a0',
-					'priority'   => 14,
-					'element'    => '#comments input[type=submit], #comments .button',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_comment_area_button_text' => array(
-					'label'      => __( 'Button Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 15,
-					'element'    => '#comments input[type=submit], #comments .button',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-				'mp_knapstack_comment_button_hover' => array(
-					'label'      => __( 'Mouse-Over Button Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#ffffff',
-					'priority'   => 16,
-					'element'    => '#comments input[type=submit]:hover, #comments .button:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'background-color'
-				),
-				'mp_knapstack_comment_area_button_text_hover' => array(
-					'label'      => __( 'Mouse-Over Button Text Color', 'mp_knapstack' ),
-					'type'       => 'color',
-					'default'    => '#a0a0a0',
-					'priority'   => 17,
-					'element'    => '#comments input[type=submit]:hover, #comments .button:hover',
-					'jquery_function_name' => 'css',
-					'arg' => 'color'
-				),
-			)
-		),
-		*/
 		array( 'section_id' => 'mp_knapstack_footer_area', 'section_title' => __( 'Footer Area', 'mp_knapstack' ),'section_priority' => 5,
 			'settings' => array(
 				'mp_stacks_footer_stack' => array(
@@ -497,15 +423,146 @@ function mp_knapstack_customizer(){
 	new MP_CORE_Customizer($args);
 	
 }
-
 add_action ('init', 'mp_knapstack_customizer');
 
 /**
- * Set Google Font
+ * Remove the MP Core Logo so we can position under the header controls in the customizer.
+ *
+ * @since    1.0.0
+ * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
+ * @see      has_filter()
+ * @see      apply_filters() 
+ * @see      MP_CORE_Customizer
+ * @return   void
+ */
+function mp_knapstack_remove_mp_core_logo_customizer(){
+	remove_action ('init', 'mp_core_logo_customizer');
+}
+add_action( 'after_setup_theme', 'mp_knapstack_remove_mp_core_logo_customizer' );
+
+/**
+ * Re-Add the MP Core Logo so we can position under the header controls in the customizer.
+ *
+ * @since    1.0.0
+ * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
+ * @see      has_filter()
+ * @see      apply_filters() 
+ * @see      MP_CORE_Customizer
+ * @return   void
+ */
+function mp_knapstack_logo_customizer( $args ){
+	
+	$section_counter = 0;
+		
+	//Loop through each customizer arg
+	foreach( $args as $section ){
+		
+		//If we are at the mp_knapstack_header_navigation
+		if ( $section['section_id'] == 'mp_knapstack_header_navigation' ){
+			
+			//Add the option for the header link group
+			$args[$section_counter]['settings']['mp_core_logo'] = array(
+					'label'      => __( 'Logo', 'mp_core' ),
+					'type'       => 'image',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#mp-core-logo',
+					'jquery_function_name' => 'attr',
+					'arg' => 'src'
+			);
+			$args[$section_counter]['settings']['mp_core_logo_width'] = array(
+					'label'      => __( 'Logo Width (Pixels)', 'mp_core' ),
+					'type'       => 'textbox',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#mp-core-logo',
+					'jquery_function_name' => 'attr',
+					'arg' => 'width'
+			);
+			$args[$section_counter]['settings']['mp_core_logo_height'] = array(
+					'label'      => __( 'Logo Height (Pixels)', 'mp_core' ),
+					'type'       => 'textbox',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#mp-core-logo',
+					'jquery_function_name' => 'attr',
+					'arg' => 'height'
+			);
+			
+			break;
+			
+		}
+		
+		$section_counter = $section_counter + 1;
+	}
+	
+	return $args;
+				
+}
+add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_logo_customizer' );
+
+/**
+ * Add the featured links group only if the mp_links function is active
+ *
+ * @since    1.0.0
+ * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
+ * @see      has_filter()
+ * @see      apply_filters() 
+ * @see      MP_CORE_Customizer
+ * @return   void
+ */
+function mp_knapstack_header_link_group( $args ){
+	
+	if ( !function_exists( 'mp_links_textdomain' ) ){
+		
+		return $args;	
+	}
+	
+	$link_groups_array = mp_core_get_all_terms_by_tax('mp_link_groups');
+	$link_groups_array['none'] = "None";
+	
+	$section_counter = 0;
+	
+	//Loop through each customizer arg
+	foreach( $args as $section ){
+		
+		//If we are at the mp_knapstack_header_navigation
+		if ( $section['section_id'] == 'mp_knapstack_header_navigation' ){
+			
+			//Add the option for the header link group
+			$args[$section_counter]['settings']['mp_knapstack_header_link_group'] = array(
+				'label'      => __( 'Header Link Group', 'mp_knapstack' ),
+				'type'       => 'select',
+				'default'    => '',
+				'priority'   => 7,
+				'element'    => NULL,
+				'jquery_function_name' => NULL,
+				'arg' => NULL,
+				'choices' => $link_groups_array
+			);
+			
+			break;
+			
+		}
+		
+		$section_counter = $section_counter + 1;
+	}
+	
+	return $args;
+				
+}
+add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_header_link_group' );
+
+/**
+ * Set Google Fonts
  *
  */
 function mp_knapstack_font(){ 
 
+	$font_family = get_theme_mod( 'mp_knapstack_header_font');
+
+    new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'Knapstack Header Font' );
+	
 	$font_family = get_theme_mod( 'mp_knapstack_font_family');
 
     new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'MP Stacks Font 1' );
