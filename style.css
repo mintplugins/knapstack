@@ -317,6 +317,9 @@ em{
 	position:relative;
 	z-index:1000;
 }
+#masthead #site-navigation *{
+	font-family: 'Knapstack Header Font';	
+}
 
 
 /* Header Menu
