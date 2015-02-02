@@ -1,11 +1,14 @@
 == Changelog ==
 
-= 1.0.7.1 = January X, 2015
+= 1.0.7.1 = February 1, 2015
 * Improved BlockQuote Styling
 * Added htmlspecialchars to Open Graph Excerpt. This was breaking layouts if the excerpt had a special character.
 * Improved Calendar Widget Styling
 * Open graph excerpts have html tags stripped
 * Footer Stack Theme Mod changed from mp_knapstack_footer_stack to mp_stacks_footer_stack with backwards compatibility for previously saved footer Theme Mods.
+* WordWrap Blog titles if the title is too long
+* Moved Logo in Customizer from its own menu to be under the “Header” menu now.
+* Added Text Size and Font for Navigation to Customizer.
 
 = 1.0.7.0 = January 4, 2015
 * Added Sidebar Support
