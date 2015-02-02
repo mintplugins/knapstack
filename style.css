@@ -566,6 +566,10 @@ em{
 	margin-right:20px;
 	white-space: nowrap;
 }
+#main-container > .page-header > .page-header-inner .page-info{
+	white-space:normal;
+	width:100%;
+}
 #main-container > .page-header > .page-header-inner .feat-img img{
 	width:150px;
 	height:150px;
