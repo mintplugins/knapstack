@@ -26,6 +26,9 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 		
 		//Add Post Formats to Downloads
 		add_post_type_support( 'download', 'post-formats' );
+		
+		//Declare support for WooCommerce
+		add_theme_support( 'woocommerce' );
 						
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
