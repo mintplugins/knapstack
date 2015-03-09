@@ -140,6 +140,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/theme-setup.php' );
 	
 	/**
+	 * Ajax Callbacks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/ajax-callbacks.php' );
+	
+	/**
 	 * Header Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/page-header-hooks.php' );

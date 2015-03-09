@@ -6,7 +6,17 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 	function knapstack_scripts() {
 		
 		global $post;
-		
+			
+		//JS for just the administrator to see on the front end
+		if ( current_user_can( 'manage_options' ) ) {
+			wp_enqueue_script( 'knapstack-front-end-admin-js', get_template_directory_uri() . '/js/admin-front-end.js', array( 'jquery' ) );
+			wp_localize_script( 'knapstack-front-end-admin-js', 'mp_knapstack_vars', 
+				array(
+					'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				)
+			);
+		}
+				
 		//Enqueue Font Awesome CSS
 		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome-4.0.3/css/font-awesome.css' );
 		
