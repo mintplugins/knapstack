@@ -215,7 +215,7 @@ function mp_knapstack_customizer(){
 		array( 'section_id' => 'mp_knapstack_form_elements', 'section_title' => __( 'Forms', 'mp_knapstack' ),'section_priority' => 6,
 			'settings' => array(
 				'mp_knapstack_form_input_text_color' => array(
-					'label'      => __( 'Text-Field\'s Text Color', 'mp_knapstack' ),
+					'label'      => __( 'Form-Field Text Colors', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#333333',
 					'priority'   => 1,
@@ -223,8 +223,35 @@ function mp_knapstack_customizer(){
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
+				'mp_knapstack_form_input_text_color' => array(
+					'label'      => __( 'Form-Field Text Colors', 'mp_knapstack' ),
+					'type'       => 'color',
+					'default'    => '#333333',
+					'priority'   => 1,
+					'element'    => 'input, textarea, select',
+					'jquery_function_name' => 'css',
+					'arg' => 'color'
+				),
+				'mp_knapstack_form_input_border_radius' => array(
+					'label'      => __( 'Form-Field Corner Radius', 'mp_knapstack' ),
+					'type'       => 'textbox',
+					'default'    => '3',
+					'priority'   => 1,
+					'element'    => 'input, textarea',
+					'jquery_function_name' => 'css',
+					'arg' => 'border-radius'
+				),
+				'mp_knapstack_form_input_border_thickness' => array(
+					'label'      => __( 'Form-Field Border Thickness', 'mp_knapstack' ),
+					'type'       => 'textbox',
+					'default'    => '2',
+					'priority'   => 1,
+					'element'    => 'input, textarea',
+					'jquery_function_name' => 'css',
+					'arg' => 'border-width'
+				),
 				'mp_knapstack_form_input_inactive_color' => array(
-					'label'      => __( 'Inactive Text-Field\'s Border Color', 'mp_knapstack' ),
+					'label'      => __( 'Inactive Form-Field\'s Border Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
 					'priority'   => 1,
@@ -233,7 +260,7 @@ function mp_knapstack_customizer(){
 					'arg' => array('border-color', 'color')
 				),
 				'mp_knapstack_form_input_active_color' => array(
-					'label'      => __( 'Active Text-Field\'s Border Color', 'mp_knapstack' ),
+					'label'      => __( 'Active Form-Field\'s Border Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#919191',
 					'priority'   => 1,
