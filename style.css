@@ -74,6 +74,12 @@ ol, ul {
 	list-style: inside disc;
 	margin: 0 0 1.5rem 0;
 }
+ol{
+	list-style:decimal;	
+}
+li{
+	margin-bottom:20px;	
+}
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border:none;
 }
@@ -309,6 +315,9 @@ em{
 	margin-top:9px;	
 	font-size: 13px; 
 	font-size: 1.3rem;
+}
+#site-navigation li{
+	margin-bottom:0px;	
 }
 #masthead .nav-inner{
 	float:right;
@@ -719,7 +728,7 @@ em{
 
 /* Form Elements
 ----------------------------------------------- */
-input:not[type=checkbox]:not[type=radio], 
+input, 
 input[type=search], 
 textarea{
 	border: 2px solid #bdc3c7;
@@ -743,8 +752,7 @@ textarea{
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 }
-input:focus:not[type=checkbox]:not[type=radio], input[type=search]:focus, textarea:focus{
-	-webkit-appearance: none;
+input:focus, input[type=search]:focus, textarea:focus{
 	border: 2px solid #000;
 	outline: none;
 	box-sizing:border-box;
@@ -835,7 +843,7 @@ input[type=checkbox]{
 input[type=checkbox]:checked:before {
 	font-family: 'fontawesome';
 	content: "\f00c";
-	margin: 7px 0px 0px -2px;
+	margin: 7px 0px 0px -11px;
 	color: #000000;
 	display: inline-block;
 }
@@ -1261,6 +1269,7 @@ pre{
 	background-color: rgb(245, 245, 245);
 	padding: 20px;
 	margin-bottom:20px;	
+	font-size:80%;
 }
 /* Full Width Page Template
 ----------------------------------------------- */
@@ -1697,6 +1706,10 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 .edd-free-download-btn{
 	margin-right:5px;	
 }
+#edd_show_discount,
+#edd-discount-code-wrap{
+	margin-bottom:0px;	
+}
 
 .single .mp-ecommerce-preview{
 	max-width:600px;
@@ -1758,4 +1771,15 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 /* The box that we use as a placeholder if there in no image on the blog archive */
 .knapstack-no-img-box{
 	background-color:#f8f8f8;	
+}
+
+/* Knapstack Notice Error Message */
+.knapstack-notice{
+	position:absolute;
+	top:0;
+	left:0;
+	padding:25px;
+	background-color:#FFB3B0;
+	z-index:99999999999999;
+	width:100%;	
 }
