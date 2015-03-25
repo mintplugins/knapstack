@@ -56,3 +56,19 @@ function mp_knapstack_show_related_downloads( $tags ){
 	}
 }
 add_action('mp_knapstack_after_single_download', 'mp_knapstack_show_related_downloads');
+
+//Filter auto embedded video posts in the post_content to be sized correctly to 16x9 on all devices
+function mp_knapstack_oembed_in_posts_filter( $cache, $url, $attr, $post_id ){
+		
+	//If this is a youtube video
+	if ( strpos( $url, 'youtube' ) !== false ){
+		return mp_core_oembed_get( $url );
+	}
+	//If this is a vimeo video
+	else if( strpos( $url, 'vimeo' ) !== false ){
+		return mp_core_oembed_get( $url );
+	}
+		
+	return $cache;
+}
+add_filter( 'embed_oembed_html', 'mp_knapstack_oembed_in_posts_filter', 10, 4 );
