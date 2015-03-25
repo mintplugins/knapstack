@@ -13,6 +13,7 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 			wp_localize_script( 'knapstack-front-end-admin-js', 'mp_knapstack_vars', 
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
+					'page_template_changing_message' => __( 'Page template updating...', 'mp_knapstack' )
 				)
 			);
 		}

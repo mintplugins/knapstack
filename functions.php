@@ -210,6 +210,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/edd-fes-hooks.php' );
 	
 	/**
+	 * Content Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/content-hooks.php' );
+	
+	/**
 	 * Stack Page template metabox
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/custom-width-page-template-metabox.php' );
