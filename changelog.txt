@@ -1,5 +1,18 @@
 == Changelog ==
 
+= 1.0.7.2 = March 25, 2015
+* Style fix for checkboxes and radio on focus in webkit browsers
+* Added notice if using full-width template w/o stack (and logged in as admin).
+* Declared Theme Support for WooCommerce
+* Increased form control in the customizer
+* Made ol’s use numbers instead of dots.
+* Added margin below li elements (20px)
+* Fixed bug with disappearing checkboxes and radio inputs
+* Added Admin Notice on pages with the "100% Width - MP Stacks" template but no Stack on the page. This notice allows for easy changing to a better template through ajax.
+* Changed names of Page Templates using Sub-Header to "Width - With Sub-Header" instead of "Show Title".
+* Made auto embedded videos use the mp_core_oembed function which allows them to resize properly for mobile devices.
+* Improves Responsive layout for pages with the sidebar
+
 = 1.0.7.1 = February 1, 2015
 * Improved BlockQuote Styling
 * Added htmlspecialchars to Open Graph Excerpt. This was breaking layouts if the excerpt had a special character.
