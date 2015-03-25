@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Show Page Title - 1100px wide
+ * Template Name: 1100px wide with Sub-Header
  */
 
 get_header(); ?>
