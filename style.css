@@ -78,7 +78,7 @@ ol{
 	list-style:decimal;	
 }
 li{
-	margin-bottom:20px;	
+	margin-bottom: 1rem;	
 }
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border:none;
@@ -129,6 +129,9 @@ p{
 }
 .entry-content img, .page-content img, .mceContentBody img  {
 	margin: 0 0 1.5rem 0;
+}
+.entry-content iframe{
+	max-width:100%;	
 }
 .alignleft,
 img.alignleft {
@@ -1280,8 +1283,8 @@ pre{
 .page-template-templatespage-title-1100px-php .content-area-one{
 	width:100%;
 	max-width:1100px;
-	float:left;
-	display:inline-block;	
+	display:inline-block;
+	vertical-align: top;	
 }
 .page-template-templatespage-title-1100px-php .entry-content{
 	width:100%;
@@ -1298,15 +1301,50 @@ pre{
 .single-format-standard .content-area-one{
 	width:100%;
 	max-width:600px;
-	float:left;
 	display:inline-block;	
+	vertical-align: top;
+	margin-right: 65px;
 }
 .page-template-templatespage-title-600px-php .content-area-two,
 .single-format-standard .content-area-two{
 	width:100%;
 	max-width:390px;
-	float:right;
-	display:inline-block;	
+	display:inline-block;
+	vertical-align: top;	
+}
+@media screen and (max-width: 1100px) {
+	.page-template-templatespage-title-600px-php .content-area-one,
+	.single-format-standard .content-area-one{
+		
+		width:60%;
+		margin-right:5%;
+			
+	}
+	.page-template-templatespage-title-600px-php .content-area-two,
+	.single-format-standard .content-area-two{
+		
+		width:30%;
+			
+	}
+}
+@media screen and (max-width: 870px) {
+	.page-template-templatespage-title-600px-php .content-area-one,
+	.single-format-standard .content-area-one,
+	.page-template-templatespage-title-600px-php .content-area-one,
+	.single-format-standard .content-area-one .entry-content{
+		
+		width:100%;
+		max-width:100%;
+		margin-right:0;
+			
+	}
+	.page-template-templatespage-title-600px-php .content-area-two,
+	.single-format-standard .content-area-two{
+		
+		width:100%;
+		max-width:100%;
+			
+	}
 }
 /* Archive Page Template
 ----------------------------------------------- */
@@ -1314,13 +1352,27 @@ pre{
 	display:inline-block;
 	max-width:800px;	
 	margin-right:10px;
-	float:left;
+	vertical-align: top;
 }
 .archive .content-area-two{
 	display:inline-block;
 	width:100%;
-	max-width:280px;	
-	float:left;	
+	max-width:275px;
+	vertical-align: top;	
+}
+@media screen and (max-width: 1114px) {
+	.archive .content-area-one{
+		display:inline-block;
+		max-width:100%;	
+		margin-right:0px;
+		vertical-align: top;
+	}
+	.archive .content-area-two{
+		display:inline-block;
+		width:100%;
+		max-width:100%;
+		vertical-align: top;	
+	}
 }
 
 /* Styles passed through TinyMCE
@@ -1782,4 +1834,11 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 	background-color:#FFB3B0;
 	z-index:99999999999999;
 	width:100%;	
+}
+#mp_knapstack_pagetemplate_chooser{
+	margin-right:10px;	
+}
+#mp_knapstack_pagetemplate_chooser_container{
+	margin-top:20px;	
+	margin-bottom:20px;	
 }
