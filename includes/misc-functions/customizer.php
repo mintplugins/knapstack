@@ -101,7 +101,7 @@ function mp_knapstack_customizer(){
 				'mp_knapstack_header_bump_site_down' => array(
 					'label'      => __( 'Bump site below header?', 'mp_knapstack' ),
 					'type'       => 'checkbox',
-					'default'    => 'true',
+					'default'    => '',
 					'priority'   => 7,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
@@ -352,6 +352,19 @@ function mp_knapstack_customizer(){
 					'element'    => '#page #main-container > .page-header input[type=submit]:hover, #page #main-container > .page-header .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
+				),
+				'mp_knapstack_sub_header_positioning' => array(
+					'label'      => __( 'Sub-Header Layout', 'mp_knapstack' ),
+					'type'       => 'select',
+					'default'    => 'left',
+					'priority'   => 18,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL,
+					'choices' => array(
+						'left'  => __('Featured Image on Left - Title to the right', 'mp_knapstack'),
+						'centered'  => __('Centered with Featured Image above - Title below', 'mp_knapstack'),
+					),
 				),
 			)
 		),
