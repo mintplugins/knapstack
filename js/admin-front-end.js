@@ -9,6 +9,7 @@ jQuery(document).ready(function($){
 		// Form the array to pass to the knapstack_get_page_templates php function
 		var postData = {
 			action: 'mp_knapstack_get_page_templates',
+			post_type: $('#mp_knapstack_pagetemplate_choose_button').attr( 'post-type' ),
 		};
 		
 		//Load in the names of the page templates
@@ -36,6 +37,7 @@ jQuery(document).ready(function($){
 			var postData = {
 				action: 'mp_knapstack_set_page_template',
 				post_id: $(this).attr( 'post-id' ),
+				post_type: $(this).attr( 'post-type' ),
 				nonce: $(this).attr( 'nonce' ),
 				template_filename: $('#mp_knapstack_pagetemplate_chooser option:selected').val(),
 			};
