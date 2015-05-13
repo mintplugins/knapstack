@@ -104,12 +104,12 @@ if ( !function_exists('mp_core_textdomain') || !function_exists('mp_stacks_textd
 	/**
 	 * Check if mp_stacks is installed
 	 */
-	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-stacks.php' );
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-stacks-check.php' );
 	
 	/**
 	 * Check if mp_menu is installed
 	 */
-	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-menu.php' );
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/plugin-checker/included-plugins/mp-menu-check.php' );
 	
 }
 /**
