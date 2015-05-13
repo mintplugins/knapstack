@@ -27,6 +27,9 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 		//Add Post Formats to Downloads
 		add_post_type_support( 'download', 'post-formats' );
 		
+		//Add Post Formats to Woo Products
+		add_post_type_support( 'product', 'post-formats' );
+		
 		//Declare support for WooCommerce
 		add_theme_support( 'woocommerce' );
 						
@@ -108,8 +111,9 @@ function mp_knapstack_rename_post_formats( $safe_text ) {
     return $safe_text;
 }
 add_filter( 'esc_html', 'mp_knapstack_rename_post_formats' );
+add_filter( 'mp_knapstack_rename_gallery', 'mp_knapstack_rename_post_formats' );
 
-//rename Aside in posts list table
+//Rename gallery in posts list table
 function mp_knapstack_live_rename_formats() { 
     global $current_screen;
 
