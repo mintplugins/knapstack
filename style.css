@@ -76,6 +76,7 @@ ol, ul {
 }
 ol{
 	list-style:decimal;	
+	list-style-position: inside;
 }
 li{
 	margin-bottom: 1rem;	
@@ -1350,7 +1351,7 @@ pre{
 ----------------------------------------------- */
 .archive .content-area-one{
 	display:inline-block;
-	max-width:800px;	
+	max-width:770px;	
 	margin-right:10px;
 	vertical-align: top;
 }
@@ -1375,6 +1376,10 @@ pre{
 	}
 }
 
+/* Set the max width of anything inside a normal text area to max out at 100% of the available area.*/
+.content-area-one *{
+	max-width:100%;	
+}
 /* Styles passed through TinyMCE
 ----------------------------------------------- */
 .margin20{
@@ -1841,4 +1846,16 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 #mp_knapstack_pagetemplate_chooser_container{
 	margin-top:20px;	
 	margin-bottom:20px;	
+}
+
+/* WooCommerce Fixes */
+.woocommerce img, .woocommerce-page img {
+  max-width: inherit;
+}
+#review_form #comment{
+	display:block;
+}
+.woocommerce .star-rating,
+.woocommerce .star-rating *:before{
+	font-family:star;	
 }
