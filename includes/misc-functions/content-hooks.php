@@ -11,7 +11,7 @@ function mp_knapstack_no_stack_change_template_option( $post_id, $post_content )
 		
 		//If there isn't a stack on this page, the user might be confused as to why it's 100% wide.
 		if ( !has_shortcode( $post_content, 'mp_stack' ) ) { 
-						
+			
 			$show_page_template_notice = mp_core_get_post_meta( $post_id, 'knapstack_page_template_notice', 'show' );
 							
 			//If the user hasn't dismissed this notice (through ajax)
@@ -22,7 +22,7 @@ function mp_knapstack_no_stack_change_template_option( $post_id, $post_content )
 					echo '<div id="mp_knapstack_pagetemplate_chooser_container">';
 						echo '<select id="mp_knapstack_pagetemplate_chooser">';						
 						echo '</select>';
-						echo '<div id="mp_knapstack_pagetemplate_choose_button" post-id="' . $post_id . '" nonce="' . wp_create_nonce( 'mp-knapstack-change-template-' . $post_id ) . '" class="button">' . __( 'Use Page-Template', 'mp_knapstack' ) . '</div>';
+						echo '<div id="mp_knapstack_pagetemplate_choose_button" post-type="' . get_post_type( $post_id ) . '" post-id="' . $post_id . '" nonce="' . wp_create_nonce( 'mp-knapstack-change-template-' . $post_id ) . '" class="button">' . __( 'Use Page-Template', 'mp_knapstack' ) . '</div>';
 					echo '</div> ';
 					echo '<div class="button knapstack-notice-hide">';
 						echo __( 'Hide Notice', 'mp_knapstack' );
@@ -32,7 +32,7 @@ function mp_knapstack_no_stack_change_template_option( $post_id, $post_content )
 					echo '</div>';
 				echo '</div>';
 			}
-		
+			
 		}
 		
 	}
