@@ -1,0 +1,17 @@
+#main-container > .page-header > .page-header-inner .page-info,
+#main-container > .page-header > .page-header-inner .feat-img,
+#main-container > .page-header > .page-header-inner .page-header-right-column{
+	display:block;
+	width:100%;
+	margin-right:0px;
+	text-align:center;
+}
+#main-container > .page-header > .page-header-inner .feat-img img{
+	margin-right:0px;
+}
+#main-container > .page-header > .page-header-inner .page-info{
+	white-space:normal;
+}
+.entry-content {
+	text-align:left;
+}
