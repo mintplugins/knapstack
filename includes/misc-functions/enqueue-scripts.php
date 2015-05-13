@@ -60,7 +60,14 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		//Responsive CSS - load if the user hasn't disabled it
 		$responsive_check = get_theme_mod('mp_knapstack_responsive_off');
 		if ( empty( $responsive_check ) ){
-			wp_enqueue_style( 'mt_responsive', get_template_directory_uri() . '/css/responsive.css' );
+			wp_enqueue_style( 'mp_knapstack_responsive', get_template_directory_uri() . '/css/responsive.css' );
+		}
+		
+		//Check if the user has chosen to have a centered sub header
+		$sub_header_positioning = get_theme_mod('mp_knapstack_sub_header_positioning');
+		
+		if ( $sub_header_positioning == 'centered' ){
+			wp_enqueue_style( 'mp_knapstack_subheader_centered', get_template_directory_uri() . '/css/centered-sub-header.css' );	
 		}
 		
 		$footer_stack_id = get_theme_mod('mp_stacks_footer_stack'); 
@@ -89,7 +96,7 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		}
 		
 		//Open Graph Meta Tags 
-		$featured_image = mp_core_the_featured_image( $post->ID );?>
+		$featured_image = mp_core_the_featured_image( $post->ID, 99999 );?>
         
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
         <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
