@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.0.7.4 = September 25, 2015
+* Inlucde new header hooks file.
+* Added option to use Stack as Header.
+* Changed hook for "mp_knapstack_deregister_bbpress_styles" from wp_print_styles to wp_enqueue_scripts.
+* Footer Stack functions moved to their own file.
+* Test for $current_screen->id before using it.
+* Make sure the attr post-type exists for mp_knapstack_pagetemplate_choose_button.
+* Class for .header-inner changed to #knapstack-theme-header
 
 = 1.0.7.3 = May 13, 2015
 * Added centered sub-header options to the Theme Customizer options for single page-headers
