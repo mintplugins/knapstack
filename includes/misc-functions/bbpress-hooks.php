@@ -24,7 +24,7 @@ function mp_knapstack_deregister_bbpress_styles() {
 	wp_enqueue_style( 'knapstack_bbpress_css', get_template_directory_uri() . '/css/bbpress.css' );
 	
 }
-add_action( 'wp_print_styles', 'mp_knapstack_deregister_bbpress_styles', 15 );
+add_action( 'wp_enqueue_scripts', 'mp_knapstack_deregister_bbpress_styles', 15 );
 
 /**
  * Functions used to remove default bbpress stuff we dont really need
