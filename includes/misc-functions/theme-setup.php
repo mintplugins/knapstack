@@ -117,7 +117,7 @@ add_filter( 'mp_knapstack_rename_gallery', 'mp_knapstack_rename_post_formats' );
 function mp_knapstack_live_rename_formats() { 
     global $current_screen;
 
-    if ( $current_screen->id == 'edit-post' ) { ?>
+    if ( isset( $current_screen->id ) && $current_screen->id == 'edit-post' ) { ?>
         <script type="text/javascript">
         jQuery('document').ready(function() {
 
