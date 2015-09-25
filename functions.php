@@ -160,6 +160,11 @@ else{
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/single-hooks.php' );
 	
 	/**
+	 * Header Hooks
+	 */
+	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/header-hooks.php' );
+	
+	/**
 	 * Footer Hooks
 	 */
 	require( MP_KNAPSTACK_THEME_DIR . '/includes/misc-functions/footer-hooks.php' );
