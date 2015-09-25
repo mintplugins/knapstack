@@ -1,7 +1,9 @@
 /**
  * Admin End JS for the Knapstack Theme
- */
+ */ 
 jQuery(document).ready(function($){
+		 
+	//return;
 	
 	//If the template chooser is on the page
 	if ( $( '#mp_knapstack_pagetemplate_chooser' ) ){
@@ -9,7 +11,7 @@ jQuery(document).ready(function($){
 		// Form the array to pass to the knapstack_get_page_templates php function
 		var postData = {
 			action: 'mp_knapstack_get_page_templates',
-			post_type: $('#mp_knapstack_pagetemplate_choose_button').attr( 'post-type' ),
+			post_type: $('#mp_knapstack_pagetemplate_choose_button').attr( 'post-type' ) ? $('#mp_knapstack_pagetemplate_choose_button').attr( 'post-type' ) : 0,
 		};
 		
 		//Load in the names of the page templates
