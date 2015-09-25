@@ -14,8 +14,12 @@ function mp_knapstack_customizer(){
 	
 	$theme = wp_get_theme(); // $theme->Name
 	
-	$mp_stacks_array = mp_core_get_all_terms_by_tax('mp_stacks');
 	$mp_stacks_array['none'] = "None";
+	
+	//Loop through each Stack and add it to the array for selection
+	foreach( mp_core_get_all_terms_by_tax('mp_stacks') as $stack_id => $stack_name ){
+		$mp_stacks_array[$stack_id] = $stack_name;
+	}	
 	
 	$args = array(
 		array( 'section_id' => 'mp_knapstack_responsive', 'section_title' => __( 'Responsive Settings', 'mp_knapstack' ),'section_priority' => 100,
@@ -24,19 +28,19 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Turn Responsive OFF?', 'mp_knapstack' ),
 					'type'       => 'checkbox',
 					'default'    => '',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'arg' => 'responsive'
 				),
 			)
 		),
-		array( 'section_id' => 'mp_knapstack_header_navigation', 'section_title' => __( 'Site-Header Area', 'mp_knapstack' ),'section_priority' => 2,
+		array( 'section_id' => 'mp_knapstack_header_navigation', 'section_title' => __( 'Header Area', 'mp_knapstack' ),'section_priority' => 2,
 			'settings' => array(
 				'mp_knapstack_header_bg_color_opacity' => array(
 					'label'      => __( 'Header Background Color Opacity (Enter a value from 0 to 1)', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => '',
-					'priority'   => 2,
-					'element'    => '#page #masthead',
+					'priority'   => 1,
+					'element'    => '#page .knapstack-theme-header-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color-opacity'
 				),
@@ -44,8 +48,8 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Header Background Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#939393',
-					'priority'   => 3,
-					'element'    => '#page #masthead',
+					'priority'   => 1,
+					'element'    => '#page .knapstack-theme-header-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -53,8 +57,8 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#FFFFFF',
-					'priority'   => 4,
-					'element'    => '#masthead .menu a, #site-navigation .mp-links li a',
+					'priority'   => 1,
+					'element'    => '#knapstack-theme-header .menu a, #site-navigation .mp-links li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -62,8 +66,8 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Hover Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#f2f2f2',
-					'priority'   => 5,
-					'element'    => '#masthead .menu a:hover, #masthead .current-menu-item a, #site-navigation .mp-links li a:hover',
+					'priority'   => 1,
+					'element'    => '#knapstack-theme-header .menu a:hover, #knapstack-theme-header .current-menu-item a, #site-navigation .mp-links li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -71,7 +75,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Google Font', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => 'Open Sans',
-					'priority'   => 5,
+					'priority'   => 1,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL
@@ -80,8 +84,8 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Navigation Font Size', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => '15',
-					'priority'   => 5,
-					'element'    => '#masthead #site-navigation *',
+					'priority'   => 1,
+					'element'    => '#knapstack-theme-header #site-navigation *',
 					'jquery_function_name' => 'css',
 					'arg' => 'font-size(px)'
 				),
@@ -93,7 +97,7 @@ function mp_knapstack_customizer(){
 						'absolute'	=> __('Scroll', 'mp_knapstack'),
 					),
 					'default'    => '',
-					'priority'   => 6,
+					'priority'   => 1,
 					'element'    => '#page .site-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'position'
@@ -102,10 +106,20 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Bump site below header?', 'mp_knapstack' ),
 					'type'       => 'checkbox',
 					'default'    => '',
-					'priority'   => 7,
+					'priority'   => 1,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL
+				),
+				'mp_stacks_header_stack' => array(
+					'label'      => __( 'Optional: You can choose a "Stack" to display as your Header. NOTE: This will override the Logo, Background, and Nagivation Options above as those will be controlled through your Chosen Stack.', 'mp_knapstack' ),
+					'type'       => 'select',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL,
+					'choices' => $mp_stacks_array
 				),
 			)
 		),
@@ -115,7 +129,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Main Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#4c4c4c',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => array( 'body, .download-archive .archive-download-article .entry-header a' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color' )
@@ -124,7 +138,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Sub-Text Color (Slightly Faded)', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#777777',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => array( '#content .sub-text, #content .sub-text a' ),
 					'jquery_function_name' => 'css',
 					'arg' => array( 'color' )
@@ -133,7 +147,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Link Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#3f3f3f',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => 'a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -142,7 +156,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Link Hover Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#0f0000',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => 'a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -151,7 +165,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Google Font Family:', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => 'Open Sans',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL,
@@ -160,7 +174,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Button Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
-					'priority'   => 14,
+					//'priority'   => 14,
 					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -169,7 +183,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Button Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 15,
+					//'priority'   => 15,
 					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a, #posts-navigation .page-numbers li span',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -178,7 +192,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Mouse-Over Button Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#5e5e5e',
-					'priority'   => 16,
+					//'priority'   => 16,
 					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li a:hover, #posts-navigation .page-numbers li span',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -187,7 +201,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Mouse-Over Button Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 17,
+					//'priority'   => 17,
 					'element'    => 'input[type=submit]:hover, .button:hover, #posts-navigation .page-numbers li a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -196,7 +210,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Border Color (Wherever borders are used)', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#d8d8d8',
-					'priority'   => 18,
+					//'priority'   => 18,
 					'element'    => 'table[id^="edd"] tbody tr td',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
@@ -205,7 +219,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Secondary Background Color (Form/Table Backgrounds)', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
-					'priority'   => 19,
+					//'priority'   => 19,
 					'element'    => '.download-archive .archive-download-article .entry-header, table, th, td, form[id^="edd"] fieldset, form[class^="fes"] fieldset, #bbpress-forums .wp-editor-container, #edd-login-account-wrap, #edd_checkout_user_info, #edd_register_account_fields',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -218,7 +232,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Form-Field Text Colors', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#333333',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => 'input, textarea, select',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -227,7 +241,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Form-Field Text Colors', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#333333',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => 'input, textarea, select',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -236,7 +250,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Form-Field Corner Radius', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => '3',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => 'input, textarea',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-radius'
@@ -245,7 +259,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Form-Field Border Thickness', 'mp_knapstack' ),
 					'type'       => 'textbox',
 					'default'    => '2',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => 'input, textarea',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-width'
@@ -254,7 +268,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Inactive Form-Field\'s Border Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#e2e2e2',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => array('input, textarea', '#searchform #searchsubmit'),
 					'jquery_function_name' => 'css',
 					'arg' => array('border-color', 'color')
@@ -263,7 +277,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Active Form-Field\'s Border Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#919191',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => 'input:focus, textarea:focus',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
@@ -276,7 +290,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#6d6d6d',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => '#main-container > .page-header, #main-container > .entry-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -285,7 +299,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Image', 'mp_knapstack' ),
 					'type'       => 'image',
 					'default'    => '#main-container .page-header',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => '#main-container > .page-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-image'
@@ -294,7 +308,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 11,
+					//'priority'   => 11,
 					'element'    => '#main-container > .page-header, #main-container > .entry-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -303,7 +317,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Link Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 12,
+					//'priority'   => 12,
 					'element'    => '#page #main-container > .page-header a, #page #main-container > .entry-header a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -312,7 +326,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Link Mouse-Over Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ededed',
-					'priority'   => 13,
+					//'priority'   => 13,
 					'element'    => '#page #main-container > .page-header a:hover, #page #main-container > .entry-header a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -321,7 +335,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Button Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
-					'priority'   => 14,
+					//'priority'   => 14,
 					'element'    => '#page #main-container > .page-header input[type=submit], #page #main-container > .page-header .button',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -330,7 +344,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Button Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 15,
+					//'priority'   => 15,
 					'element'    => '#page #main-container > .page-header input[type=submit], #page #main-container > .page-header .button',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -339,7 +353,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Mouse-Over Button Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 16,
+					//'priority'   => 16,
 					'element'    => '#page #main-container > .page-header input[type=submit]:hover, #page #main-container > .page-header .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -348,7 +362,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Mouse-Over Button Text Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
-					'priority'   => 17,
+					//'priority'   => 17,
 					'element'    => '#page #main-container > .page-header input[type=submit]:hover, #page #main-container > .page-header .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
@@ -357,7 +371,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Sub-Header Layout', 'mp_knapstack' ),
 					'type'       => 'select',
 					'default'    => 'left',
-					'priority'   => 18,
+					//'priority'   => 18,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL,
@@ -374,7 +388,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Choose a Stack for your footer', 'mp_knapstack' ),
 					'type'       => 'select',
 					'default'    => '',
-					'priority'   => 1,
+					//'priority'   => 1,
 					'element'    => NULL,
 					'jquery_function_name' => NULL,
 					'arg' => NULL,
@@ -388,7 +402,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Color', 'mp_knapstack' ),
 					'type'       => 'color',
 					'default'    => '#ffffff',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => 'body',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
@@ -397,7 +411,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Image', 'mp_knapstack' ),
 					'type'       => 'image',
 					'default'    => '',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => 'body',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-image'
@@ -406,7 +420,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Disable Background Image', 'mp_knapstack' ),
 					'type'       => 'checkbox',
 					'default'    => '',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'element'    => 'body',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-disabled'
@@ -415,7 +429,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Image Repeat', 'mp_knapstack' ),
 					'type'       => 'radio',
 					'default'    => 'no-repeat',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'choices'    => array(
 						'no-repeat'  => __('No Repeat', 'mp_knapstack'),
 						'repeat'     => __('Tile', 'mp_knapstack'),
@@ -430,7 +444,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Image Position', 'mp_knapstack' ),
 					'type'       => 'radio',
 					'default'    => '',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'choices'    => array(
 						'inherit'  => __('None', 'mp_knapstack'),
 						'left'  => __('Left', 'mp_knapstack'),
@@ -445,7 +459,7 @@ function mp_knapstack_customizer(){
 					'label'      => __( 'Background Image Position', 'mp_knapstack' ),
 					'type'       => 'radio',
 					'default'    => '',
-					'priority'   => 10,
+					//'priority'   => 10,
 					'choices'    => array(
 						'fixed'  => __('Fixed', 'mp_knapstack'),
 						'scroll'  => __('Scroll', 'mp_knapstack'),
@@ -505,7 +519,7 @@ function mp_knapstack_logo_customizer( $args ){
 					'label'      => __( 'Logo', 'mp_core' ),
 					'type'       => 'image',
 					'default'    => '',
-					'priority'   => 1,
+					//'priority'   => 2,
 					'element'    => '#mp-core-logo',
 					'jquery_function_name' => 'attr',
 					'arg' => 'src'
@@ -514,7 +528,7 @@ function mp_knapstack_logo_customizer( $args ){
 					'label'      => __( 'Logo Width (Pixels)', 'mp_core' ),
 					'type'       => 'textbox',
 					'default'    => '',
-					'priority'   => 1,
+					//'priority'   => 2,
 					'element'    => '#mp-core-logo',
 					'jquery_function_name' => 'attr',
 					'arg' => 'width'
@@ -523,7 +537,7 @@ function mp_knapstack_logo_customizer( $args ){
 					'label'      => __( 'Logo Height (Pixels)', 'mp_core' ),
 					'type'       => 'textbox',
 					'default'    => '',
-					'priority'   => 1,
+					//'priority'   => 2,
 					'element'    => '#mp-core-logo',
 					'jquery_function_name' => 'attr',
 					'arg' => 'height'
@@ -574,7 +588,7 @@ function mp_knapstack_header_link_group( $args ){
 				'label'      => __( 'Header Link Group', 'mp_knapstack' ),
 				'type'       => 'select',
 				'default'    => '',
-				'priority'   => 7,
+				//'priority'   => 7,
 				'element'    => NULL,
 				'jquery_function_name' => NULL,
 				'arg' => NULL,

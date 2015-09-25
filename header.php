@@ -27,33 +27,56 @@
 
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-    	<div class="header-inner">
-            <div class="header-inner-content">
-                <div class="site-branding">
-                    
-                    <?php function_exists( 'mp_core_logo_image' ) ? mp_core_logo_image( 300 ) : ''; ?>
-                    
-                    <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                </div>
-        	 
-                <nav id="site-navigation" class="navigation-main" role="navigation">
-                
-                	<div class="nav-inner">
-                        <h1 class="menu-toggle"><?php _e( 'Menu', 'mp_knapstack' ); ?></h1>
-                        <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mp_knapstack' ); ?>"><?php _e( 'Skip to content', 'mp_knapstack' ); ?></a></div>
-            
-                        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'mp_core_link_to_menu_editor', 'container_class' => 'menu-main-navigation-container', ) ); ?>
+    	        
+        <?php
+      	 	//Header Stack
+			$header_stack_id = get_theme_mod('mp_stacks_header_stack'); 
+			
+			//Check if a header has been saved to the 'mp_stacks_header_stack' theme mod
+			if ( !empty( $header_stack_id  ) && $header_stack_id != 'none' ){
+				 
+				 //Output the masthead with correct classes
+				 ?><header id="masthead" class="site-header" role="banner"><?php
+				 
+				 //Output the Header Stack?>
+				 <div id="mp-stacks-header">
+        			<?php do_action( 'mp_knapstack_header_stack' ); ?>
+       			</div><?php
+			}
+			//If NO Header Stack has been saved to the mp_stacks_header_stack theme mod
+			else{
+				
+				//Output the Knapstack Theme's Default Header ?>
+				<header id="masthead" class="site-header knapstack-theme-header-container" role="banner">
+				 
+                <div id="knapstack-theme-header" class="header-inner">
+                    <div class="header-inner-content">
+                        <div class="site-branding">
+                            
+                            <?php function_exists( 'mp_core_logo_image' ) ? mp_core_logo_image( 300 ) : ''; ?>
+                            
+                            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                        </div>
+                     
+                        <nav id="site-navigation" class="navigation-main" role="navigation">
                         
-                        <?php  echo function_exists( 'mp_links' ) ? mp_links( get_theme_mod('mp_knapstack_header_link_group') ) : NULL; ?>
-                    </div><!-- .nav-inner -->
+                            <div class="nav-inner">
+                                <h1 class="menu-toggle"><?php _e( 'Menu', 'mp_knapstack' ); ?></h1>
+                                <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mp_knapstack' ); ?>"><?php _e( 'Skip to content', 'mp_knapstack' ); ?></a></div>
                     
-                </nav><!-- #site-navigation -->
+                                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'mp_core_link_to_menu_editor', 'container_class' => 'menu-main-navigation-container', ) ); ?>
+                                
+                                <?php  echo function_exists( 'mp_links' ) ? mp_links( get_theme_mod('mp_knapstack_header_link_group') ) : NULL; ?>
+                            </div><!-- .nav-inner -->
+                            
+                        </nav><!-- #site-navigation -->
+                        
+                        <?php do_action( 'mp_knapstack_header_additional_cell' ); ?>
+                        
+                    </div><!-- .header-inner-content -->     
+                </div><!-- .header-inner -->
                 
-                <?php do_action( 'mp_knapstack_header_additional_cell' ); ?>
-                
-            </div><!-- .header-inner-content -->     
-        </div><!-- .header-inner -->
+                <?php } ?>
         
         <div style="clear: both;"></div>
         
