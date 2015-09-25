@@ -69,32 +69,7 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		if ( $sub_header_positioning == 'centered' ){
 			wp_enqueue_style( 'mp_knapstack_subheader_centered', get_template_directory_uri() . '/css/centered-sub-header.css' );	
 		}
-		
-		$footer_stack_id = get_theme_mod('mp_stacks_footer_stack'); 
-		
-		//Check if a footer has been saved to the 'mp_stacks_footer_stack' theme mod
-		if ( !empty( $footer_stack_id  ) && $footer_stack_id != 'none' ){
-			
-			//The footer stack CSS
-			mp_stack_css( $footer_stack_id, true ); 
-			
-			//Reset the post data for the footer
-			wp_reset_postdata();
-		}
-		//If no footer was saved there, check if one was saved to mp_knapstack_footer_stack (for backwards compaitibility before this option was changed to 'mp_stacks_footer_stack')
-		else{
-			$footer_stack_id = get_theme_mod('mp_knapstack_footer_stack'); 	
-			if ( !empty( $footer_stack_id  ) && $footer_stack_id != 'none' ){
 				
-				//The footer stack CSS
-				mp_stack_css( $footer_stack_id, true ); 
-				
-				//Reset the post data for the footer
-				wp_reset_postdata();
-			
-			}
-		}
-		
 		//Open Graph Meta Tags 
 		$featured_image = mp_core_the_featured_image( $post->ID, 99999 );?>
         
