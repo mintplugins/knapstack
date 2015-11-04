@@ -1292,12 +1292,12 @@ pre{
 }
 /* 600px Page Template
 ----------------------------------------------- */
-.page-template-templatespage-title-600px-php .site-content,
+.content-area-600 .site-content,
 .single-format-standard .site-content{
 	width:100%;
 	max-width:1100px;
 }
-.page-template-templatespage-title-600px-php .content-area-one,
+.content-area-600 .content-area-one,
 .single-format-standard .content-area-one{
 	width:100%;
 	max-width:600px;
@@ -1305,7 +1305,7 @@ pre{
 	vertical-align: top;
 	margin-right: 65px;
 }
-.page-template-templatespage-title-600px-php .content-area-two,
+.content-area-600 .content-area-two,
 .single-format-standard .content-area-two{
 	width:100%;
 	max-width:390px;
@@ -1313,14 +1313,14 @@ pre{
 	vertical-align: top;	
 }
 @media screen and (max-width: 1100px) {
-	.page-template-templatespage-title-600px-php .content-area-one,
+	.content-area-600 .content-area-one,
 	.single-format-standard .content-area-one{
 		
 		width:60%;
 		margin-right:5%;
 			
 	}
-	.page-template-templatespage-title-600px-php .content-area-two,
+	.content-area-600 .content-area-two,
 	.single-format-standard .content-area-two{
 		
 		width:30%;
@@ -1328,9 +1328,9 @@ pre{
 	}
 }
 @media screen and (max-width: 870px) {
-	.page-template-templatespage-title-600px-php .content-area-one,
+	.content-area-600 .content-area-one,
 	.single-format-standard .content-area-one,
-	.page-template-templatespage-title-600px-php .content-area-one,
+	.content-area-600 .content-area-one,
 	.single-format-standard .content-area-one .entry-content{
 		
 		width:100%;
@@ -1338,7 +1338,7 @@ pre{
 		margin-right:0;
 			
 	}
-	.page-template-templatespage-title-600px-php .content-area-two,
+	.content-area-600 .content-area-two,
 	.single-format-standard .content-area-two{
 		
 		width:100%;
@@ -1376,7 +1376,9 @@ pre{
 }
 
 /* Set the max width of anything inside a normal text area to max out at 100% of the available area.*/
-.content-area-one *{
+.content-area-one img,
+.content-area-one div,
+.content-area-one pre{
 	max-width:100%;	
 }
 /* Styles passed through TinyMCE
@@ -1390,7 +1392,7 @@ pre{
 
 /* #Content div when the stacks (default) page template is used */
 .page-template-templatespage-template-stack-php .site-content,
-.page-template-default .site-content, 
+.mp-knapstack-mp-stacks-full-width .site-content, 
 .single-format-gallery .site-content,
 .site-content.stack-content{
 	max-width:100%;
@@ -1398,7 +1400,7 @@ pre{
 }
 .page-template-templatespage-template-stack-php .entry-content,
 .site-content.stack-content .entry-content,
-.page-template-default .entry-content{
+.mp-knapstack-mp-stacks-full-width .entry-content{
 	max-width:100%;
 }
 .mp-brick-outer{
