@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.0.7.5 = November 4, 2015
+* Font awesome now pulled from MP Stacks
+* Removed mp_knapstack_below_stack_content action hook
+* Ajax callbacks no longer needed
+* If there is no Stack on a page using the MP Stacks page template, auto change it to the 600px template.
+* Admin front end js file no longer needed
+* Add page support for pages without ID (BuddyPress etc)
+* CSS Selector reference .content-area-600 instead of .page-template-templatespage-title-600px-php as the page template may not be used for all 600px layouts
+
 = 1.0.7.4 = September 25, 2015
 * Inlucde new header hooks file.
 * Added option to use Stack as Header.
