@@ -13,11 +13,7 @@
 	<div class="entry-content">        
 		<?php 
 		
-		global $wp_query;
-		
 		the_content(); 
-				
-		do_action( 'mp_knapstack_below_stack_content', $wp_query->queried_object_id, get_the_content() );
 				
 		?>
 	</div><!-- .entry-content -->
