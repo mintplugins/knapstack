@@ -6,20 +6,9 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 	function knapstack_scripts() {
 		
 		global $post;
-			
-		//JS for just the administrator to see on the front end
-		if ( current_user_can( 'manage_options' ) ) {
-			wp_enqueue_script( 'knapstack-front-end-admin-js', get_template_directory_uri() . '/js/admin-front-end.js', array( 'jquery' ) );
-			wp_localize_script( 'knapstack-front-end-admin-js', 'mp_knapstack_vars', 
-				array(
-					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-					'page_template_changing_message' => __( 'Page template updating...', 'mp_knapstack' )
-				)
-			);
-		}
 				
 		//Enqueue Font Awesome CSS
-		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome-4.0.3/css/font-awesome.css' );
+		wp_enqueue_style( 'fontawesome', MP_STACKS_PLUGIN_URL . 'includes/fonts/font-awesome/css/font-awesome.css?ver=' . MP_STACKS_VERSION );
 		
 		//Enqueue Default Stylesheet
 		wp_enqueue_style( 'style', get_stylesheet_uri(), array('fontawesome') );
@@ -71,7 +60,7 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		}
 				
 		//Open Graph Meta Tags 
-		$featured_image = mp_core_the_featured_image( $post->ID, 99999 );?>
+		$featured_image = isset( $post->ID ) ? mp_core_the_featured_image( $post->ID, 99999 ) : NULL; ?>
         
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
         <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
