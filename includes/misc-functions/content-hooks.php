@@ -3,38 +3,46 @@
 /**
  * If there isn't a Stack on a Page which is using the Stack Template (Default for Knapstack), give admins the ability change that page template to be the 1100px template
  * With a single click
- */
-function mp_knapstack_no_stack_change_template_option( $post_id, $post_content ){	
-	
-	//If the user logged in is the administrator
+ */ 
+function mp_knapstack_no_stack_change_template(){	
+		
+		//If the user logged in is the administrator
 	if ( current_user_can( 'manage_options' ) ) {
 		
-		//If there isn't a stack on this page, the user might be confused as to why it's 100% wide.
+		global $wp_query;
+		
+		$post_id = isset( $wp_query->queried_object_id ) ? $wp_query->queried_object_id : NULL;
+		
+		if ( empty( $post_id ) ){
+			return;	
+		}
+		
+		$post_object = get_post($post_id);
+		$post_content = isset( $post_object->post_content ) ? $post_object->post_content : NULL;
+	
+		if ( empty( $post_content ) ){
+			return;	
+		}
+		
+		//If there is NOT a stack on this page, automatically change the page template to the 600px with sidebar template.
 		if ( !has_shortcode( $post_content, 'mp_stack' ) ) { 
 			
-			$show_page_template_notice = mp_core_get_post_meta( $post_id, 'knapstack_page_template_notice', 'show' );
-							
-			//If the user hasn't dismissed this notice (through ajax)
-			if ( $show_page_template_notice != 'dismissed' ){
+			$post_type = get_post_type( $post_id );
+			
+			//If this is a page
+			if ( $post_type == 'page' ){
 				
-				echo '<div class="knapstack-notice">';
-					echo __( '<strong>Admin Notice:</strong> You don\'t have a Stack on this page. Would you like to change the page template?', 'mp_knapstack' );
-					echo '<div id="mp_knapstack_pagetemplate_chooser_container">';
-						echo '<select id="mp_knapstack_pagetemplate_chooser">';						
-						echo '</select>';
-						echo '<div id="mp_knapstack_pagetemplate_choose_button" post-type="' . get_post_type( $post_id ) . '" post-id="' . $post_id . '" nonce="' . wp_create_nonce( 'mp-knapstack-change-template-' . $post_id ) . '" class="button">' . __( 'Use Page-Template', 'mp_knapstack' ) . '</div>';
-					echo '</div> ';
-					echo '<div class="button knapstack-notice-hide">';
-						echo __( 'Hide Notice', 'mp_knapstack' );
-					echo '</div> ';
-					echo '<div class="button knapstack-notice-dismiss" post-id="' . $post_id . '" knapstack-notice-name="knapstack_page_template_notice">';
-						echo __( 'Dismiss Notice', 'mp_knapstack' );
-					echo '</div>';
-				echo '</div>';
+				$page_template = get_post_meta( $post_id, '_wp_page_template', true );
+				
+				//If the page template is using the 100% width one for MP Stacks but there's no Stack on the page, auto change it to the 600px one.
+				if ( $page_template == 'default' ){
+					//Change the page template	 to the default 600px wide one that comes with Knapstack.
+					update_post_meta( $post_id, '_wp_page_template', 'templates/page-title-600px.php' );
+				}
 			}
 			
 		}
 		
 	}
 }
-add_action('mp_knapstack_below_stack_content', 'mp_knapstack_no_stack_change_template_option', 10, 2);
+add_action( 'wp', 'mp_knapstack_no_stack_change_template' );
