@@ -385,24 +385,23 @@ em{
 }
 
 #knapstack-theme-header ul ul {
-	background: #fff;
-	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.08);
 	border-radius: 4px;
 	float: left;
 	position: absolute;
-	top: 2.75em;
+	top: 1.3em;
 	left: 50%;
 	z-index: 99999;
 	opacity: 0;
+	padding-top:20px;
 	
 
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility:    hidden;
 	backface-visibility:         hidden;
 
-	-webkit-transform: translate(-50%, -60%) scale(0);
-	-moz-transform:    translate(-50%, -60%) scale(0);
-	transform:         translate(-50%, -60%) scale(0);
+	-webkit-transform: translate(-50%, 60%) scale(0);
+	-moz-transform:    translate(-50%, 60%) scale(0);
+	transform:         translate(-50%, 60%) scale(0);
 
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition:    all 0.2s ease-in-out;
@@ -416,7 +415,7 @@ em{
 	border-bottom: 7px solid #fff;
 	content: ' ';
 	position: absolute;
-	top: -14px;
+	top: 6px;
 	right: 50%;
 	margin-right: -4px;
 }
@@ -441,6 +440,10 @@ em{
 }
 
 #knapstack-theme-header .menu ul a {
+	
+	background: #fff;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.08);
+	
 	font-size: 12px;
 	letter-spacing: 0;
 	color: #515a63;
@@ -485,9 +488,9 @@ em{
 	display: block;
 	opacity: 1;
 
-	-webkit-transform: translate(-50%, 0) scale(1);
-	-moz-transform:    translate(-50%, 0) scale(1);
-	transform:         translate(-50%, 0) scale(1);
+	-webkit-transform: translate(-4%, 0) scale(1);
+	-moz-transform:    translate(-48%, 0) scale(1);
+	transform:         translate(-48%, 0) scale(1);
 }
 
 #knapstack-theme-header ul ul li:hover > ul {
