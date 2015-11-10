@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.7.6 = November 10, 2015
+* Adjusted Main navigation Dropdowns to be more accessible
+
 = 1.0.7.5 = November 4, 2015
 * Font awesome now pulled from MP Stacks
 * Removed mp_knapstack_below_stack_content action hook
