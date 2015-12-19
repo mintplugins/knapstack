@@ -63,11 +63,11 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
 		$featured_image = isset( $post->ID ) ? mp_core_the_featured_image( $post->ID, 99999 ) : NULL; ?>
         
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
-        <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
-		<meta property="og:description" content="<?php echo strip_tags( mp_core_get_excerpt_by_id( $post->ID ) ); ?>" />
+        <meta property="og:url" content="<?php echo isset( $post->ID ) ? get_permalink( $post->ID ) : NULL; ?>" />
+		<meta property="og:description" content="<?php echo isset( $post->ID ) ? strip_tags( mp_core_get_excerpt_by_id( $post->ID ) ) : NULL; ?>" />
 		<?php  if ( !empty( $featured_image ) ){ ?>	
-            <meta property="og:image" content="<?php echo $featured_image; ?>"/>
-			<meta property="og:image:secure_url" content="<?php echo str_replace( 'http://', 'https://', $featured_image ); ?>" />
+            <meta property="og:image" content="<?php echo isset( $featured_image ) ? $featured_image : NULL; ?>"/>
+			<meta property="og:image:secure_url" content="<?php echo isset( $featured_image ) ? str_replace( 'http://', 'https://', $featured_image ) : NULL; ?>" />
 		<?php }
 		
 	}
