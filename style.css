@@ -4,7 +4,7 @@ Theme URI: https://mintplugins.com/downloads/knapstack-theme
 Author: Mint Plugins
 Author URI: https://mintplugins.com/
 Description: A Clean, Responsive, Retina, Flat-Styled WordPress theme with Unlimited Page Layout variations controlled using the MP Stacks Plugin.
-Version: 1.0.7.7
+Version: 1.0.7.8
 License: GNU General Public License
 License URI: license.txt
 Tags: One-Column
@@ -488,7 +488,7 @@ em{
 	display: block;
 	opacity: 1;
 
-	-webkit-transform: translate(-4%, 0) scale(1);
+	-webkit-transform: translate(-48%, 0) scale(1);
 	-moz-transform:    translate(-48%, 0) scale(1);
 	transform:         translate(-48%, 0) scale(1);
 }
