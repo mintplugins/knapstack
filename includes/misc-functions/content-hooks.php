@@ -28,14 +28,15 @@ function mp_knapstack_no_stack_change_template(){
 		if ( !has_shortcode( $post_content, 'mp_stack' ) ) { 
 			
 			$post_type = get_post_type( $post_id );
-			
+					
 			//If this is a page
 			if ( $post_type == 'page' ){
 				
 				$page_template = get_post_meta( $post_id, '_wp_page_template', true );
-				
+								
 				//If the page template is using the 100% width one for MP Stacks but there's no Stack on the page, auto change it to the 600px one.
-				if ( $page_template == 'default' ){
+				if ( $page_template == 'default' || empty( $page_template ) ){
+										
 					//Change the page template	 to the default 600px wide one that comes with Knapstack.
 					update_post_meta( $post_id, '_wp_page_template', 'templates/page-title-600px.php' );
 				}
