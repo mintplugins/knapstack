@@ -32,50 +32,14 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 		
 		//Declare support for WooCommerce
 		add_theme_support( 'woocommerce' );
+		
+		//Declare support for the Title tag
+		add_theme_support( 'title-tag' );
 						
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Navigation', 'mp_knapstack' ),
 		) );
-		
-		//Setup the sidebar that appears beside blog posts
-		$knapstack_sidebar_args = array(
-			'name'          => __( 'Post Sidebar', 'mp_knapstack' ),
-			'id'            => 'knapstack-post-sidebar',
-			'description'   => __( 'This sidebar appears beside blog posts', 'mp_knapstack' ),
-			'class'         => '',
-			'before_widget' => '<div class="knapstack-widgets-item">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="knapstack-widgets-title">',
-			'after_title'   => '</div>' 
-		);
-		register_sidebar( $knapstack_sidebar_args );
-		
-		//Setup the sidebar that appears beside blog posts
-		$knapstack_sidebar_args = array(
-			'name'          => __( 'Page Sidebar', 'mp_knapstack' ),
-			'id'            => 'knapstack-page-sidebar',
-			'description'   => __( 'This sidebar appears beside pages set to be 600px wide.', 'mp_knapstack' ),
-			'class'         => '',
-			'before_widget' => '<div class="knapstack-widgets-item">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="knapstack-widgets-title">',
-			'after_title'   => '</div>' 
-		);
-		register_sidebar( $knapstack_sidebar_args );
-		
-		//Setup the sidebar that appears beside blog posts
-		$knapstack_sidebar_args = array(
-			'name'          => __( 'Category Sidebar', 'mp_knapstack' ),
-			'id'            => 'knapstack-category-sidebar',
-			'description'   => __( 'This sidebar appears beside category pages.', 'mp_knapstack' ),
-			'class'         => '',
-			'before_widget' => '<div class="knapstack-widgets-item">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="knapstack-widgets-title">',
-			'after_title'   => '</div>' 
-		);
-		register_sidebar( $knapstack_sidebar_args );
 	
 	}
 endif;
@@ -143,4 +107,12 @@ function mp_knapstack_theme_check_appeaser(){
 	the_post_thumbnail();	
 	add_theme_support( "custom-header", NULL );
 	add_theme_support( "custom-background", NULL ); 
+}
+
+//Backwards compatibility for the title tag.
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function theme_slug_render_title() { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title><?php 
+	}
+	add_action( 'wp_head', 'theme_slug_render_title' );
 }
