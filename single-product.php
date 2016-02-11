@@ -34,7 +34,7 @@ if ( has_post_format( 'gallery' )) { ?>
 //Otherwise use the normal page layout for downloads
 } else{
 
-	get_template_part( 'page-header' ); ?>
+	//get_template_part( 'page-header' ); ?>
 
 	<div id="main" class="site-main">
 	
