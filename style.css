@@ -31,7 +31,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: 'MP Stacks Font 1';
+	font-family: 'Knapstack Font 1';
 	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
@@ -258,6 +258,12 @@ em{
 .header-inner-content{
 	display:table;
 	width:100%;
+}
+/* Make the header not-fixed on mobile devices no matter what - where fixed headers take up too much space on a small screen. */
+@media screen and (max-width: 600px) {
+	#page > header{
+		position:absolute!important;
+	}
 }
 
 /* Header Site Branding Area
@@ -739,7 +745,7 @@ input[type=search],
 textarea{
 	border: 2px solid #bdc3c7;
 	color: #34495e;
-	font-family: 'MP Stacks Font 1';
+	font-family: 'Knapstack Font 1';
 	font-size: 14px;
 	padding: 8px 5px;
 	text-indent: 6px;
@@ -780,7 +786,7 @@ input[type=submit],
 	text-indent: 0px;
 	color:#fff;
 	padding:10px 20px 10px 20px;
-	font-family: 'MP Stacks Font 1';
+	font-family: 'Knapstack Font 1';
 	border-radius: 3px;
 	border:none;
 	text-shadow:none;
