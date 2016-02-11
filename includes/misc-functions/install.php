@@ -47,7 +47,7 @@ function mp_knapstack_install() {
 			'mp_track_event' => true, 
 			'event_product_title' => 'Knapstack', 
 			'event_action' => 'activation', 
-			'event_url' => get_bloginfo( 'wpurl'),
+			'event_url' => esc_url( site_url() ),
 			'wp_version' => $wp_version,
 			'active_plugins' => json_encode( get_option('active_plugins') ),
 			'active_theme' => $active_theme->get( 'Name' ),
