@@ -619,7 +619,7 @@ function mp_knapstack_font(){
 	
 	$font_family = get_theme_mod( 'mp_knapstack_font_family');
 
-    new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'MP Stacks Font 1' );
+    new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'Knapstack Font 1' );
 
 }
 add_action( 'wp_loaded', 'mp_knapstack_font' );
