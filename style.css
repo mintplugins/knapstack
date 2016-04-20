@@ -1299,6 +1299,24 @@ pre{
 	width:100%;
 	max-width:1100px;
 }
+
+/* WooCommerce Single Product Page */
+.woocommerce-page .entry-content,
+.woocommerce-page .content-area-one{
+	width:100%!important;
+	max-width:1100px!important;
+}
+.woocommerce-page .product .variations,
+.woocommerce-page .product .variations tr,
+.product .variations td{
+	background-color:transparent;	
+}
+.woocommerce-page .input-text.qty{
+	padding:6.5px 5px;
+}
+.woocommerce-page #rating{
+	margin-left:10px;	
+}
 /* 600px Page Template
 ----------------------------------------------- */
 .content-area-600 .site-content,

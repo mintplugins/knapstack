@@ -175,7 +175,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
 					//'priority'   => 14,
-					'element'    => 'input[type=submit], .button, #posts-navigation .page-numbers li a',
+					'element'    => 'button, input[type=submit], .button, #posts-navigation .page-numbers li a, .woocommerce .product button.single_add_to_cart_button.alt:disabled[disabled], .woocommerce .product button.single_add_to_cart_button',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),

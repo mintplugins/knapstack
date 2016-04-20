@@ -116,3 +116,39 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	}
 	add_action( 'wp_head', 'theme_slug_render_title' );
 }
+
+/**
+ * WooCommerce: Define image sizes
+ */
+function mp_knapstack_woocommerce_image_dimensions() {
+	global $pagenow;
+ 
+	if ( ! isset( $_GET['activated'] ) || $pagenow != 'themes.php' ) {
+		return;
+	}
+  	$catalog = array(
+		'width' 	=> '400',	// px
+		'height'	=> '400',	// px
+		'crop'		=> 1 		// true
+	);
+	$single = array(
+		'width' 	=> '900',	// px
+		'height'	=> '900',	// px
+		'crop'		=> 0 		// true
+	);
+	$thumbnail = array(
+		'width' 	=> '120',	// px
+		'height'	=> '120',	// px
+		'crop'		=> 0 		// false
+	);
+	// Image sizes
+	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
+	update_option( 'shop_single_image_size', $single ); 		// Single product image
+	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
+}
+add_action( 'after_switch_theme', 'mp_knapstack_woocommerce_image_dimensions', 1 );
+
+function mp_knapstack_remove_wc_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+add_action( 'init', 'mp_knapstack_remove_wc_breadcrumbs' );

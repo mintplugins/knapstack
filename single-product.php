@@ -31,7 +31,7 @@ if ( has_post_format( 'gallery' )) { ?>
    				</div>
             </div><!-- #content -->
         </div><!-- #primary --><?php
-//Otherwise use the normal page layout for downloads
+//Otherwise use the normal page layout for WooCommerce Products
 } else{
 
 	//get_template_part( 'page-header' ); ?>
@@ -67,20 +67,10 @@ if ( has_post_format( 'gallery' )) { ?>
 					do_action( 'woocommerce_after_main_content' );
 				?>
 
-				
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template();
-				?>
+
 				</div>
-				<div class="content-area-two">
-					<?php //Get Widgets Output?>
-                    <div class="mp-knapstack-widgets">
-                        <?php dynamic_sidebar( 'knapstack-post-sidebar' ); ?>
-                    </div>
-                </div>
-                
+				
+
 			</div><!-- #content -->
 				
 		</div><!-- #primary -->	
