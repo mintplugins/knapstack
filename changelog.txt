@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.0.7.9 = April 20, 2016
+* Added Theme support for 'title-tag'
+* Remove Page Header from WooCommerce Pages
+* Added License.txt file for GPL
+* Change Font Family name of "MP Stacks Font 1" to "Knapstack Font 1"
+* Proper function naming for sidebar registration
+* WooCommerce single page styles added
+
 = 1.0.7.8 = December 18, 2015
 * Add check for page template needed without any Stack. Now checks in case the page template is empty or "default".
 * Open Graph now has checks for post->ID.
