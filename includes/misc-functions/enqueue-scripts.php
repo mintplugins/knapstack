@@ -64,8 +64,21 @@ if ( ! function_exists( 'knapstack_scripts' ) ):
         
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
         <meta property="og:url" content="<?php echo isset( $post->ID ) ? get_permalink( $post->ID ) : NULL; ?>" />
-		<meta property="og:description" content="<?php echo isset( $post->ID ) ? strip_tags( mp_core_get_excerpt_by_id( $post->ID ) ) : NULL; ?>" />
-		<?php  if ( !empty( $featured_image ) ){ ?>	
+		
+        <?php
+		
+		//Get the exceprt
+		$excerpt_for_og = isset( $post->ID ) ? strip_tags( mp_core_get_excerpt_by_id( $post->ID ) ) : '';
+		$content_for_og = isset( $post->ID ) ? trim( preg_replace('/\s+/', ' ', preg_replace('/<[^>]*>/', ' ', preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", preg_replace('/<style\b[^>]*>(.*?)<\/style>/is', "", do_shortcode( get_the_content( $post->ID ) ) ) ) ) ) )  : '';
+		
+		if ( !empty( $excerpt_for_og ) ){
+			?><meta property="og:description" content="<?php echo $excerpt_for_og; ?>" /><?php
+		}
+		else if( !empty( $content_for_og ) ){ 
+			?><meta property="og:description" content="<?php echo $content_for_og; ?>" /><?php
+		}
+		
+		if ( !empty( $featured_image ) ){ ?>	
             <meta property="og:image" content="<?php echo isset( $featured_image ) ? $featured_image : NULL; ?>"/>
 			<meta property="og:image:secure_url" content="<?php echo isset( $featured_image ) ? str_replace( 'http://', 'https://', $featured_image ) : NULL; ?>" />
 		<?php }
