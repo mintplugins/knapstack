@@ -12,7 +12,7 @@
 */
 // Theme version
 if( !defined( 'MP_KNAPSTACK_VERSION' ) )
-	define( 'MP_KNAPSTACK_VERSION', '1.0.7.8' );
+	define( 'MP_KNAPSTACK_VERSION', '1.0.8.0' );
 
 // Theme Folder Path
 if( !defined( 'MP_KNAPSTACK_THEME_DIR' ) )
