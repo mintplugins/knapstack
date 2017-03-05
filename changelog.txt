@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.8.0 = March 5, 2017
+* Only output open graph description if the excerpt is not blank for a post.
+* Border Changes to account for HTML5 Legend tag.
+* New customizer setting to set default post_format style
+
 = 1.0.7.9 = April 20, 2016
 * Added Theme support for 'title-tag'
 * Remove Page Header from WooCommerce Pages
