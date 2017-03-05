@@ -8,9 +8,12 @@
 get_header(); ?>
 
 <?php 
+//The Knapstack Customizer has a post format over-ride which allows you to set what "Standard Means" as a post format.
+$standard_post_format_style = get_theme_mod( 'mp_knapstack_default_post_format_style' );
+
 //This person has chosen to use the FULL-WIDTH (Stacks) layout. 
 //We are using "gallery" because WP Post Formats are limited and gallery is the most similar
-if ( has_post_format( 'gallery' )) { ?>
+if ( has_post_format( 'gallery' ) || $standard_post_format_style == '100percentwidth' ) { ?>
 	
     <div id="main" class="site-main">
     

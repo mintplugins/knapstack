@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Customize
  *
@@ -9,19 +9,50 @@
  * @package mp_knapstack
  * @since mp_knapstack 3.0
  */
- 
+
 function mp_knapstack_customizer(){
-	
+
 	$theme = wp_get_theme(); // $theme->Name
-	
+
 	$mp_stacks_array['none'] = "None";
-	
+
 	//Loop through each Stack and add it to the array for selection
 	foreach( mp_core_get_all_terms_by_tax('mp_stacks') as $stack_id => $stack_name ){
 		$mp_stacks_array[$stack_id] = $stack_name;
-	}	
-	
+	}
+
 	$args = array(
+		array( 'section_id' => 'mp_knapstack_post_controls', 'section_title' => __( 'Post Settings', 'mp_knapstack' ),'section_priority' => 100,
+			'settings' => array(
+			'mp_knapstack_default_post_format_style' => array(
+					'label'      => __( 'If a Post\'s format is set to "Standard", how should it display?', 'mp_stacks' ),
+					'type'       => 'select',
+					'default'    => '600wHeader',
+					//'priority'   => 1,
+					'element'    => NULL,
+					'jquery_function_name' => NULL,
+					'arg' => NULL,
+					'choices' => array(
+						'600wHeader' => __( "600px wide with Sub-Header" , 'mp_knapstack' ),
+						'1100wHeader' => __( "1100px wide with Sub-Header" , 'mp_knapstack' ),
+						'100percentwidth' => __( "100% Wide (Recommended for MP Stacks)" , 'mp_stacks' )
+					)
+				),
+			),
+			'mp_knapstack_header_fixed' => array(
+					'label'      => __( 'Scroll Header?', 'mp_knapstack' ),
+					'type'       => 'radio',
+					'choices'    => array(
+						'fixed'  	=> __('Fixed', 'mp_knapstack'),
+						'absolute'	=> __('Scroll', 'mp_knapstack'),
+					),
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#page .site-header',
+					'jquery_function_name' => 'css',
+					'arg' => 'position'
+				),
+		),
 		array( 'section_id' => 'mp_knapstack_responsive', 'section_title' => __( 'Responsive Settings', 'mp_knapstack' ),'section_priority' => 100,
 			'settings' => array(
 				'mp_knapstack_responsive_off' => array(
@@ -211,7 +242,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#d8d8d8',
 					//'priority'   => 18,
-					'element'    => 'table[id^="edd"] tbody tr td',
+					'element'    => 'table[id^="edd"] tbody tr td, fieldset, table, #edd-login-account-wrap',
 					'jquery_function_name' => 'css',
 					'arg' => 'border-color'
 				),
@@ -439,7 +470,7 @@ function mp_knapstack_customizer(){
 					'element'    => 'body',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-repeat'
-				),	
+				),
 				'mp_knapstack_background_position' => array(
 					'label'      => __( 'Background Image Position', 'mp_knapstack' ),
 					'type'       => 'radio',
@@ -471,11 +502,11 @@ function mp_knapstack_customizer(){
 			)
 		)
 	);
-	
+
 	$args = has_filter('mp_knapstack_customizer_args') ? apply_filters('mp_knapstack_customizer_args', $args) : $args;
-	
+
 	new MP_CORE_Customizer($args);
-	
+
 }
 add_action ('init', 'mp_knapstack_customizer');
 
@@ -485,7 +516,7 @@ add_action ('init', 'mp_knapstack_customizer');
  * @since    1.0.0
  * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
  * @see      has_filter()
- * @see      apply_filters() 
+ * @see      apply_filters()
  * @see      MP_CORE_Customizer
  * @return   void
  */
@@ -500,20 +531,20 @@ add_action( 'after_setup_theme', 'mp_knapstack_remove_mp_core_logo_customizer' )
  * @since    1.0.0
  * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
  * @see      has_filter()
- * @see      apply_filters() 
+ * @see      apply_filters()
  * @see      MP_CORE_Customizer
  * @return   void
  */
 function mp_knapstack_logo_customizer( $args ){
-	
+
 	$section_counter = 0;
-		
+
 	//Loop through each customizer arg
 	foreach( $args as $section ){
-		
+
 		//If we are at the mp_knapstack_header_navigation
 		if ( $section['section_id'] == 'mp_knapstack_header_navigation' ){
-			
+
 			//Add the option for the header link group
 			$args[$section_counter]['settings']['mp_core_logo'] = array(
 					'label'      => __( 'Logo', 'mp_core' ),
@@ -542,16 +573,16 @@ function mp_knapstack_logo_customizer( $args ){
 					'jquery_function_name' => 'attr',
 					'arg' => 'height'
 			);
-			
+
 			break;
-			
+
 		}
-		
+
 		$section_counter = $section_counter + 1;
 	}
-	
+
 	return $args;
-				
+
 }
 add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_logo_customizer' );
 
@@ -561,28 +592,28 @@ add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_logo_customizer' );
  * @since    1.0.0
  * @link     http://mintplugins.com/doc/mp_core_logo_customizer/
  * @see      has_filter()
- * @see      apply_filters() 
+ * @see      apply_filters()
  * @see      MP_CORE_Customizer
  * @return   void
  */
 function mp_knapstack_header_link_group( $args ){
-	
+
 	if ( !function_exists( 'mp_links_textdomain' ) ){
-		
-		return $args;	
+
+		return $args;
 	}
-	
+
 	$link_groups_array = mp_core_get_all_terms_by_tax('mp_link_groups');
 	$link_groups_array['none'] = "None";
-	
+
 	$section_counter = 0;
-	
+
 	//Loop through each customizer arg
 	foreach( $args as $section ){
-		
+
 		//If we are at the mp_knapstack_header_navigation
 		if ( $section['section_id'] == 'mp_knapstack_header_navigation' ){
-			
+
 			//Add the option for the header link group
 			$args[$section_counter]['settings']['mp_knapstack_header_link_group'] = array(
 				'label'      => __( 'Header Link Group', 'mp_knapstack' ),
@@ -594,16 +625,16 @@ function mp_knapstack_header_link_group( $args ){
 				'arg' => NULL,
 				'choices' => $link_groups_array
 			);
-			
+
 			break;
-			
+
 		}
-		
+
 		$section_counter = $section_counter + 1;
 	}
-	
+
 	return $args;
-				
+
 }
 add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_header_link_group' );
 
@@ -611,15 +642,46 @@ add_filter( 'mp_knapstack_customizer_args', 'mp_knapstack_header_link_group' );
  * Set Google Fonts
  *
  */
-function mp_knapstack_font(){ 
+function mp_knapstack_font(){
 
 	$font_family = get_theme_mod( 'mp_knapstack_header_font');
 
     new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'Knapstack Header Font' );
-	
+
 	$font_family = get_theme_mod( 'mp_knapstack_font_family');
 
     new MP_CORE_Font( !empty( $font_family ) ? $font_family : 'Open Sans', 'Knapstack Font 1' );
 
 }
 add_action( 'wp_loaded', 'mp_knapstack_font' );
+
+/**
+ * Set Standard Post Format Style based on Customizer setting by adding the class to the body.
+ */
+function mp_knapstack_standard_post_format_body_classes( $classes ) {
+
+	if ( is_page() ){
+		return $classes;
+	}
+
+	//The Knapstack Customizer has a post format over-ride which allows you to set what "Standard Means" as a post format.
+	$standard_post_format_style = get_theme_mod( 'mp_knapstack_default_post_format_style' );
+
+	if ( $standard_post_format_style == '100percentwidth' || has_post_format( 'gallery' ) ){
+
+		$classes[] = 'mp-knapstack-mp-stacks-full-width';
+
+	}
+	else if( $standard_post_format_style == '1100wHeader' ){
+
+		$classes[] = 'page-template-templatespage-title-1100px-php';
+
+	}
+	else{
+		$classes[] = 'content-area-600';
+	}
+
+    return $classes;
+
+}
+add_filter( 'body_class', 'mp_knapstack_standard_post_format_body_classes' );
