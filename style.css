@@ -1885,3 +1885,17 @@ form[id^="edd"] .edd-payment-icons img.payment-icon {
 .woocommerce .star-rating *:before{
 	font-family:star;	
 }
+
+/* Video Container Fixes to make them responsive */
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-container iframe, .video-container object, .video-container embed, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* All Access Login Wrapper */
+.edd-aa-wrapper{
+	max-width: 600px!important;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p:empty { display: none }
