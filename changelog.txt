@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.8.4 = September 8, 2017
+* Add support for Stacks as WooCommerce single pages
+* Add support for WooCommerce 3.0 Galleries
+
 = 1.0.8.3 = May 13, 2017
 * Update WooCommerce versions to 3.0
 
