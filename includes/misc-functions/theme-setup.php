@@ -32,6 +32,9 @@ if ( ! function_exists( 'mp_knapstack_setup' ) ):
 
 		//Declare support for WooCommerce
 		add_theme_support( 'woocommerce' );
+		//add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		//Declare support for the Title tag
 		add_theme_support( 'title-tag' );
