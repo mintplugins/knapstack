@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.8.5 = March 8, 2018
+* Updated plugin checker/installer for allow_url_fopen fixes
+
 = 1.0.8.4 = September 8, 2017
 * Add support for Stacks as WooCommerce single pages
 * Add support for WooCommerce 3.0 Galleries
