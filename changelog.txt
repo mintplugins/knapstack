@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.0 = November 26, 2020
+* Changed name of page ID attribute to knapsack-page so that there's no duplicate from WordPress core.
+
 = 1.0.8.6 = April 16, 2019
 * Remove Microformats from Pages
 
