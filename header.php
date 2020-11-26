@@ -24,7 +24,7 @@
 
 <?php do_action( 'mp_knapstack_prepend_body' ); ?>
 
-<div id="page" class="hfeed site">
+<div id="knapstack-page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
     	        
         <?php

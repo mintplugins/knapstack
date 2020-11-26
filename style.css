@@ -211,7 +211,7 @@ em{
 
 /* Page
 ----------------------------------------------- */
-#page{
+#knapstack-page{
 	min-width:1100px;
 	width:100%;
 	min-height:100%;
@@ -221,19 +221,19 @@ em{
 
 /* Header With Admin Bar when logged in
 ----------------------------------------------- */
-.admin-bar #page > header,
-.admin-bar #page #main-container{
+.admin-bar #knapstack-page > header,
+.admin-bar #knapstack-page #main-container{
 	margin-top:32px;
 }
 @media screen and (max-width: 782px) {
-	.admin-bar #page > header,
-	.admin-bar #page #main-container{
+	.admin-bar #knapstack-page > header,
+	.admin-bar #knapstack-page #main-container{
 		margin-top:46px;
 	}
 }
 @media screen and (max-width: 600px) {
-	.admin-bar #page > header,
-	.admin-bar #page #main-container{
+	.admin-bar #knapstack-page > header,
+	.admin-bar #knapstack-page #main-container{
 		margin-top:0px;
 	}
 	#wpadminbar{
@@ -243,14 +243,14 @@ em{
 
 /* Header
 ----------------------------------------------- */
-#page > header{
+#knapstack-page > header{
 	position:absolute;
 	top:0px;
 	width:100%;
 	z-index:99999;
 }
 
-#page > header #knapstack-theme-header{
+#knapstack-page > header #knapstack-theme-header{
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -265,7 +265,7 @@ em{
 }
 /* Make the header not-fixed on mobile devices no matter what - where fixed headers take up too much space on a small screen. */
 @media screen and (max-width: 600px) {
-	#page > header{
+	#knapstack-page > header{
 		position:absolute!important;
 	}
 }

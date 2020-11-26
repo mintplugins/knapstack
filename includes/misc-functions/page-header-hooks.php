@@ -7,7 +7,7 @@ function mp_knapstack_featured_image_page_header(){
 
 	if ( !is_archive() ){
 		//Check if there is a featured image
-		$featured_image = mp_core_the_featured_image( get_the_ID(), 150, 150, '<a class="page_header_feat_image" href="' . get_permalink() . '"><img width="150px" height="150px" src="', '" /></a>');
+		$featured_image = mp_core_the_featured_image( get_the_ID(), 150, 150, '<a class="page_header_feat_image" href="' . get_permalink() . '"><img alt="' . esc_attr( get_the_title() ) . '" width="150px" height="150px" src="', '" /></a>');
 		
 		//Show featured image - if there is one	
 		if ( $featured_image ) { 
