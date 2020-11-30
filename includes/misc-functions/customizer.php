@@ -48,7 +48,7 @@ function mp_knapstack_customizer(){
 					),
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => '#page .site-header',
+					'element'    => '#knapstack-page .site-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'position'
 				),
@@ -71,7 +71,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'textbox',
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => '#page .knapstack-theme-header-container',
+					'element'    => '#knapstack-page .knapstack-theme-header-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color-opacity'
 				),
@@ -80,7 +80,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#939393',
 					'priority'   => 1,
-					'element'    => '#page .knapstack-theme-header-container',
+					'element'    => '#knapstack-page .knapstack-theme-header-container',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -129,7 +129,7 @@ function mp_knapstack_customizer(){
 					),
 					'default'    => '',
 					'priority'   => 1,
-					'element'    => '#page .site-header',
+					'element'    => '#knapstack-page .site-header',
 					'jquery_function_name' => 'css',
 					'arg' => 'position'
 				),
@@ -349,7 +349,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					//'priority'   => 12,
-					'element'    => '#page #main-container > .page-header a, #page #main-container > .entry-header a',
+					'element'    => '#knapstack-page #main-container > .page-header a, #knapstack-page #main-container > .entry-header a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -358,7 +358,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ededed',
 					//'priority'   => 13,
-					'element'    => '#page #main-container > .page-header a:hover, #page #main-container > .entry-header a:hover',
+					'element'    => '#knapstack-page #main-container > .page-header a:hover, #knapstack-page #main-container > .entry-header a:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -367,7 +367,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
 					//'priority'   => 14,
-					'element'    => '#page #main-container > .page-header input[type=submit], #page #main-container > .page-header .button',
+					'element'    => '#knapstack-page #main-container > .page-header input[type=submit], #knapstack-page #main-container > .page-header .button',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -376,7 +376,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					//'priority'   => 15,
-					'element'    => '#page #main-container > .page-header input[type=submit], #page #main-container > .page-header .button',
+					'element'    => '#knapstack-page #main-container > .page-header input[type=submit], #knapstack-page #main-container > .page-header .button',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
@@ -385,7 +385,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#ffffff',
 					//'priority'   => 16,
-					'element'    => '#page #main-container > .page-header input[type=submit]:hover, #page #main-container > .page-header .button:hover',
+					'element'    => '#knapstack-page #main-container > .page-header input[type=submit]:hover, #knapstack-page #main-container > .page-header .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'background-color'
 				),
@@ -394,7 +394,7 @@ function mp_knapstack_customizer(){
 					'type'       => 'color',
 					'default'    => '#a0a0a0',
 					//'priority'   => 17,
-					'element'    => '#page #main-container > .page-header input[type=submit]:hover, #page #main-container > .page-header .button:hover',
+					'element'    => '#knapstack-page #main-container > .page-header input[type=submit]:hover, #knapstack-page #main-container > .page-header .button:hover',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
 				),
