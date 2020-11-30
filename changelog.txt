@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.1 = November 30, 2020
+* Fixed some responsive layout issues from 2.0.0 changes.
+
 = 2.0.0 = November 26, 2020
 * Changed name of page ID attribute to knapsack-page so that there's no duplicate from WordPress core.
 
